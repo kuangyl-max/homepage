@@ -4,19 +4,23 @@
     <title>工具合集</title>
     <url>/2021/10/28/tool/</url>
     <content><![CDATA[<h1 id="Window-终端配置"><a href="#Window-终端配置" class="headerlink" title="Window 终端配置"></a>Window 终端配置</h1><h2 id="Scoop配置"><a href="#Scoop配置" class="headerlink" title="Scoop配置"></a>Scoop配置</h2><p><a href="https://blog.csdn.net/luoyooi/article/details/102990113">Windows下Scoop安装、配置与使用_luoyooi的博客-CSDN博客_scoop</a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在PowerShell中运行以下命令，将scoop安装到其默认位置(<code>C:\Users\&lt;user&gt;\scoop</code>)</p>
+<p><strong>安装</strong></p>
+<p>在PowerShell中运行以下命令，将scoop安装到其默认位置(<code>C:\Users\&lt;user&gt;\scoop</code>)</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Invoke-Expression (New-Object</span><br><span class="line">System.Net.WebClient).DownloadString(&#39;https:&#x2F;&#x2F;get.scoop.sh&#39;)</span><br></pre></td></tr></table></figure>
+
 <p><strong>或</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">iwr -useb get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
 
 <p>安装完成后，输入<code>scoop help</code>验证是否成功（常见的命令可以通过此方法来查看）。</p>
 <p>用户安装的程序和scoop本身位于C:Users&lt;user&gt;scoop。全局安装的程序（–global）位于C:\ProgramData\scoop。可以通过环境变量更改这些设置。具体步骤如下：</p>
-<h3 id="将Scoop安装到自定义目录-命令行方式"><a href="#将Scoop安装到自定义目录-命令行方式" class="headerlink" title="将Scoop安装到自定义目录(命令行方式)"></a>将Scoop安装到自定义目录(命令行方式)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP&#x3D;&#39;D:Applications\Scoop&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP&#39;, $env:SCOOP,&#39;User&#39;)</span><br></pre></td></tr></table></figure>
+<p><strong>将Scoop安装到自定义目录(命令行方式)</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP&#x3D;&#39;D:Applications\Scoop&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP&#39;, $env:SCOOP,&#39;User&#39;)</span><br></pre></td></tr></table></figure>
 
+<p><strong>将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式)</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP_GLOBAL&#x3D;&#39;F:\GlobalScoopApps&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP_GLOBAL&#39;,</span><br><span class="line">$env:SCOOP_GLOBAL, &#39;Machine&#39;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h3 id="将Scoop配置为将全局程序安装到自定义目录-SCOOP-GLOBAL-命令行方式"><a href="#将Scoop配置为将全局程序安装到自定义目录-SCOOP-GLOBAL-命令行方式" class="headerlink" title="将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式)"></a>将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式)</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP_GLOBAL&#x3D;&#39;F:\GlobalScoopApps&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP_GLOBAL&#39;,</span><br><span class="line">$env:SCOOP_GLOBAL, &#39;Machine&#39;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="上面两句运行的结果-环境变量"><a href="#上面两句运行的结果-环境变量" class="headerlink" title="上面两句运行的结果(环境变量)"></a>上面两句运行的结果(环境变量)</h3><p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-38-45-69d072a8079102da338071daa6fa4c10-image55-d2410c.png" alt="在这里插入图片描述">{width=”5.768055555555556in”<br>height=”4.741666666666666in”}<br>如果不想运行命令行，直接添加环境变量也可。设置完安装位置后，建议将默认目录下的所有文件复制到新目录（<strong>不是剪切！！</strong>）</p>
+<p><strong>上面两句运行的结果(环境变量)</strong></p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-38-45-69d072a8079102da338071daa6fa4c10-image55-d2410c.png" alt="在这里插入图片描述">{width=”5.768055555555556in”<br>height=”4.741666666666666in”}<br>如果不想运行命令行，直接添加环境变量也可。设置完安装位置后，建议将默认目录下的所有文件复制到新目录（<strong>不是剪切！！</strong>）</p>
 <p>参考链接：</p>
 <ul>
 <li><p><a href="https://www.jianshu.com/p/50993df76b1c">scoop——强大的Windows命令行包管理工具 - 简书(jianshu.com)</a></p>
@@ -30,7 +34,7 @@
 </ul>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="oh-my-posh-中文乱码"><a href="#oh-my-posh-中文乱码" class="headerlink" title="oh-my-posh 中文乱码"></a>oh-my-posh 中文乱码</h3><p>可以更改字体，如Fira Code Retina</p>
 <p>或者<a href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3及oh-my-zsh提示prompt出现乱码的原因及使用Nerd字体的解决方法_yihuajack的博客-CSDN博客</a></p>
-<h2 id="scoop工具安装"><a href="#scoop工具安装" class="headerlink" title="scoop工具安装"></a>scoop工具安装</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install Installed</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
+<h2 id="scoop工具安装"><a href="#scoop工具安装" class="headerlink" title="scoop工具安装"></a>scoop工具安装</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>若下载不了，则开启VPN</p>
@@ -44,6 +48,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu]</span><br><span class="line">@&#x3D;&quot;Open PowerShell Here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu\command]</span><br><span class="line">@&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -NoExit -Command Set-Location -LiteralPath &#39;%L&#39;&quot;</span><br></pre></td></tr></table></figure>
 
 <h2 id="终端工具"><a href="#终端工具" class="headerlink" title="终端工具"></a>终端工具</h2><h3 id="terminus"><a href="#terminus" class="headerlink" title="terminus"></a>terminus</h3><p>全平台通用。功能强大。</p>
+<p><a href="https://tabby.sh/">Tabby - a terminal for a more modern age</a></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#安装</span><br><span class="line">#方法1： https:&#x2F;&#x2F;github.com&#x2F;Eugeny&#x2F;tabby</span><br><span class="line">#方法2</span><br><span class="line">scoop install terminus -g </span><br></pre></td></tr></table></figure>
 
 
@@ -75,11 +80,11 @@
 <p>打开 Writage网页，点击Download，再点击Download Now完成下载<br>运行安装程序，一般按照默认选项安装就好啦</p>
 </li>
 <li><p>安装后重启电脑，新建或打开任一 Word 文档，在 文件 菜单栏下选 另存为，查看 <strong>【保存类型】</strong> 中是否有 Markdown 格式。</p>
+</li>
+</ol>
 <blockquote>
 <p>如果插件安装成功，就会自动出现Markdown选项；否则，重新安装一遍吧~）</p>
 </blockquote>
-</li>
-</ol>
 <h3 id="Word-to-Markdown-Converter在线转换"><a href="#Word-to-Markdown-Converter在线转换" class="headerlink" title="Word to Markdown Converter在线转换"></a>Word to Markdown Converter在线转换</h3><ol>
 <li><strong>设置word文档中的标准样式，如一级、二级标题，项目符号或编号等，如此才能与markdown的格式对应</strong></li>
 </ol>
@@ -153,7 +158,14 @@
 <p>python – 解析一个.py文件,读取AST,修改它,然后回写修改后的源代码<a href="http://www.voidcn.com/article/p-mvtnzhha-bsk.html">http://www.voidcn.com/article/p-mvtnzhha-bsk.html</a></p>
 <p>统一纠正变量名<br>读取各项目ast，对每个变量计算编辑距离，编辑距离为0~len(word) 为一类<br>批量更正变量并写回去</p>
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><p><a href="https://www.nbmao.com/archives/4463">2021年最新Clash For Windows 详细使用教程 - 笨猫博客 (nbmao.com)</a></p>
-<p><a href="https://hello-shudong.com/auth/login">登录 — GW树洞 (hello-shudong.com)</a>：邀请码<code>gayP</code></p>
+<p><a href="https://hello-shudong.com/auth/login">登录 — GW树洞 (hello-shudong.com)</a> ：邀请码<code>gayP</code></p>
+<p><strong>为git设置代理</strong></p>
+<blockquote>
+<p>设置后加速git clone等命令执行速度，解决Timeout问题。</p>
+<p>此处使用clash for window 设置代理，其端口为7890</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">http代理</span></span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">https代理</span></span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">查看代理</span></span><br><span class="line">git config -l</span><br><span class="line"><span class="meta">#</span><span class="bash">取消http代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> http.proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">取消https代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> https.proxy</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="电脑维护"><a href="#电脑维护" class="headerlink" title="电脑维护"></a>电脑维护</h2><ul>
 <li>CCleaner</li>
 <li>SpaceSniffer</li>
@@ -233,6 +245,7 @@
 <p>word小恐龙： <a href="http://gw.xkonglong.com/">http://gw.xkonglong.com/</a></p>
 <p>word精灵</p>
 <p>grammarly ：语法纠正</p>
+<p><a href="https://aimwriting.mtutor.engkoo.com/editor">微软爱写作</a>：在线写作，提供逻辑连接词例子，可批改评分</p>
 <p><a href="https://quillbot.com/">Paraphrasing Tool | QuillBot AI</a>：句子重构，降低查重</p>
 <p><a href="https://www.phrasebank.manchester.ac.uk/">Academic Phrasebank | The University of Manchester</a>：论文例句</p>
 <p><a href="https://www.bigan.net/check/">论文查重软件_论文检测软件_笔杆网 (bigan.net)</a></p>
@@ -256,6 +269,7 @@
 <p>**<a href="https://zhuanlan.zhihu.com/p/20902898">Histcite</a>**：这是一款非常强大的引文分析工具，可以快速绘制出某个研究领域的发展脉络，快速锁定某个研究方向的重要文献和学术大牛，还可以找到某些具有开创性成果的无指定关键词的论文。</p>
 <p>**<a href="https://link.zhihu.com/?target=http://xueshu.baidu.com/u/biye?fr=kaiti301">百度开题</a>**：这里必须隆重介绍一下这个百度开题，其使用简单，效果也比较炫酷，是开题不可多得的工具。</p>
 <h3 id="英文文献翻译"><a href="#英文文献翻译" class="headerlink" title="英文文献翻译"></a>英文文献翻译</h3><p>这里要推荐一个网站，叫tongtianta.site，<a href="https://link.zhihu.com/?target=http://www.tongtianta.site/">网站</a>功能很简单： 对论文进行翻译，中英文对照阅读</p>
+<p><a href="https://www.deepl.com/translator">DeepL翻译：全世界最准确的翻译</a></p>
 <h2 id="中国计算机学会推荐国际学术期刊"><a href="#中国计算机学会推荐国际学术期刊" class="headerlink" title="中国计算机学会推荐国际学术期刊"></a>中国计算机学会推荐国际学术期刊</h2><p><strong>(**数据库</strong>/<strong>数据挖掘</strong>/<strong>内容检索</strong>)**</p>
 <p>一、<strong>A</strong> 类 </p>
 <table>
@@ -456,6 +470,8 @@
 <li><p>ilovePDF网址：<a href="https://www.ilovepdf.com/zh-cn">https://www.ilovepdf.com/zh-cn</a> 免费PDF工具</p>
 </li>
 <li><p>temp-mail网址：<a href="https://temp-mail.org/">https://temp-mail.org/</a> 临时邮箱，避免垃圾广告</p>
+</li>
+<li><p><a href="https://github.com/jlevy/the-art-of-command-line">jlevy/the-art-of-command-line: Master the command line, in one page (github.com)</a></p>
 </li>
 </ul>
 <h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="课程-amp-资料"><a href="#课程-amp-资料" class="headerlink" title="课程&amp;资料"></a>课程&amp;资料</h2><p>【链接】最值得看的十大机器学习公开课<br><a href="https://blog.csdn.net/yushupan/article/details/78582630">https://blog.csdn.net/yushupan/article/details/78582630</a></p>
