@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-14 11:24:24" itemprop="dateModified" datetime="2021-11-14T11:24:24+08:00">2021-11-14</time>
+                <time title="修改时间：2021-11-14 17:18:01" itemprop="dateModified" datetime="2021-11-14T17:18:01+08:00">2021-11-14</time>
               </span>
 
           
@@ -255,15 +255,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Window-终端配置"><a href="#Window-终端配置" class="headerlink" title="Window 终端配置"></a>Window 终端配置</h1><p>相关软件快捷安装powershell脚本：<a href="./download/install.zip">点击下载</a></p>
+          <h1 id="Window-终端配置"><a href="#Window-终端配置" class="headerlink" title="Window 终端配置"></a>Window 终端配置</h1><p>相关软件快捷安装脚本 及 Fira字体：<a href="./download/install.zip">点击下载</a></p>
 <h2 id="Scoop配置"><a href="#Scoop配置" class="headerlink" title="Scoop配置"></a>Scoop配置</h2><p>Scoop的定位主要是“开源、命令行的开发者工具”</p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/luoyooi/article/details/102990113">Windows下Scoop安装、配置与使用_luoyooi的博客-CSDN博客_scoop</a></p>
 <p><strong>安装</strong></p>
 <p>在PowerShell中运行以下命令，将scoop安装到其默认位置(<code>C:\Users\&lt;user&gt;\scoop</code>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Invoke-Expression (New-Object</span><br><span class="line">System.Net.WebClient).DownloadString(&#39;https:&#x2F;&#x2F;get.scoop.sh&#39;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>或</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iwr -useb get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Invoke-Expression (New-Object</span><br><span class="line">System.Net.WebClient).DownloadString(&#39;https:&#x2F;&#x2F;get.scoop.sh&#39;)</span><br><span class="line">#或者</span><br><span class="line">iwr -useb get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
 
 <p>安装完成后，输入<code>scoop help</code>验证是否成功（常见的命令可以通过此方法来查看）。</p>
 <p>用户安装的程序和scoop本身位于C:Users&lt;user&gt;scoop。全局安装的程序（–global）位于C:\ProgramData\scoop。可以通过环境变量更改这些设置。具体步骤如下：</p>
@@ -286,9 +283,11 @@
 <li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4b2b7074d9e2">像MAC一样使用win10的Terminal - 简书(jianshu.com)</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43455581/article/details/105565970">使用Oh-My-Posh美化FluentTerminal_罗伯特祥的博客-CSDN博客</a></li>
 </ul>
-<h3 id="oh-my-posh-中文乱码"><a href="#oh-my-posh-中文乱码" class="headerlink" title="oh-my-posh 中文乱码"></a>oh-my-posh 中文乱码</h3><p>可以更改字体，如Fira Code Retina</p>
+<blockquote>
+<p> 如果遇到<strong>powershell乱码</strong>,  可以更改字体(如Fira Code Retina)</p>
 <p>或者<a target="_blank" rel="noopener" href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3及oh-my-zsh提示prompt出现乱码的原因及使用Nerd字体的解决方法_yihuajack的博客-CSDN博客</a></p>
-<h2 id="scoop工具安装"><a href="#scoop工具安装" class="headerlink" title="scoop工具安装"></a>scoop工具安装</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="scoop下工具安装"><a href="#scoop下工具安装" class="headerlink" title="scoop下工具安装"></a>scoop下工具安装</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>若下载不了，则开启VPN</p>
@@ -305,28 +304,21 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hffyyg/article/details/83990873?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link">Windows上的巧克力味Chocolatey详解_hffyyg的博客-CSDN博客_chocolatey</a></p>
 <h2 id="终端工具"><a href="#终端工具" class="headerlink" title="终端工具"></a>终端工具</h2><h3 id="terminus"><a href="#terminus" class="headerlink" title="terminus"></a>terminus</h3><p>全平台通用。功能强大。</p>
 <p><a target="_blank" rel="noopener" href="https://tabby.sh/">Tabby - a terminal for a more modern age</a></p>
+<p>Github:<a target="_blank" rel="noopener" href="https://github.com/eugeny/tabby">Eugeny/tabby</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#安装</span><br><span class="line">#方法1： https:&#x2F;&#x2F;github.com&#x2F;Eugeny&#x2F;tabby</span><br><span class="line">#方法2</span><br><span class="line">scoop install terminus -g </span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="fluentTerminal"><a href="#fluentTerminal" class="headerlink" title="fluentTerminal"></a>fluentTerminal</h3><h3 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h3><h1 id="Onedriver"><a href="#Onedriver" class="headerlink" title="Onedriver"></a>Onedriver</h1><h2 id="同步任意文件夹"><a href="#同步任意文件夹" class="headerlink" title="同步任意文件夹"></a>同步任意文件夹</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#需在<span class="built_in">cmd</span>内执行</span><br><span class="line">mklink /j &quot;onedrive文件夹地址\需要同步的文件夹名&quot; &quot;需要同步的文件夹地址&quot;</span><br><span class="line">mklink /j &quot;H:\OneDriver\OneDrive - stu.suda.edu.cn\研究生\算法&quot; &quot;H:\算法&quot;</span><br></pre></td></tr></table></figure>
 
-
-
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="Brew-安装报错"><a href="#Brew-安装报错" class="headerlink" title="Brew 安装报错"></a>Brew 安装报错</h2><p>当我们用Homebrew安装应用时，会出现此问题，显示Homebrew无法访问这些位置并添加在OS<br>X上为您安装软件所需的文件</p>
-<p>对于上面问题，我们应尝试回收权限，解决方案如下：<br>首先打开终端，然后输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R `whoami`:admin /usr/local/bin</span><br></pre></td></tr></table></figure>
-
-<p>接着系统会提醒你输入密码,输入密码回车之后接着输入：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R `whoami`:admin /usr/local/share</span><br></pre></td></tr></table></figure>
-
-<p>之后就能在终端中用brew install 安装文件了</p>
-<h2 id="利用Hexo在多台电脑上提交和更新github-pages博客"><a href="#利用Hexo在多台电脑上提交和更新github-pages博客" class="headerlink" title="利用Hexo在多台电脑上提交和更新github pages博客"></a>利用Hexo在多台电脑上提交和更新github pages博客</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">https://hexo.io/zh-cn/docs/configuration.html</a></p>
+<h1 id="自建博客"><a href="#自建博客" class="headerlink" title="自建博客"></a>自建博客</h1><h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p><strong>利用Hexo在多台电脑上提交和更新github pages博客</strong></p>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">https://hexo.io/zh-cn/docs/configuration.html</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg">[https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg]{.ul}</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程_Fangzh的技术博客-CSDN博客_hexo</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4bcf2848b3fc">[https://www.jianshu.com/p/4bcf2848b3fc]{.ul}</a></p>
-<h2 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44815733/article/details/88786480">[https://blog.csdn.net/weixin_44815733/article/details/88786480]{.ul}</a></p>
-<h1 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h1><p><strong>有了docsify神器，从此爱上看文档</strong></p>
+<p><strong>写文章</strong></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44815733/article/details/88786480">[https://blog.csdn.net/weixin_44815733/article/details/88786480]{.ul}</a></p>
+<h2 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h2><p><strong>有了docsify神器，从此爱上看文档</strong></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4883e95aa903">https://www.jianshu.com/p/4883e95aa903</a></p>
 <p><a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">官方中文文档</a></p>
 <h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="vscode插件"><a href="#vscode插件" class="headerlink" title="vscode插件"></a>vscode插件</h2><p><strong>1.markdown-all-in-one—-基础功能+快捷键。<br>2.markdown toc—生成目录<br>3.markdown+math–编辑公式<br>4.Markdown PDF–转为PDF和其他格式<br>5.Markdown Preview Enhanced—–所以这款是增强显示的。<br>6.Markdown Shortcuts—–解决复制表格的问题。</strong></p>
