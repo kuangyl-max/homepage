@@ -22,28 +22,90 @@
     var CONFIG = {"hostname":"kuangyl-max.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":5},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="博客">
-<meta property="og:url" content="https://kuangyl-max.github.io/index.html">
+  <meta name="description" content="Gitgit命令交互式学习https:&#x2F;&#x2F;www.liaoxuefeng.com&#x2F;wiki&#x2F;896043488029600 https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014734886&#x2F;article&#x2F;details&#x2F;79527710 https:&#x2F;&#x2F;learngitbranching.js.org&#x2F;?locale&#x3D;zh_CN 示例：{width&#x3D;”5.540972222222222in”he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git教程">
+<meta property="og:url" content="https://kuangyl-max.github.io/2021/11/15/git/index.html">
 <meta property="og:site_name" content="博客">
+<meta property="og:description" content="Gitgit命令交互式学习https:&#x2F;&#x2F;www.liaoxuefeng.com&#x2F;wiki&#x2F;896043488029600 https:&#x2F;&#x2F;blog.csdn.net&#x2F;u014734886&#x2F;article&#x2F;details&#x2F;79527710 https:&#x2F;&#x2F;learngitbranching.js.org&#x2F;?locale&#x3D;zh_CN 示例：{width&#x3D;”5.540972222222222in”he">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-17-19-cbcb88da5f3b55ab6a6bb41c1019e995-image15-1fbb47.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205180715-2020-12-05-18-07-16.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205180740-2020-12-05-18-07-40.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205180754-2020-12-05-18-07-55.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205180805-2020-12-05-18-08-06.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/abnerworks.Typora/2020/12/13/09-43-36-1e86b868bb36524bef9ae76be9b53dd3-watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RkZGQ2NjY2cXE=,size_16,color_FFFFFF,t_70-c7a109.png">
+<meta property="og:image" content="https://kuangyl-max.github.io/2021/Library/Application%2520Support/typora-user-images/image-20210107132654116.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/01/07/13-27-58-f6bfb78a8b4aac4ac07cefedd25bdc5c-image-20210107132756513-207804.png">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-fa1b0b20624cd7f8c31f2879e6c2820d_r.jpg?source=1940ef5c">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205182720-2020-12-05-18-27-25.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205182904-2020-12-05-18-29-14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205183048-2020-12-05-18-30-50.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205183149-2020-12-05-18-31-52.png">
+<meta property="og:image" content="https://kuangyl-max.github.io/2021/Library/Application%2520Support/typora-user-images/image-20210415110322574.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-18-03-e0c1cd706c9becd959756c6b89e22b5f-image17-61c157.png">
+<meta property="og:image" content="https://kuangyl-max.github.io/2021/workSpace/documentation/%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0/media/image18.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2020/12/13/10-56-05-d27dfd459ca4a4fc85609d8b0eb6f231-image-20201213105603140-0d55f1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-18-23-2e2011e3bb51a81ccbaa15e5a905487e-image19-b07eeb.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-18-44-729f65c734788aa782d054c4bded528d-image20-dee2cb.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/abnerworks.Typora/2020/12/05/15-30-06-2012268feac886848fd1c027c8329c5d--var-folders-84-tzfvcm9s5wlc1gcjq2qpqygw0000gn-T-abnerworks.Typora-0-f0ea7f.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/abnerworks.Typora/2020/12/21/12-48-38-701e02bf0b2d71ab51b7e2b6aa973d52-0-9b8ebd.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/abnerworks.Typora/2020/12/05/15-32-07-3140921b12cc7d9a949076b2bb80d637--var-folders-84-tzfvcm9s5wlc1gcjq2qpqygw0000gn-T-abnerworks.Typora-0-ec896c.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/abnerworks.Typora/2020/12/05/15-32-41-f6ddf40f921f9953b6f84d107a11f689--var-folders-84-tzfvcm9s5wlc1gcjq2qpqygw0000gn-T-abnerworks.Typora-0-20201205153241447-d86c8b.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-20201205155858-2020-12-05-15-58-59.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0mediaimage22.png-2020-12-05-16-32-09.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-image23-2020-12-05-16-34-27.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-image24-2020-12-05-16-34-46.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-image25-2020-12-05-16-35-01.jpeg">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-image26-2020-12-05-16-35-44.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0mediaimage27.png-2020-12-05-16-49-50.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/16-58-24-7d7b962a0e07f5d49418c4268577902f-image28-614ef5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/16-58-49-1d7bb19fe4188d6de19a5120f330096e-image29-5332f5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/16-59-20-1deb9320af5a425d8e1e02ca5c9184e8-image30-40c5b0.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/16-59-33-3d49d3ec358fcd726421df18e3439ff2-image31-e7bed9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/16-59-47-fc603198cc94a93c22b3c1a4cf86ae01-image32-05ae14.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/16-59-55-db53e89c0d0421c1afd2dc1c9e257bec-image33-a0649c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-00-06-7192d4ded3c4a88a0a438d4c4ae50a64-image34-e57f36.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-00-16-7805d35ac338422bfca0392abf72374d-image35-79c71e.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-00-29-3787014405122b6bab510595d1f67c8f-image36-58d7e9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-00-46-907a7552e60ade951ac68fefd0ae0475-image37-5a4873.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-00-54-7861202049bf28c4e0b02a0e0cfb9646-image38-d2549a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-01-01-5f3dd4037789e1471433f7b4c6471dd8-image39-3701ae.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-01-14-79701861ba33c16dd061af7ab8d9fdb2-image40-3604cf.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-01-27-8d95fbbaac75e564a6e381a823963be1-image41-b9f423.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-01-34-f3588fbd8ff4cc8f57fd7b52145b133d-image42-d1b4a6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-01-45-0117a0f019fd2f1c5b58c3d84d94fa01-image43-0c7c1c.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-01-52-5e1c6ec87cd49947634dde35b1dbca61-image44-25d6d0.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-01-58-1f3bf58e1d2102553824b87ab13bbd30-image45-3c423b.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-21-14-1867d75af9c5dc305130349b6adcbd8f-image46-2d79c2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-21-06-ca6d1ccb0acf2b7980d2193ccd72ddc7-image47-6c2615.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-02-06-b5ddd5f3cf54db08d07746d951b5039f-image48-9450fb.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-21-44-83545c1a9844f53a24e53f3b2bca1aa6-image49-eea995.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-20-53-4c5865f227274bbf92353bbd22b50d65-image50-2cb8e9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-02-23-f398f7bb150853bc40db13154a57314a-image51-93b6f3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-02-30-80bdcc06dbf6463f2baf0a7387760fb5-image52-dea17a.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-02-37-aebe80c876b2d1692544da5a0b26cf4c-image53-1fecda.png">
+<meta property="article:published_time" content="2021-11-15T05:46:40.000Z">
+<meta property="article:modified_time" content="2021-11-15T12:19:16.622Z">
 <meta property="article:author" content="小邝">
+<meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-17-19-cbcb88da5f3b55ab6a6bb41c1019e995-image15-1fbb47.png">
 
-<link rel="canonical" href="https://kuangyl-max.github.io/">
+<link rel="canonical" href="https://kuangyl-max.github.io/2021/11/15/git/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>博客</title>
+  <title>Git教程 | 博客</title>
   
 
 
@@ -182,9 +244,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -200,10 +263,9 @@
       <meta itemprop="name" content="博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/15/git/" class="post-title-link" itemprop="url">Git教程</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Git教程
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -249,7 +311,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git命令交互式学习"><a href="#git命令交互式学习" class="headerlink" title="git命令交互式学习"></a>git命令交互式学习</h2><p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git命令交互式学习"><a href="#git命令交互式学习" class="headerlink" title="git命令交互式学习"></a>git命令交互式学习</h2><p><a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014734886/article/details/79527710">https://blog.csdn.net/u014734886/article/details/79527710</a></p>
 <p><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">https://learngitbranching.js.org/?locale=zh_CN</a></p>
 <p>示例：<br><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/19/13-17-19-cbcb88da5f3b55ab6a6bb41c1019e995-image15-1fbb47.png">{width=”5.540972222222222in”<br>height=”2.9277777777777776in”}</p>
@@ -1362,1174 +1424,66 @@
 </ol>
 <p>进入控制面板》用户账号》凭据管理器？windows凭据》普通凭据，在里面找到git，点开编辑密码，更新为最新密码之后就可以正常操作了。</p>
 
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
+        
+
 <div>
-    
- </div>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kuangyl-max.github.io/2021/11/15/docker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="小邝">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/15/docker/" class="post-title-link" itemprop="url">Docker教程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-11-15 13:45:40 / 修改时间：20:05:55" itemprop="dateCreated datePublished" datetime="2021-11-15T13:45:40+08:00">2021-11-15</time>
-            </span>
-
-          
-            <span id="/2021/11/15/docker/" class="post-meta-item leancloud_visitors" data-flag-title="Docker教程" title="热度">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">热度：</span>
-              <span class="leancloud-visitors-count"></span>
-	<span>℃</span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/11/15/docker/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/15/docker/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><p><a target="_blank" rel="noopener" href="https://www.docker.org.cn/docker/195.html"><strong>docker中文教程</strong> </a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it paddle bash</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="docker-安装及配置"><a href="#docker-安装及配置" class="headerlink" title="docker 安装及配置"></a>docker 安装及配置</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/macos-docker-install.html">https://www.runoob.com/docker/macos-docker-install.html</a></p>
-<p>含Ubuntu，Linux，macOS，window，CentOS等</p>
-<p><strong>Mac</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask --appdir=/Applications docker</span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<h2 id="Docker-镜像加速"><a href="#Docker-镜像加速" class="headerlink" title="Docker 镜像加速"></a>Docker 镜像加速</h2><p>国内从 DockerHub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。Docker 官方和国内很多云服务商都提供了国内加速器服务，例如：</p>
-<ul>
-<li>网易：<strong><a target="_blank" rel="noopener" href="https://hub-mirror.c.163.com/">https://hub-mirror.c.163.com/</a></strong></li>
-<li>阿里云：<strong>https://&lt;你的ID&gt;.mirror.aliyuncs.com</strong></li>
-<li>七牛云加速器：<strong><a target="_blank" rel="noopener" href="https://reg-mirror.qiniu.com/">https://reg-mirror.qiniu.com</a></strong></li>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>小邝
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://kuangyl-max.github.io/2021/11/15/git/" title="Git教程">https://kuangyl-max.github.io/2021/11/15/git/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-<p>当配置某一个加速器地址之后，若发现拉取不到镜像，请切换到另一个加速器地址。国内各大云服务商均提供了 Docker 镜像加速服务，建议根据运行 Docker 的云平台选择对应的镜像加速服务。</p>
-<p>阿里云镜像获取地址：<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors%EF%BC%8C%E7%99%BB%E9%99%86%E5%90%8E%EF%BC%8C%E5%B7%A6%E4%BE%A7%E8%8F%9C%E5%8D%95%E9%80%89%E4%B8%AD%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F%E5%99%A8%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E4%BD%A0%E7%9A%84%E4%B8%93%E5%B1%9E%E5%9C%B0%E5%9D%80%E4%BA%86%EF%BC%9A">https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors，登陆后，左侧菜单选中镜像加速器就可以看到你的专属地址了：</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/hankleo/p/13596264.html">mac下docker镜像加速</a></p>
-<p>1.前往<code>https://cr.console.aliyun.com/</code>，注册、登录找到“镜像加速器”。复制加速器地址</p>
-<p>2.在Docker Desktop下配置加速器</p>
-<p>在任务栏点击 Docker Desktop 应用图标 -&gt; Perferences，在左侧导航菜单选择 Docker Engine，在右侧输入栏编辑 json 文件。将</p>
-<p><code>https://xxxx.mirror.aliyuncs.com</code>加到 <code>&quot;registry-mirrors&quot;</code> 的数组里，点击 Apply &amp; Restart按钮，等待Docker重启并应用配置的镜像加速器。</p>
-<h3 id="检查加速器是否生效"><a href="#检查加速器是否生效" class="headerlink" title="检查加速器是否生效"></a>检查加速器是否生效</h3><p>检查加速器是否生效配置加速器之后，如果拉取镜像仍然十分缓慢，请手动检查加速器配置是否生效，在命令行执行 <strong>docker info</strong>，如果从结果中看到了如下内容，说明配置成功。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker info</span><br><span class="line">Registry Mirrors:</span><br><span class="line">    https:&#x2F;&#x2F;reg-mirror.qiniu.com</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>安装完成后，运行下面的命令，验证是否安装成功。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker version</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ docker info</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h2 id="Docker-入门教程-阮一峰"><a href="#Docker-入门教程-阮一峰" class="headerlink" title="Docker 入门教程-阮一峰"></a><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html">Docker 入门教程-阮一峰</a></h2><p>2013年发布至今， <a target="_blank" rel="noopener" href="https://www.docker.com/">Docker</a> 一直广受瞩目，被认为可能会改变软件行业。</p>
-<p>但是，许多人并不清楚 Docker 到底是什么，要解决什么问题，好处又在哪里？本文就来详细解释，帮助大家理解它，还带有简单易懂的实例，教你如何将它用于日常开发。</p>
-<h3 id="一、环境配置的难题"><a href="#一、环境配置的难题" class="headerlink" title="一、环境配置的难题"></a>一、环境配置的难题</h3><p>软件开发最大的麻烦事之一，就是环境配置。用户计算机的环境都不相同，你怎么知道自家的软件，能在那些机器跑起来？</p>
-<p>用户必须保证两件事：操作系统的设置，各种库和组件的安装。只有它们都正确，软件才能运行。举例来说，安装一个 Python 应用，计算机必须有 Python 引擎，还必须有各种依赖，可能还要配置环境变量。</p>
-<p>如果某些老旧的模块与当前环境不兼容，那就麻烦了。开发者常常会说：”它在我的机器可以跑了”（It works on my machine），言下之意就是，其他机器很可能跑不了。</p>
-<p>环境配置如此麻烦，换一台机器，就要重来一次，旷日费时。很多人想到，能不能从根本上解决问题，软件可以带环境安装？也就是说，安装的时候，把原始环境一模一样地复制过来。</p>
-<h3 id="二、虚拟机"><a href="#二、虚拟机" class="headerlink" title="二、虚拟机"></a>二、虚拟机</h3><p>虚拟机（virtual machine）就是带环境安装的一种解决方案。它可以在一种操作系统里面运行另一种操作系统，比如在 Windows 系统里面运行 Linux 系统。应用程序对此毫无感知，因为虚拟机看上去跟真实系统一模一样，而对于底层系统来说，虚拟机就是一个普通文件，不需要了就删掉，对其他部分毫无影响。</p>
-<p>虽然用户可以通过虚拟机还原软件的原始环境。但是，这个方案有几个缺点。</p>
-<p><strong>（1）资源占用多</strong></p>
-<p>虚拟机会独占一部分内存和硬盘空间。它运行的时候，其他程序就不能使用这些资源了。哪怕虚拟机里面的应用程序，真正使用的内存只有 1MB，虚拟机依然需要几百 MB 的内存才能运行。</p>
-<p><strong>（2）冗余步骤多</strong></p>
-<p>虚拟机是完整的操作系统，一些系统级别的操作步骤，往往无法跳过，比如用户登录。</p>
-<p><strong>（3）启动慢</strong></p>
-<p>启动操作系统需要多久，启动虚拟机就需要多久。可能要等几分钟，应用程序才能真正运行。</p>
-<h3 id="三、Linux-容器"><a href="#三、Linux-容器" class="headerlink" title="三、Linux 容器"></a>三、Linux 容器</h3><p>由于虚拟机存在这些缺点，Linux 发展出了另一种虚拟化技术：Linux 容器（Linux Containers，缩写为 LXC）。</p>
-<p><strong>Linux 容器不是模拟一个完整的操作系统，而是对进程进行隔离。</strong>或者说，在正常进程的外面套了一个<a target="_blank" rel="noopener" href="https://opensource.com/article/18/1/history-low-level-container-runtimes">保护层</a>。对于容器里面的进程来说，它接触到的各种资源都是虚拟的，从而实现与底层系统的隔离。</p>
-<p>由于容器是进程级别的，相比虚拟机有很多优势。</p>
-<p><strong>（1）启动快</strong></p>
-<p>容器里面的应用，直接就是底层系统的一个进程，而不是虚拟机内部的进程。所以，启动容器相当于启动本机的一个进程，而不是启动一个操作系统，速度就快很多。</p>
-<p><strong>（2）资源占用少</strong></p>
-<p>容器只占用需要的资源，不占用那些没有用到的资源；虚拟机由于是完整的操作系统，不可避免要占用所有资源。另外，多个容器可以共享资源，虚拟机都是独享资源。</p>
-<p><strong>（3）体积小</strong></p>
-<p>容器只要包含用到的组件即可，而虚拟机是整个操作系统的打包，所以容器文件比虚拟机文件要小很多。</p>
-<p>总之，容器有点像轻量级的虚拟机，能够提供虚拟化的环境，但是成本开销小得多。</p>
-<h3 id="四、Docker-是什么？"><a href="#四、Docker-是什么？" class="headerlink" title="四、Docker 是什么？"></a>四、Docker 是什么？</h3><p><strong>Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。</strong>它是目前最流行的 Linux 容器解决方案。</p>
-<p>Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题。</p>
-<p>总体来说，Docker 的接口相当简单，用户可以方便地创建和使用容器，把自己的应用放入容器。容器还可以进行版本管理、复制、分享、修改，就像管理普通的代码一样。</p>
-<h3 id="五、Docker-的用途"><a href="#五、Docker-的用途" class="headerlink" title="五、Docker 的用途"></a>五、Docker 的用途</h3><p>Docker 的主要用途，目前有三大类。</p>
-<p><strong>（1）提供一次性的环境。</strong>比如，本地测试他人的软件、持续集成的时候提供单元测试和构建的环境。</p>
-<p><strong>（2）提供弹性的云服务。</strong>因为 Docker 容器可以随开随关，很适合动态扩容和缩容。</p>
-<p><strong>（3）组建微服务架构。</strong>通过多个容器，一台机器可以跑多个服务，因此在本机就可以模拟出微服务架构。</p>
-<h3 id="六、Docker-的安装"><a href="#六、Docker-的安装" class="headerlink" title="六、Docker 的安装"></a>六、Docker 的安装</h3><p>Docker 是一个开源的商业产品，有两个版本：社区版（Community Edition，缩写为 CE）和企业版（Enterprise Edition，缩写为 EE）。企业版包含了一些收费服务，个人开发者一般用不到。下面的介绍都针对社区版。</p>
-<p>Docker CE 的安装请参考官方文档。</p>
-<blockquote>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://docs.docker.com/docker-for-mac/install/">Mac</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.docker.com/docker-for-windows/install/">Windows</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">Ubuntu</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/debian/">Debian</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/centos/">CentOS</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/fedora/">Fedora</a></li>
-<li><a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/binaries/">其他 Linux 发行版</a></li>
-</ul>
-</blockquote>
-<p>安装完成后，运行下面的命令，验证是否安装成功。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker version</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ docker info</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>Docker 需要用户具有 sudo 权限，为了避免每次命令都输入<code>sudo</code>，可以把用户加入 Docker 用户组（<a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user">官方文档</a>）。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>Docker 是服务器—-客户端架构。命令行运行<code>docker</code>命令的时候，需要本机有 Docker 服务。如果这项服务没有启动，可以用下面的命令启动（<a target="_blank" rel="noopener" href="https://docs.docker.com/config/daemon/systemd/">官方文档</a>）。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># service 命令的用法</span></span><br><span class="line">$ sudo service docker start</span><br><span class="line"></span><br><span class="line"><span class="comment"># systemctl 命令的用法</span></span><br><span class="line">$ sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><strong>Mac启动方式</strong></p>
-<p><strong>方法 1</strong> : 通过 launchctl 查看 docker server, 记住docker server 名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">launchctl list | grep docker</span><br><span class="line"></span><br><span class="line">111117   0       com.docker.docker.2388</span><br></pre></td></tr></table></figure>
+</div>
 
-<p>然后关闭和启动它。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">launchctl stop com.docker.docker.2388 &amp;&amp; launchctl start com.docker.docker.2388</span><br></pre></td></tr></table></figure>
 
-<p><strong>方法 2</strong> : 或者启动docker.app</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open &#x2F;Applications&#x2F;Docker.app</span><br></pre></td></tr></table></figure>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B7%A5%E5%85%B7/" rel="tag"># 工具</a>
+          </div>
 
-<h3 id="七、image-文件"><a href="#七、image-文件" class="headerlink" title="七、image 文件"></a>七、image 文件</h3><p><strong>Docker 把应用程序及其依赖，打包在 image 文件里面。</strong>只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p>
-<p>image 是二进制文件。实际开发中，一个 image 文件往往通过继承另一个 image 文件，加上一些个性化设置而生成。举例来说，你可以在 Ubuntu 的 image 基础上，往里面加入 Apache 服务器，形成你的 image。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机的所有 image 文件。</span></span><br><span class="line">$ docker image ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除 image 文件</span></span><br><span class="line">$ docker image rm [imageName]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>image 文件是通用的，一台机器的 image 文件拷贝到另一台机器，照样可以使用。一般来说，为了节省时间，我们应该尽量使用别人制作好的 image 文件，而不是自己制作。即使要定制，也应该基于别人的 image 文件进行加工，而不是从零开始制作。</p>
-<p>为了方便共享，image 文件制作完成后，可以上传到网上的仓库。Docker 的官方仓库 <a target="_blank" rel="noopener" href="https://hub.docker.com/">Docker Hub</a> 是最重要、最常用的 image 仓库。此外，出售自己制作的 image 文件也是可以的。</p>
-<h3 id="八、实例：hello-world"><a href="#八、实例：hello-world" class="headerlink" title="八、实例：hello world"></a>八、实例：hello world</h3><p>下面，我们通过最简单的 image 文件”<a target="_blank" rel="noopener" href="https://hub.docker.com/r/library/hello-world/">hello world”</a>，感受一下 Docker。</p>
-<p>需要说明的是，国内连接 Docker 的官方仓库很慢，还会断线，需要将默认仓库改成国内的镜像网站，具体的修改方法在<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">下一篇文章</a>的第一节。有需要的朋友，可以先看一下。</p>
-<p>首先，运行下面的命令，将 image 文件从仓库抓取到本地。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image pull library/hello-world</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>上面代码中，<code>docker image pull</code>是抓取 image 文件的命令。<code>library/hello-world</code>是 image 文件在仓库里面的位置，其中<code>library</code>是 image 文件所在的组，<code>hello-world</code>是 image 文件的名字。</p>
-<p>由于 Docker 官方提供的 image 文件，都放在<a target="_blank" rel="noopener" href="https://hub.docker.com/r/library/"><code>library</code></a>组里面，所以它的是默认组，可以省略。因此，上面的命令可以写成下面这样。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image pull hello-world</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>抓取成功以后，就可以在本机看到这个 image 文件了。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image ls</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>现在，运行这个 image 文件。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run hello-world</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><code>docker container run</code>命令会从 image 文件，生成一个正在运行的容器实例。</p>
-<p>注意，<code>docker container run</code>命令具有自动抓取 image 文件的功能。如果发现本地没有指定的 image 文件，就会从仓库自动抓取。因此，前面的<code>docker image pull</code>命令并不是必需的步骤。</p>
-<p>如果运行成功，你会在屏幕上读到下面的输出。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run hello-world</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">... ...</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>输出这段提示以后，<code>hello world</code>就会停止运行，容器自动终止。</p>
-<p>有些容器不会自动终止，因为提供的是服务。比如，安装运行 Ubuntu 的 image，就可以在命令行体验 Ubuntu 系统。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run -it ubuntu bash</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>对于那些不会自动终止的容器，必须使用<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/container_kill/"><code>docker container kill</code></a> 命令手动终止。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container <span class="built_in">kill</span> [containID]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h3 id="九、容器文件"><a href="#九、容器文件" class="headerlink" title="九、容器文件"></a>九、容器文件</h3><p><strong>image 文件生成的容器实例，本身也是一个文件，称为容器文件。</strong>也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行而已。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出本机正在运行的容器</span></span><br><span class="line">$ docker container ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出本机所有容器，包括终止运行的容器</span></span><br><span class="line">$ docker container ls --all</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>上面命令的输出结果之中，包括容器的 ID。很多地方都需要提供这个 ID，比如上一节终止容器运行的<code>docker container kill</code>命令。</p>
-<p>终止运行的容器文件，依然会占据硬盘空间，可以使用<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/container_rm/"><code>docker container rm</code></a>命令删除。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container rm [containerID]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>运行上面的命令之后，再使用<code>docker container ls --all</code>命令，就会发现被删除的容器文件已经消失了。</p>
-<h3 id="十、Dockerfile-文件"><a href="#十、Dockerfile-文件" class="headerlink" title="十、Dockerfile 文件"></a>十、Dockerfile 文件</h3><p>学会使用 image 文件以后，接下来的问题就是，如何可以生成 image 文件？如果你要推广自己的软件，势必要自己制作 image 文件。</p>
-<p>这就需要用到 Dockerfile 文件。它是一个文本文件，用来配置 image。Docker 根据 该文件生成二进制的 image 文件。</p>
-<p>下面通过一个实例，演示如何编写 Dockerfile 文件。</p>
-<h3 id="十一、实例：制作自己的-Docker-容器"><a href="#十一、实例：制作自己的-Docker-容器" class="headerlink" title="十一、实例：制作自己的 Docker 容器"></a>十一、实例：制作自己的 Docker 容器</h3><p>下面我以 <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2017/08/koa.html">koa-demos</a> 项目为例，介绍怎么写 Dockerfile 文件，实现让用户在 Docker 容器里面运行 Koa 框架。</p>
-<p>作为准备工作，请先<a target="_blank" rel="noopener" href="https://github.com/ruanyf/koa-demos/archive/master.zip">下载源码</a>。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/ruanyf/koa-demos.git</span><br><span class="line">$ <span class="built_in">cd</span> koa-demos</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="编写-Dockerfile-文件"><a href="#编写-Dockerfile-文件" class="headerlink" title="编写 Dockerfile 文件"></a>编写 Dockerfile 文件</h4><p>首先，在项目的根目录下，新建一个文本文件<code>.dockerignore</code>，写入下面的<a target="_blank" rel="noopener" href="https://github.com/ruanyf/koa-demos/blob/master/.dockerignore">内容</a>。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.git</span><br><span class="line">node_modules</span><br><span class="line">npm-debug.log</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>上面代码表示，这三个路径要排除，不要打包进入 image 文件。如果你没有路径要排除，这个文件可以不新建。</p>
-<p>然后，在项目的根目录下，新建一个文本文件 Dockerfile，写入下面的<a target="_blank" rel="noopener" href="https://github.com/ruanyf/koa-demos/blob/master/Dockerfile">内容</a>。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM node:8.4</span><br><span class="line">COPY . /app</span><br><span class="line">WORKDIR /app</span><br><span class="line">RUN npm install --registry=https://registry.npm.taobao.org</span><br><span class="line">EXPOSE 3000</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>上面代码一共五行，含义如下。</p>
-<blockquote>
-<ul>
-<li><code>FROM node:8.4</code>：该 image 文件继承官方的 node image，冒号表示标签，这里标签是<code>8.4</code>，即8.4版本的 node。</li>
-<li><code>COPY . /app</code>：将当前目录下的所有文件（除了<code>.dockerignore</code>排除的路径），都拷贝进入 image 文件的<code>/app</code>目录。</li>
-<li><code>WORKDIR /app</code>：指定接下来的工作路径为<code>/app</code>。</li>
-<li><code>RUN npm install</code>：在<code>/app</code>目录下，运行<code>npm install</code>命令安装依赖。注意，安装后所有的依赖，都将打包进入 image 文件。</li>
-<li><code>EXPOSE 3000</code>：将容器 3000 端口暴露出来， 允许外部连接这个端口。</li>
-</ul>
-</blockquote>
-<h4 id="创建-image-文件"><a href="#创建-image-文件" class="headerlink" title="创建 image 文件"></a>创建 image 文件</h4><p>有了 Dockerfile 文件以后，就可以使用<code>docker image build</code>命令创建 image 文件了。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker image build -t koa-demo .</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ docker image build -t koa-demo:0.0.1 .</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>上面代码中，<code>-t</code>参数用来指定 image 文件的名字，后面还可以用冒号指定标签。如果不指定，默认的标签就是<code>latest</code>。最后的那个点表示 Dockerfile 文件所在的路径，上例是当前路径，所以是一个点。</p>
-<p>如果运行成功，就可以看到新生成的 image 文件<code>koa-demo</code>了。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image ls</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="生成容器"><a href="#生成容器" class="headerlink" title="生成容器"></a>生成容器</h4><p><code>docker container run</code>命令会从 image 文件生成容器。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run -p 8000:3000 -it koa-demo /bin/bash</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ docker container run -p 8000:3000 -it koa-demo:0.0.1 /bin/bash</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>上面命令的各个参数含义如下：</p>
-<blockquote>
-<ul>
-<li><code>-p</code>参数：容器的 3000 端口映射到本机的 8000 端口。</li>
-<li><code>-it</code>参数：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器。</li>
-<li><code>koa-demo:0.0.1</code>：image 文件的名字（如果有标签，还需要提供标签，默认是 latest 标签）。</li>
-<li><code>/bin/bash</code>：容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell。</li>
-</ul>
-</blockquote>
-<p>如果一切正常，运行上面的命令以后，就会返回一个命令行提示符。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@66d80f4aaf1e:/app<span class="comment">#</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>这表示你已经在容器里面了，返回的提示符就是容器内部的 Shell 提示符。执行下面的命令。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@66d80f4aaf1e:/app<span class="comment"># node demos/01.js</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>这时，Koa 框架已经运行起来了。打开本机的浏览器，访问 <a href="http://127.0.0.1:8000，网页显示&quot;Not">http://127.0.0.1:8000，网页显示&quot;Not</a> Found”，这是因为这个 <a target="_blank" rel="noopener" href="https://github.com/ruanyf/koa-demos/blob/master/demos/01.js">demo</a> 没有写路由。</p>
-<p>这个例子中，Node 进程运行在 Docker 容器的虚拟环境里面，进程接触到的文件系统和网络接口都是虚拟的，与本机的文件系统和网络接口是隔离的，因此需要定义容器与物理机的端口映射（map）。</p>
-<p>现在，在容器的命令行，按下 Ctrl + c 停止 Node 进程，然后按下 Ctrl + d （或者输入 exit）退出容器。此外，也可以用<code>docker container kill</code>终止容器运行。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在本机的另一个终端窗口，查出容器的 ID</span></span><br><span class="line">$ docker container ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止指定的容器运行</span></span><br><span class="line">$ docker container <span class="built_in">kill</span> [containerID]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>容器停止运行之后，并不会消失，用下面的命令删除容器文件。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查出容器的 ID</span></span><br><span class="line">$ docker container ls --all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除指定的容器文件</span></span><br><span class="line">$ docker container rm [containerID]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>也可以使用<code>docker container run</code>命令的<code>--rm</code>参数，在容器终止运行后自动删除容器文件。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run --rm -p 8000:3000 -it koa-demo /bin/bash</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="CMD-命令"><a href="#CMD-命令" class="headerlink" title="CMD 命令"></a>CMD 命令</h4><p>上一节的例子里面，容器启动以后，需要手动输入命令<code>node demos/01.js</code>。我们可以把这个命令写在 Dockerfile 里面，这样容器启动以后，这个命令就已经执行了，不用再手动输入了。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FROM node:8.4</span><br><span class="line">COPY . /app</span><br><span class="line">WORKDIR /app</span><br><span class="line">RUN npm install --registry=https://registry.npm.taobao.org</span><br><span class="line">EXPOSE 3000</span><br><span class="line">CMD node demos/01.js</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>上面的 Dockerfile 里面，多了最后一行<code>CMD node demos/01.js</code>，它表示容器启动后自动执行<code>node demos/01.js</code>。</p>
-<p>你可能会问，<code>RUN</code>命令与<code>CMD</code>命令的区别在哪里？简单说，<code>RUN</code>命令在 image 文件的构建阶段执行，执行结果都会打包进入 image 文件；<code>CMD</code>命令则是在容器启动后执行。另外，一个 Dockerfile 可以包含多个<code>RUN</code>命令，但是只能有一个<code>CMD</code>命令。</p>
-<p>注意，指定了<code>CMD</code>命令以后，<code>docker container run</code>命令就不能附加命令了（比如前面的<code>/bin/bash</code>），否则它会覆盖<code>CMD</code>命令。现在，启动容器可以使用下面的命令。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container run --rm -p 8000:3000 -it koa-demo:0.0.1</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="发布-image-文件"><a href="#发布-image-文件" class="headerlink" title="发布 image 文件"></a>发布 image 文件</h4><p>容器运行成功后，就确认了 image 文件的有效性。这时，我们就可以考虑把 image 文件分享到网上，让其他人使用。</p>
-<p>首先，去 <a target="_blank" rel="noopener" href="https://hub.docker.com/">hub.docker.com</a> 或 <a target="_blank" rel="noopener" href="https://cloud.docker.com/">cloud.docker.com</a> 注册一个账户。然后，用下面的命令登录。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker login</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>接着，为本地的 image 标注用户名和版本。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker image tag [imageName] [username]/[repository]:[tag]</span><br><span class="line"><span class="comment"># 实例</span></span><br><span class="line">$ docker image tag koa-demos:0.0.1 ruanyf/koa-demos:0.0.1</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>也可以不标注用户名，重新构建一下 image 文件。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image build -t [username]/[repository]:[tag] .</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>最后，发布 image 文件。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker image push [username]/[repository]:[tag]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>发布成功以后，登录 hub.docker.com，就可以看到已经发布的 image 文件。</p>
-<h3 id="十二、其他有用的命令"><a href="#十二、其他有用的命令" class="headerlink" title="十二、其他有用的命令"></a>十二、其他有用的命令</h3><p>docker 的主要用法就是上面这些，此外还有几个命令，也非常有用。</p>
-<p><strong>（1）docker container start</strong></p>
-<p>前面的<code>docker container run</code>命令是新建容器，每运行一次，就会新建一个容器。同样的命令运行两次，就会生成两个一模一样的容器文件。如果希望重复使用容器，就要使用<code>docker container start</code>命令，它用来启动已经生成、已经停止运行的容器文件。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container start [containerID]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><strong>（2）docker container stop</strong></p>
-<p>前面的<code>docker container kill</code>命令终止容器运行，相当于向容器里面的主进程发出 SIGKILL 信号。而<code>docker container stop</code>命令也是用来终止容器运行，相当于向容器里面的主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bash container stop [containerID]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>这两个信号的差别是，应用程序收到 SIGTERM 信号以后，可以自行进行收尾清理工作，但也可以不理会这个信号。如果收到 SIGKILL 信号，就会强行立即终止，那些正在进行中的操作会全部丢失。</p>
-<p><strong>（3）docker container logs</strong></p>
-<p><code>docker container logs</code>命令用来查看 docker 容器的输出，即容器里面 Shell 的标准输出。如果<code>docker run</code>命令运行容器的时候，没有使用<code>-it</code>参数，就要用这个命令查看输出。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container logs [containerID]</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><strong>（4）docker container exec</strong></p>
-<p><code>docker container exec</code>命令用于进入一个正在运行的 docker 容器。如果<code>docker run</code>命令运行容器的时候，没有使用<code>-it</code>参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的 Shell 执行命令了。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container <span class="built_in">exec</span> -it [containerID] /bin/bash</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p><strong>（5）docker container cp</strong></p>
-<p><code>docker container cp</code>命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机。下面是拷贝到当前目录的写法。</p>
-<blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container cp [containID]:[/path/to/file] .</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>非常感谢你一直读到了这里，这个系列还有<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">下一篇</a>，介绍如何使用 Docker 搭建真正的网站，欢迎<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">继续阅读</a>。</p>
-<h3 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h3><ul>
-<li><p>2020.12.13: <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2020/12/ssh-tutorial.html">《SSH 入门教程》发布了</a></p>
-<p>SSH 是登录 Linux 服务器的必备工具，只要你在做互联网开发，多多少少都会用到它。</p>
-</li>
-<li><p>2020.11.02: <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2020/11/wechat-miniprogram-tutorial-part-four.html">微信小程序入门教程之四：API 使用</a></p>
-<p>今天是这个系列教程的最后一篇。</p>
-</li>
-<li><p>2020.10.29: <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2020/10/wechat-miniprogram-tutorial-part-three.html">微信小程序入门教程之三：脚本编程</a></p>
-<p>这个系列教程的前两篇，介绍了小程序的项目结构和页面样式。</p>
-</li>
-<li><p>2020.10.27: <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2020/10/wechat-miniprogram-tutorial-part-two.html">微信小程序入门教程之二：页面样式</a></p>
-<p>这个系列的上一篇教程，教大家写了一个最简单的 Hello world 微信小程序。</p>
-</li>
-</ul>
-<p>创建你的第一个容器</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">username@localhost$</span><span class="bash">  docker run -d -p 80:80 docker/getting-started</span></span><br><span class="line">Unable to find image &#x27;docker/getting-started:latest&#x27; locally</span><br><span class="line">latest: Pulling from docker/getting-started</span><br><span class="line">188c0c94c7c5: Pull complete</span><br><span class="line">617561f33ec6: Pull complete</span><br><span class="line">7d856acdaa9c: Pull complete</span><br><span class="line">a0d3c6e28e6d: Pull complete</span><br><span class="line">af69a9b963c8: Pull complete</span><br><span class="line">0739f3815ad8: Pull complete</span><br><span class="line">7c7b75d0baf8: Pull complete</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+        
 
-<h3 id="Docker-微服务教程"><a href="#Docker-微服务教程" class="headerlink" title="Docker 微服务教程"></a>Docker 微服务教程</h3><p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html">http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html</a></p>
-<p>本文采用三种方法，演示如何架设 WordPress 网站。</p>
-<blockquote>
-<ul>
-<li>方法 A：自建 WordPress 容器</li>
-<li>方法 B：采用官方的 WordPress 容器</li>
-<li>方法 C：采用 Docker Compose 工具</li>
-</ul>
-</blockquote>
-<h2 id="疑难"><a href="#疑难" class="headerlink" title="疑难"></a>疑难</h2><h3 id="VSCode-远程连接Docker"><a href="#VSCode-远程连接Docker" class="headerlink" title="VSCode 远程连接Docker"></a>VSCode 远程连接Docker</h3><h3 id="Windows下搭建最接近Linux体验的开发环境——使用WSL-Linux子系统"><a href="#Windows下搭建最接近Linux体验的开发环境——使用WSL-Linux子系统" class="headerlink" title="Windows下搭建最接近Linux体验的开发环境——使用WSL(Linux子系统)"></a><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000021742880">Windows下搭建最接近Linux体验的开发环境——使用WSL(Linux子系统)</a></h3><h3 id="Windows系统利用Docker实现Linux环境搭建"><a href="#Windows系统利用Docker实现Linux环境搭建" class="headerlink" title="Windows系统利用Docker实现Linux环境搭建"></a><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41380248/article/details/89013751">Windows系统利用Docker实现Linux环境搭建</a></h3><h3 id="获取容器完整Id"><a href="#获取容器完整Id" class="headerlink" title="获取容器完整Id"></a>获取容器完整Id</h3><ol>
-<li><p>查看container ID</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker container ls --all</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/01/19/13-45-22-fadf64317dcaf9a84fce217725efeb5d-image-20210119134519900-3ca6e2.png" alt="image-20210119134519900"></p>
-<blockquote>
-<p>–all , -a  :  显示所有容器(默认只显示当前运行的容器)</p>
-</blockquote>
-</li>
-<li><p>根据container ID  ： 0a01e194a5a7获取 容器信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect  0a01e194a5a7</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&quot;Id&quot;</span>: <span class="string">&quot;416df806cb3f4e7c27a0a76eb7073f03047add4e1372cda3b65453fd2f1b072f&quot;</span>,</span><br><span class="line">        <span class="string">&quot;Created&quot;</span>: <span class="string">&quot;2021-01-18T09:17:07.5536068Z&quot;</span>,</span><br><span class="line">        <span class="string">&quot;Path&quot;</span>: <span class="string">&quot;/docker-entrypoint.sh&quot;</span>,</span><br><span class="line">        <span class="string">&quot;Args&quot;</span>: [</span><br><span class="line">            <span class="string">&quot;nginx&quot;</span>,</span><br><span class="line">            <span class="string">&quot;-g&quot;</span>,</span><br><span class="line">            <span class="string">&quot;daemon off;&quot;</span></span><br><span class="line">      ...</span><br><span class="line">      &#125;</span><br><span class="line">      ...</span><br><span class="line">]</span><br><span class="line">$ docker inspect 0a01e194a5a7 | grep <span class="string">&#x27;&quot;Id&quot;&#x27;</span></span><br><span class="line">        <span class="string">&quot;Id&quot;</span>: <span class="string">&quot;0a00e134a5b7139ed49d88b48b2bkf5d5517683fd143b946fa6aed634f3fe09c&quot;</span>,</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">$ docker inspect 0a01e194a5a7 | grep <span class="string">&#x27;&quot;Id&quot;&#x27;</span> | awk -F <span class="string">&#x27;&quot;&#x27;</span> <span class="string">&#x27;&#123;print $4&#125;&#x27;</span></span><br><span class="line">0a00e134a5b7139ed49d88b48b2bkf5d5517683fd143b946fa6aed634f3fe09c</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>通过这个Id我们可以执行<code>docker exec -it Id /bin/bash </code> 开启一个交互模式的终端</p>
-</blockquote>
-<p>例如</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">containerNAME=<span class="string">&quot;&quot;</span> <span class="comment">#容器名</span></span><br><span class="line">containerID=$(docker container ls --all  | grep <span class="string">&quot;<span class="variable">$containerNAME</span>&quot;</span> | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span>)</span><br><span class="line">integratedId=$(docker inspect <span class="string">&quot;<span class="variable">$containerID</span>&quot;</span> | grep <span class="string">&#x27;&quot;Id&quot;&#x27;</span> | awk -F <span class="string">&#x27;&quot;&#x27;</span> <span class="string">&#x27;&#123;print $4&#125;&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><strong>或者</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps -a -q -f <span class="string">&quot;name=kind_mendeleev&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>或者</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo docker inspect -f <span class="string">&#x27;&#123;&#123;.ID&#125;&#125;&#x27;</span> containerNAME</span></span><br></pre></td></tr></table></figure>
-
-<p>注意，此处name 为：</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/01/19/14-17-24-ef4f3a405ab0e25d288c3adb3104a6b5-image-20210119141722116-4f5e7e.png" alt="image-20210119141722116"></p>
-<table>
-<thead>
-<tr>
-<th>Name, shorthand</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>--all , -a</code></td>
-<td></td>
-<td>Show all containers (default shows just running)</td>
-</tr>
-<tr>
-<td><code>--filter , -f</code></td>
-<td></td>
-<td>Filter output based on conditions provided</td>
-</tr>
-<tr>
-<td><code>--format</code></td>
-<td></td>
-<td>Pretty-print containers using a Go template</td>
-</tr>
-<tr>
-<td><code>--last , -n</code></td>
-<td><code>-1</code></td>
-<td>Show n last created containers (includes all states)</td>
-</tr>
-<tr>
-<td><code>--latest , -l</code></td>
-<td></td>
-<td>Show the latest created container (includes all states)</td>
-</tr>
-<tr>
-<td><code>--no-trunc</code></td>
-<td></td>
-<td>Don’t truncate output</td>
-</tr>
-<tr>
-<td><code>--quiet , -q</code></td>
-<td></td>
-<td>Only display numeric IDs</td>
-</tr>
-<tr>
-<td><code>--size , -s</code></td>
-<td></td>
-<td>Display total file sizes</td>
-</tr>
-</tbody></table>
-</li>
-</ol>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/15/docker/" rel="prev" title="Docker教程">
+      <i class="fa fa-chevron-left"></i> Docker教程
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
 <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------ 本文结束------</div>
+    
+</div>
     
  </div>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kuangyl-max.github.io/2021/10/28/tool/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="小邝">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/28/tool/" class="post-title-link" itemprop="url">工具合集</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-28 13:45:40" itemprop="dateCreated datePublished" datetime="2021-10-28T13:45:40+08:00">2021-10-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-11-15 20:19:22" itemprop="dateModified" datetime="2021-11-15T20:19:22+08:00">2021-11-15</time>
-              </span>
-
-          
-            <span id="/2021/10/28/tool/" class="post-meta-item leancloud_visitors" data-flag-title="工具合集" title="热度">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">热度：</span>
-              <span class="leancloud-visitors-count"></span>
-	<span>℃</span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/10/28/tool/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/10/28/tool/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Window-终端配置"><a href="#Window-终端配置" class="headerlink" title="Window 终端配置"></a>Window 终端配置</h1><p>相关软件快捷安装脚本 及 Fira字体：<a href="./download/install.zip">点击下载</a></p>
-<h2 id="Scoop配置"><a href="#Scoop配置" class="headerlink" title="Scoop配置"></a>Scoop配置</h2><p>Scoop的定位主要是“开源、命令行的开发者工具”</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/luoyooi/article/details/102990113">Windows下Scoop安装、配置与使用_luoyooi的博客-CSDN博客_scoop</a></p>
-<p><strong>安装</strong></p>
-<p>在PowerShell中运行以下命令，将scoop安装到其默认位置(<code>C:\Users\&lt;user&gt;\scoop</code>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Invoke-Expression (New-Object</span><br><span class="line">System.Net.WebClient).DownloadString(&#39;https:&#x2F;&#x2F;get.scoop.sh&#39;)</span><br><span class="line">#或者</span><br><span class="line">iwr -useb get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，输入<code>scoop help</code>验证是否成功（常见的命令可以通过此方法来查看）。</p>
-<p>用户安装的程序和scoop本身位于C:Users&lt;user&gt;scoop。全局安装的程序（–global）位于C:\ProgramData\scoop。可以通过环境变量更改这些设置。具体步骤如下：</p>
-<p><strong>将Scoop安装到自定义目录(命令行方式)</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$env:SCOOP&#x3D;&#39;D:Applications\Scoop&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP&#39;, $env:SCOOP,&#39;User&#39;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式)</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$env:SCOOP_GLOBAL&#x3D;&#39;F:\GlobalScoopApps&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP_GLOBAL&#39;,</span><br><span class="line">$env:SCOOP_GLOBAL, &#39;Machine&#39;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>上面两句运行的结果(环境变量)</strong></p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-38-45-69d072a8079102da338071daa6fa4c10-image55-d2410c.png" alt="在这里插入图片描述">{width=”5.768055555555556in”<br>height=”4.741666666666666in”}<br>如果不想运行命令行，直接添加环境变量也可。设置完安装位置后，建议将默认目录下的所有文件复制到新目录（<strong>不是剪切！！</strong>）</p>
-<p>参考链接：</p>
-<ul>
-<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/50993df76b1c">scoop——强大的Windows命令行包管理工具 - 简书(jianshu.com)</a></p>
-</li>
-<li><p>配色 如何保存更改 ：<a target="_blank" rel="noopener" href="https://blog.csdn.net/cum44153/article/details/109043040">zsh自定义命令提示符_如何使用Microsoft的ColorTool自定义命令提示符的配色方案_cum44153的博客-CSDN博客</a></p>
-</li>
-</ul>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4b2b7074d9e2">像MAC一样使用win10的Terminal - 简书(jianshu.com)</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43455581/article/details/105565970">使用Oh-My-Posh美化FluentTerminal_罗伯特祥的博客-CSDN博客</a></li>
-</ul>
-<blockquote>
-<p> 如果遇到<strong>powershell乱码</strong>,  可以更改字体(如Fira Code Retina)</p>
-<p>或者<a target="_blank" rel="noopener" href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3及oh-my-zsh提示prompt出现乱码的原因及使用Nerd字体的解决方法_yihuajack的博客-CSDN博客</a></p>
-</blockquote>
-<h2 id="scoop下工具安装"><a href="#scoop下工具安装" class="headerlink" title="scoop下工具安装"></a>scoop下工具安装</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>若下载不了，则开启VPN</p>
-</blockquote>
-<h2 id="配置右键菜单栏"><a href="#配置右键菜单栏" class="headerlink" title="配置右键菜单栏"></a>配置右键菜单栏</h2><p>HKEY_CLASSES_ROOT\Directory\Background\shell新建PowershellMenu</p>
-<p>空白处右键菜单</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellMenu]</span><br><span class="line">@&#x3D;&quot;Open PowerShell Here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellMenu\command]</span><br><span class="line">@&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -NoExit -Command Set-Location -LiteralPath &#39;%v&#39;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>HKEY_CLASSES_ROOT\Directory\shell新建PowershellMenu</p>
-<p>文件夹右键菜单</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu]</span><br><span class="line">@&#x3D;&quot;Open PowerShell Here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu\command]</span><br><span class="line">@&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -NoExit -Command Set-Location -LiteralPath &#39;%L&#39;&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Chocolatey配置"><a href="#Chocolatey配置" class="headerlink" title="Chocolatey配置"></a>Chocolatey配置</h2><p>Chocolatey依赖于Windows PowerShell及其NuGet包管理器系统，该系统主要用于解决软件库依赖关系。常用来管理window桌面端应用，如googlechrome,QQ等</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hffyyg/article/details/83990873?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link">Windows上的巧克力味Chocolatey详解_hffyyg的博客-CSDN博客_chocolatey</a></p>
-<h2 id="终端工具"><a href="#终端工具" class="headerlink" title="终端工具"></a>终端工具</h2><h3 id="terminus"><a href="#terminus" class="headerlink" title="terminus"></a>terminus</h3><p>全平台通用。功能强大。</p>
-<p><a target="_blank" rel="noopener" href="https://tabby.sh/">Tabby - a terminal for a more modern age</a></p>
-<p>Github:<a target="_blank" rel="noopener" href="https://github.com/eugeny/tabby">Eugeny/tabby</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#安装</span><br><span class="line">#方法1： https:&#x2F;&#x2F;github.com&#x2F;Eugeny&#x2F;tabby</span><br><span class="line">#方法2</span><br><span class="line">scoop install terminus -g </span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="fluentTerminal"><a href="#fluentTerminal" class="headerlink" title="fluentTerminal"></a>fluentTerminal</h3><h3 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h3><h1 id="Onedriver"><a href="#Onedriver" class="headerlink" title="Onedriver"></a>Onedriver</h1><h2 id="同步任意文件夹"><a href="#同步任意文件夹" class="headerlink" title="同步任意文件夹"></a>同步任意文件夹</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#需在<span class="built_in">cmd</span>内执行</span><br><span class="line">mklink /j &quot;onedrive文件夹地址\需要同步的文件夹名&quot; &quot;需要同步的文件夹地址&quot;</span><br><span class="line">mklink /j &quot;H:\OneDriver\OneDrive - stu.suda.edu.cn\研究生\算法&quot; &quot;H:\算法&quot;</span><br></pre></td></tr></table></figure>
-
-<h1 id="自建博客"><a href="#自建博客" class="headerlink" title="自建博客"></a>自建博客</h1><h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p><strong>利用Hexo在多台电脑上提交和更新github pages博客</strong></p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration.html">https://hexo.io/zh-cn/docs/configuration.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg">[https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg]{.ul}</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程_Fangzh的技术博客-CSDN博客_hexo</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4bcf2848b3fc">[https://www.jianshu.com/p/4bcf2848b3fc]{.ul}</a></p>
-<p><strong>写文章</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44815733/article/details/88786480">[https://blog.csdn.net/weixin_44815733/article/details/88786480]{.ul}</a></p>
-<h2 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h2><p><strong>有了docsify神器，从此爱上看文档</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4883e95aa903">https://www.jianshu.com/p/4883e95aa903</a></p>
-<p><a target="_blank" rel="noopener" href="https://docsify.js.org/#/zh-cn/">官方中文文档</a></p>
-<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="vscode插件"><a href="#vscode插件" class="headerlink" title="vscode插件"></a>vscode插件</h2><p><strong>1.markdown-all-in-one—-基础功能+快捷键。<br>2.markdown toc—生成目录<br>3.markdown+math–编辑公式<br>4.Markdown PDF–转为PDF和其他格式<br>5.Markdown Preview Enhanced—–所以这款是增强显示的。<br>6.Markdown Shortcuts—–解决复制表格的问题。</strong></p>
-<h2 id="markdown互转word"><a href="#markdown互转word" class="headerlink" title="markdown互转word"></a>markdown互转word</h2><h3 id="一键将-Word-转换为-Markdown"><a href="#一键将-Word-转换为-Markdown" class="headerlink" title="一键将 Word 转换为 Markdown"></a>一键将 Word 转换为 Markdown</h3><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/df6a136d06d8">https://www.jianshu.com/p/df6a136d06d8</a></p>
-<h3 id="Writage-Pandoc"><a href="#Writage-Pandoc" class="headerlink" title="Writage + Pandoc"></a>Writage + Pandoc</h3><ol>
-<li><p>下载并安装 Writage，下载地址：<a target="_blank" rel="noopener" href="http://www.writage.com/">http://www.writage.com/</a></p>
-<p>打开 Writage网页，点击Download，再点击Download Now完成下载<br>运行安装程序，一般按照默认选项安装就好啦</p>
-</li>
-<li><p>安装后重启电脑，新建或打开任一 Word 文档，在 文件 菜单栏下选 另存为，查看 <strong>【保存类型】</strong> 中是否有 Markdown 格式。</p>
-</li>
-</ol>
-<blockquote>
-<p>如果插件安装成功，就会自动出现Markdown选项；否则，重新安装一遍吧~）</p>
-</blockquote>
-<h3 id="Word-to-Markdown-Converter在线转换"><a href="#Word-to-Markdown-Converter在线转换" class="headerlink" title="Word to Markdown Converter在线转换"></a>Word to Markdown Converter在线转换</h3><ol>
-<li><strong>设置word文档中的标准样式，如一级、二级标题，项目符号或编号等，如此才能与markdown的格式对应</strong></li>
-</ol>
-<p>（稍微有点繁琐的前期准备，如果文档一开始就是按照标准样式排版，就没有这个烦恼啦）</p>
-<p>设置</p>
-<ol>
-<li><p>打开网页Word to Markdown</p>
-<blockquote>
-<p>Converter：<a target="_blank" rel="noopener" href="https://word-to-markdown.herokuapp.com/">https://word-to-markdown.herokuapp.com/</a></p>
-</blockquote>
-</li>
-<li><p>选择需要转换的Word文件,点击Convert</p>
-</li>
-<li><p>大功告成啦！<br>页面左边显示的是Markdown文档的内容，右边显示的是预览出来的样子</p>
-</li>
-</ol>
-<p><strong>但还需要进一步手动编辑整理完善表格</strong></p>
-<p>（如果，Word文档本身不包括表格，Word to Markdown<br>Converter使用体验可谓相当便捷稳妥啦！）</p>
-<p><strong>图片的下载与存储</strong></p>
-<p>除了标准格式设置与表格调整问题，<br><strong>图片的下载与存储</strong>也会是我们可能会遇到的问题</p>
-<ul>
-<li><p><strong>Markdown转换为Word</strong><br>在Markdown文档中，图片以网络超链接的形式保存,如果markdown文档中有这一类图片，那么需要在网络连接的情况下，才能正常输出有图片的word文档。否则，图片处显示空白</p>
-</li>
-<li><p><strong>Word转换为Markdown</strong><br>Word转换为Markdown文档之后，文档中的图片输出到本地文件夹下，将该文件夹与输出的Markdown文档在同一目录下，在Markdown文档中图片引用本地相对路径，也就是说，必须保证Markdown文档与存放图片的本地文件夹在一起，才能完整的在markdown编辑器中显示图片</p>
-</li>
-</ul>
-<h3 id="在线版word2markdown"><a href="#在线版word2markdown" class="headerlink" title="在线版word2markdown"></a>在线版word2markdown</h3><p><a target="_blank" rel="noopener" href="https://word2md.com/">https://word2md.com/</a></p>
-<h3 id="Ulysses-mac支持-纯文本-Markdown2Word-，但付费"><a href="#Ulysses-mac支持-纯文本-Markdown2Word-，但付费" class="headerlink" title="Ulysses mac支持 纯文本 Markdown2Word ，但付费"></a>Ulysses mac支持 纯文本 Markdown2Word ，但付费</h3><p>目前只研究了Mac下的方案：</p>
-<ol>
-<li>word-to-markdown，google用word to</li>
-</ol>
-<p>markdown搜出来第一个，看来这个名字起得好。用这个的话得装个LibreOffice</p>
-<ol>
-<li><p>pandoc，这个就比较大名鼎鼎了</p>
-</li>
-<li><p>unoconv，介绍</p>
-</li>
-</ol>
-<p>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/b0be43b03015">https://www.jianshu.com/p/b0be43b03015</a></p>
-<h2 id="Markdown如何存放图片"><a href="#Markdown如何存放图片" class="headerlink" title="Markdown如何存放图片"></a>Markdown如何存放图片</h2><h3 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h3><p>配置</p>
-<ol>
-<li><p>申请七牛云做免费图床</p>
-<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/335783774/answer/756830851">https://www.zhihu.com/question/335783774/answer/756830851</a></p>
-</li>
-</ol>
-<p>存储空间名称markdown-source-of-bayes</p>
-<ol start="2">
-<li><p>配置插件</p>
-<p><a target="_blank" rel="noopener" href="https://www.codingyang.com/2020/03/getQiniu.html#%E8%8E%B7%E5%8F%96%E5%AF%86%E9%92%A5">https://www.codingyang.com/2020/03/getQiniu.html#%E8%8E%B7%E5%8F%96%E5%AF%86%E9%92%A5</a></p>
-</li>
-</ol>
-<p>Sm_ms,picGo</p>
-<h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a>pandoc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc -s $infile -t markdown -o $outfile --extract-media&#x3D;$filename#导出图片到目录下</span><br></pre></td></tr></table></figure>
-
-<p>pandoc是文档转换利器。在将docx文档转为md文档过程中，如果直接输入<code>pandoc -o f.md f.docx</code>,会丢失word文档中的图片。输入<code>pandoc -o f.md f.docx ---extract-media=f </code>则不会丢失图片。</p>
-<p>pandoc语法<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fd761fc43753">https://www.jianshu.com/p/fd761fc43753</a></p>
-<p><strong>示例</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">foo $ cat word2md.sh</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">infile=$1</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$infile</span></span></span><br><span class="line">filename=$(echo $infile | awk -F &#x27;.&#x27; &#x27;&#123;print $1&#125;&#x27;)</span><br><span class="line">outfile=$&#123;filename&#125;.md</span><br><span class="line">pandoc -s $infile -t markdown -o $outfile --extract-media=$filename</span><br><span class="line">echo &quot;convert success, $outfile &quot;</span><br><span class="line"></span><br><span class="line">foo $ bash ./word2md.sh mydoc.docx </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="draw-io"><a href="#draw-io" class="headerlink" title="draw.io"></a>draw.io</h3><p>draw.io 绘图可以导出成 HTML，而 markdown 是支持直接嵌入 HTML 的</p>
-<p>点击图形中的全屏按钮，再点击编辑，居然还可以直接修改原图的副本。厉害了！</p>
-<p>具体插入的方法是，打开 draw.io 导出的 HTML<br>文件，将其中的 <body> 中的内容复制出来即可（不包含<code> &lt;body&gt;</code>标签）。<strong>github不支持解析</strong></p>
-<h3 id="picGo-GitHub-上传图片"><a href="#picGo-GitHub-上传图片" class="headerlink" title="picGo+GitHub 上传图片"></a>picGo+GitHub 上传图片</h3><p>Typora批量上传图片</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zenglintao/p/12876725.html">https://www.cnblogs.com/zenglintao/p/12876725.html</a></p>
-<p>图床配置</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43367829/article/details/104882071">https://blog.csdn.net/qq_43367829/article/details/104882071</a></p>
-<p>注意 创建的GitHub图床默认分支为main,没有master分支，</p>
-<h1 id="开发养成"><a href="#开发养成" class="headerlink" title="开发养成"></a>开发养成</h1><p>编程中最难的事：如何优雅地为程序中的变量和函数命名<br>命名不一致解决思路：<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/395223359">https://www.zhihu.com/question/395223359</a><br><a target="_blank" rel="noopener" href="https://www.douban.com/note/571297448/">https://www.douban.com/note/571297448/</a><br>(创建中间层，添加注解@)<br>工具<br><a target="_blank" rel="noopener" href="https://graphql.org/%EF%BC%8CTypeScrip">https://graphql.org/，TypeScrip</a></p>
-<p>python – 解析一个.py文件,读取AST,修改它,然后回写修改后的源代码<a target="_blank" rel="noopener" href="http://www.voidcn.com/article/p-mvtnzhha-bsk.html">http://www.voidcn.com/article/p-mvtnzhha-bsk.html</a></p>
-<p>统一纠正变量名<br>读取各项目ast，对每个变量计算编辑距离，编辑距离为0~len(word) 为一类<br>批量更正变量并写回去</p>
-<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><p><a target="_blank" rel="noopener" href="https://www.nbmao.com/archives/4463">2021年最新Clash For Windows 详细使用教程 - 笨猫博客 (nbmao.com)</a></p>
-<p><a target="_blank" rel="noopener" href="https://hello-shudong.com/auth/login">登录 — GW树洞 (hello-shudong.com)</a> ：邀请码<code>gayP</code></p>
-<p><strong>为git设置代理</strong></p>
-<blockquote>
-<p>设置后加速git clone等命令执行速度，解决Timeout问题。</p>
-<p>此处使用clash for window 设置代理，其端口为7890</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">http代理</span></span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">https代理</span></span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">查看代理</span></span><br><span class="line">git config -l</span><br><span class="line"><span class="meta">#</span><span class="bash">取消http代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> http.proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">取消https代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> https.proxy</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="电脑维护"><a href="#电脑维护" class="headerlink" title="电脑维护"></a>电脑维护</h2><ul>
-<li>CCleaner</li>
-<li>SpaceSniffer</li>
-<li>Geek</li>
-<li>Snipaste</li>
-</ul>
-<h2 id="数据标注"><a href="#数据标注" class="headerlink" title="数据标注"></a>数据标注</h2><ol>
-<li>labelImg</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://github.com/tzutalin/labelImg">https://github.com/tzutalin/labelImg</a></p>
-<p>使用</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1.环境配置</span></span><br><span class="line">brew install qt  # Install qt-5.x.x by Homebrew</span><br><span class="line">brew install libxml2</span><br><span class="line"><span class="meta">#</span><span class="bash">or using pip</span></span><br><span class="line">pip3 install pyqt5 lxml # Install qt and lxml by pip</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.配置labelimg</span></span><br><span class="line">git clone https://hub.fastgit.org/tzutalin/labelImg.git</span><br><span class="line">cd labelImg</span><br><span class="line">make qt5py3</span><br><span class="line">python3 labelImg.py</span><br><span class="line">python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="2">
-<li><strong>Yolo_mark</strong></li>
-</ol>
-<p><strong>Windows</strong>和<strong>Linux</strong> GUI，用于在图像中标记对象的边界框，以训练Yolo v3和v2</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/AlexeyAB/Yolo_mark">https://github.com/AlexeyAB/Yolo_mark</a></p>
-<p>其他</p>
-<p>深度学习图像标注工具汇总</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/chaipp0607/article/details/79036312">https://blog.csdn.net/chaipp0607/article/details/79036312</a></p>
-<p>浏览器 PDF 预览及打印（效果很棒）</p>
-<p><a target="_blank" rel="noopener" href="https://www.printfriendly.com/">https://www.printfriendly.com/</a></p>
-<p>Send Anywhere</p>
-<p>Send Anywhere官方版是款支持多种平台的文件传输共享工具。</p>
-<p>Send Anywhere最新版主打网络传输文件，支持安卓、iOS、windows、macOS、Linux以及Windows Phon。Send Anywhere几乎能可以将你所有的电子设备全部打通!你甚至在电脑上无需安装任何APP，直接通过Chrome、Firefox、Safari或IE浏览器即可与手机收发文件。</p>
-<p>1、bandzip（解压 window）<br>2、ditto（复制剪贴板window）<br>3、shareX（截图window）</p>
-<p><a target="_blank" rel="noopener" href="https://getsharex.com/">https://getsharex.com/</a></p>
-<p>4、everthing（找文件）<br>5、uTools（百宝箱）<br>6、IDM（下载）<br>7、RST（硬盘优化）<br>8、VS Code（编辑器）<br>9、天翼云盘（网盘）<br>10、chrome（浏览器）<br>11、quicker（鼠标党助手 window,chrome插件）</p>
-<p><a target="_blank" rel="noopener" href="https://getquicker.net/Download">https://getquicker.net/Download</a></p>
-<p>FilePane for Mac 是一款轻量级，多功能的文件快速复制粘贴工具，功能上同之前分享过的 <a target="_blank" rel="noopener" href="https://www.macsky.net/22701.html">PopClip</a> 类似，可用于快速管理文件。它适用于系统中任何应用程序的几乎任何可选择和可拖动内容，并根据您提供的数据建议各种快速操作。您可以轻松复制/移动/创建文件和文件夹，编辑/共享/转换图像等等。</p>
-<p>Chrome插件</p>
-<p>① 百度药丸</p>
-<p>使用更纯净的百度 1.屏蔽百度广告推广 2.阻止百度追踪 3.支持居中显示治愈偏头痛</p>
-<p>②onetab</p>
-<p>能把所有打开的网页/标签页一键「全部关闭」并「保存成列表」，你随后可以一个个 (或一次性全部) 恢复它们。这样不仅变相实现了释放和回收浏览器占用的内存、解决 CPU 资源占用问题、让系统和浏览器的速度恢复正常，而且还能将打开的网页全部保存下来备用。</p>
-<p><strong>Session Buddy</strong>插件功能介绍</p>
-<p>很多人应该都知道，Chrome 虽然也有内置的Session Manager，但是功能什么的简单。Session Buddy 扩展提供的功能为暂存标签，会自动记录已经关闭的标签，当然你可以手动点击保存，下次需要时调用。至于节省内存开销，这事还是交给 Google 来做吧。</p>
-<p>当然具有类似功能的插件，我们网站之前也有介绍过一些：</p>
-<blockquote>
-<p>2.<a target="_blank" rel="noopener" href="http://www.cnplugins.com/fuzhu/tab-hibernation/">TAb Hibernation</a>:可以将我们目前未使用到的网页进入休眠，让这些分页暂时不占用内存，但我们需要使用时，按一下就可以唤醒，解决内存不足的问题.<br>3.<a target="_blank" rel="noopener" href="http://www.cnplugins.com/office/the-great-suspender/">The Great Suspender</a>:可以让你把不需要的标签进入睡眠模式以节省内存，保证流畅的浏览体验。不同于其他类似扩展，The Great Suspender 提供两种休眠方式： 手动休眠、或者一段时间不使用自动休眠。扩展还支持白名单，无论自动休眠还是手动休眠，白名单中的网站是不会休眠的.</p>
-</blockquote>
-<p>③喵喵折</p>
-<p>购物助手</p>
-<p>④搜图助手</p>
-<p>奇妙加速器，免费<a target="_blank" rel="noopener" href="https://www.qimiao.com/">https://www.qimiao.com/</a></p>
-<p>网页版文件快传</p>
-<p><a target="_blank" rel="noopener" href="https://snapdrop.net/">https://snapdrop.net/</a></p>
-<p>快传 ：Feem和AirDroid</p>
-<p><strong>Linux远程拷贝工具(WinSCP)</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/dengjin20104042056/article/details/97378487">https://blog.csdn.net/dengjin20104042056/article/details/97378487</a></p>
-<h2 id="论文工具"><a href="#论文工具" class="headerlink" title="论文工具"></a>论文工具</h2><p>LaTeX新手入门以及TeXlive和TeXstudio的安装使用<a target="_blank" rel="noopener" href="https://blog.csdn.net/zywhehe/article/details/83113214">https://blog.csdn.net/zywhehe/article/details/83113214</a><br>TeX Live 下载及安装说明(mac 和window)<br><a target="_blank" rel="noopener" href="https://www.latexstudio.net/archives/10208.html">https://www.latexstudio.net/archives/10208.html</a><br><a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/">https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/</a></p>
-<p>VS Code + LaTeX<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/144729565">https://zhuanlan.zhihu.com/p/144729565</a></p>
-<p>一般来讲，LaTeX装好后默认的编译方式是pdflatex，但是这种方式不能编译中文源码。对于中文源码，采用的是xelatex的编译方式。对于编译中文文档有两种方式，第一种：在中文源文件首行添加：% !TEX program = xelatex，如果有参考文献，可以再添加% !BIB options = “%DOCFILE%”。显然，这个操作不够智能，因此，我们第一步是，添加xelatex的编译方式(2.3节)。</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wdkirchhoff/article/details/41707157">AUCTeX+Emacs 是目前我见过的能最大限度提高 LaTeX 编辑效率的编辑器 （转）_芝兰生于深谷，不以无人而不芳-CSDN博客</a></p>
-<p>Mendeley－一款免费好用的文献管理软件<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/28762628">https://zhuanlan.zhihu.com/p/28762628</a><br>自动插入参考文献，史上最简Endnote教程！！#论文写作+Endnote X8安装文件<a target="_blank" rel="noopener" href="http://www.xszydq.com/17326.html">http://www.xszydq.com/17326.html</a></p>
-<p>翻译狗：<a target="_blank" rel="noopener" href="https://www.fanyigou.com/trans/login.html?code=6ZH3PQVY0F">登录-Word翻译,Pdf翻译,文献论文翻译-翻译狗 (fanyigou.com)</a></p>
-<h3 id="论文查询"><a href="#论文查询" class="headerlink" title="论文查询"></a>论文查询</h3><ol>
-<li>**<a href="https://link.zhihu.com/?target=https://scholar.google.com.hk/?hl=zh-CN">谷歌学术</a>**：谷歌大概是最友好的一个平台了，尤其是在国外的校内网中使用谷歌学术。</li>
-<li>**<a href="https://link.zhihu.com/?target=https://xueshu.baidu.com/">百度学术</a>**：这大概是百度产品中，算是非常良心的一个了，不能用谷歌的话，百度顶上吧。</li>
-<li>**<a href="https://link.zhihu.com/?target=http://www.cnki.net/">中国知网</a>**：知网是国内比较不错的平台，可在境外的话，会遇到IP限制，大概是超过国内许可范围了。</li>
-<li>**<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24299207">Sci-Hub</a>**：这个比较有趣，大家可以配合知网来使用，从知网搜寻论文，然后在Sci-Hub中下载。但你懂的，Sci-Hub的地址经常变动，所以需要的时候直接用搜索引擎吧。</li>
-<li>**<a href="https://link.zhihu.com/?target=https://lunwen.im/">喵咪论文 - 简单自由的论文下载平台</a>**：亲自试了一下，使用起来还是很方便的，但是随手测试了一下，论文查找到的概率也不是太大。</li>
-<li><a href="https://link.zhihu.com/?target=http://www.ncpssd.org/index.aspx">国家哲学社会科学文献中心</a>: 如果是中文的论文，那用这个查看也还行，主要是界面比知网要人性化一些。</li>
-<li><a target="_blank" rel="noopener" href="https://papers.labml.ai/papers/monthly/">https://papers.labml.ai/papers/monthly/</a></li>
-<li><a target="_blank" rel="noopener" href="https://scholar.google.com.hk/schhp?hl=zh-CN">Google 学术搜索</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.4243.net/">大木虫学术导航 (4243.net)</a>：<font color=red>功能极其强悍</font></li>
-</ol>
-<p>另外就是一些不错的期刊：</p>
-<ol>
-<li><strong><a href="https://link.zhihu.com/?target=https://www.sciencemag.org">Science官网</a></strong></li>
-<li><strong><a href="https://link.zhihu.com/?target=https://www.sciencemag.org">Science | AAAS</a></strong></li>
-</ol>
-<h3 id="论文撰写"><a href="#论文撰写" class="headerlink" title="论文撰写"></a>论文撰写</h3><p>officeTab：模仿WPS多个文章同时显示</p>
-<p>word小恐龙： <a target="_blank" rel="noopener" href="http://gw.xkonglong.com/">http://gw.xkonglong.com/</a></p>
-<p>word精灵</p>
-<p>grammarly ：语法纠正</p>
-<p><a target="_blank" rel="noopener" href="https://aimwriting.mtutor.engkoo.com/editor">微软爱写作</a>：在线写作，提供逻辑连接词例子，可批改评分</p>
-<p><a target="_blank" rel="noopener" href="https://quillbot.com/">Paraphrasing Tool | QuillBot AI</a>：句子重构，降低查重</p>
-<p><a target="_blank" rel="noopener" href="https://www.phrasebank.manchester.ac.uk/">Academic Phrasebank | The University of Manchester</a>：论文例句</p>
-<p><a target="_blank" rel="noopener" href="https://www.bigan.net/check/">论文查重软件_论文检测软件_笔杆网 (bigan.net)</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.xiegelunwen.com/#/zhllc">写个论文 - 论文降重神器，写论文更简单 (xiegelunwen.com)</a></p>
-<h3 id="论文管理"><a href="#论文管理" class="headerlink" title="论文管理"></a>论文管理</h3><p><strong>Readcube</strong>：这是一个付费的管理软件，这里有一篇介绍Readcube的文章，<a href="https://link.zhihu.com/?target=https://www.jianshu.com/p/6bf14803dc99">高效率科研神器——驾驭文献洪流</a>，有需要可以继续了解一下。</p>
-<p>EndNote 是SCI（Thomson Scientific 公司）的官方软件，自身具有强大的功能，<strong>是一款集文献检索、文摘及全文管理、文献共享等功能于一身的老牌软件</strong></p>
-<p>Citavi有<strong>全功能免费版（支持每个项目插入不多于100篇文献）</strong>，具有<strong>强大的参考文献编辑功能，</strong>可以从各个方面实现对参考文献的编辑需求。</p>
-<p>Citavi很大一个特点是<strong>支持PDF阅读功能，且可以支持多种批注格式</strong></p>
-<p>Mendeley是一款Elsevier公司旗下的<strong>免费文献管理软件，</strong>所有人都可以在Mendeley上搜索到世界各地的学术文献，这些学术文件都是由用户自己上传到Mendeley“library”进行编辑管理，<strong>这款软件拥有整理组织文献、PDF标记和文件分享、网络备份的强大功能。</strong>（其余工具见<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/105066833">研究生必备文献整理工具 - 知乎 (zhihu.com)</a>）</p>
-<p>noteexpress：对中文支持更全面，但对英文文献不太靠谱</p>
-<p>Zotero：最大特点是浏览器的抓取功能异常强大。</p>
-<p><strong>总结：首推citavi</strong></p>
-<h3 id="开题相关工具"><a href="#开题相关工具" class="headerlink" title="开题相关工具"></a>开题相关工具</h3><p>如果要快速了解某个领域，那需要大量阅读该领域的相关文献，才能了解到以下：</p>
-<ol>
-<li>这个领域的研究热点、主要研究内容、权威的学者等</li>
-<li>研究存在的不足</li>
-<li>对自己而言，该从哪个领域进行切入才有研究意义等</li>
-</ol>
-<p>这里我直接根据知乎的回答来推荐工具：</p>
-<p>**<a href="https://link.zhihu.com/?target=http://cluster.ischool.drexel.edu/~cchen/citespace/download/">CiteSpace</a>**：这是一个可视化软件，可以将下载的论文进行CiteSpace分析，让你能够尽快地了解领域的发展情况。</p>
-<p>**<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20902898">Histcite</a>**：这是一款非常强大的引文分析工具，可以快速绘制出某个研究领域的发展脉络，快速锁定某个研究方向的重要文献和学术大牛，还可以找到某些具有开创性成果的无指定关键词的论文。</p>
-<p>**<a href="https://link.zhihu.com/?target=http://xueshu.baidu.com/u/biye?fr=kaiti301">百度开题</a>**：这里必须隆重介绍一下这个百度开题，其使用简单，效果也比较炫酷，是开题不可多得的工具。</p>
-<h3 id="英文文献翻译"><a href="#英文文献翻译" class="headerlink" title="英文文献翻译"></a>英文文献翻译</h3><p>这里要推荐一个网站，叫tongtianta.site，<a href="https://link.zhihu.com/?target=http://www.tongtianta.site/">网站</a>功能很简单： 对论文进行翻译，中英文对照阅读</p>
-<p><a target="_blank" rel="noopener" href="https://www.deepl.com/translator">DeepL翻译：全世界最准确的翻译</a></p>
-<h2 id="中国计算机学会推荐国际学术期刊"><a href="#中国计算机学会推荐国际学术期刊" class="headerlink" title="中国计算机学会推荐国际学术期刊"></a>中国计算机学会推荐国际学术期刊</h2><p><strong>(**数据库</strong>/<strong>数据挖掘</strong>/<strong>内容检索</strong>)**</p>
-<p>一、<strong>A</strong> 类 </p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>刊物简称</th>
-<th>刊物全称</th>
-<th>出版社</th>
-<th>网址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>TODS</td>
-<td>ACM  Transactions on Database Systems</td>
-<td>ACM</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/tods/">http://dblp.uni-trier.de/db/journals/tods/</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td>TOIS</td>
-<td>ACM  Transactions on Information Systems</td>
-<td>ACM</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/tois/">http://dblp.uni-trier.de/db/journals/tois/</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>TKDE</td>
-<td>IEEE  Transactions on Knowledge and Data Engineering</td>
-<td>IEEE</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/tkde/">http://dblp.uni-trier.de/db/journals/tkde/</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>VLDBJ</td>
-<td>The  VLDB Journal</td>
-<td>Springer</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/vldb/">http://dblp.uni-trier.de/db/journals/vldb/</a></td>
-</tr>
-</tbody></table>
-<p><a target="_blank" rel="noopener" href="https://icde2021.gr/accepted-papers/">https://icde2021.gr/accepted-papers/</a><br><a target="_blank" rel="noopener" href="http://vldb.org/pvldb/vol14-volume-info/">http://vldb.org/pvldb/vol14-volume-info/</a></p>
-<p><a target="_blank" rel="noopener" href="https://kdd.org/kdd2021/accepted-papers/index">https://kdd.org/kdd2021/accepted-papers/index</a><br><a target="_blank" rel="noopener" href="https://sigir.org/sigir2021/accepted-papers/">https://sigir.org/sigir2021/accepted-papers/</a></p>
-<p>二、<strong>B</strong> 类 </p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>刊物简称</th>
-<th>刊物全称</th>
-<th>出版社</th>
-<th>网址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>TKDD</td>
-<td>ACM  Transactions on Knowledge   Discovery  from Data</td>
-<td>ACM</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/tkdd/">http://dblp.uni-trier.de/db/journals/tkdd/</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td>TWEB</td>
-<td>ACM  Transactions on the Web</td>
-<td>ACM</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/tweb/">http://dblp.uni-trier.de/db/journals/tweb/</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>AEI</td>
-<td>Advanced  Engineering Informatics</td>
-<td>Elsevier</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/aei/">http://dblp.uni-trier.de/db/journals/aei/</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>DKE</td>
-<td>Data  and Knowledge Engineering</td>
-<td>Elsevier</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/dke/">http://dblp.uni-trier.de/db/journals/dke/</a></td>
-</tr>
-<tr>
-<td>5</td>
-<td>DMKD</td>
-<td>Data Mining and Knowledge Discovery</td>
-<td>Springer</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/datamine/">http://dblp.uni-trier.de/db/journals/datamine/</a></td>
-</tr>
-<tr>
-<td>6</td>
-<td>EJIS</td>
-<td>European  Journal of Information   Systems</td>
-<td>Springer</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/ejis/">http://dblp.uni-trier.de/db/journals/ejis/</a></td>
-</tr>
-<tr>
-<td>7</td>
-<td></td>
-<td>GeoInformatica</td>
-<td>Springer</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/geoinformatica/">http://dblp.uni-trier.de/db/journals/geoinformatica/</a></td>
-</tr>
-<tr>
-<td>8</td>
-<td>IPM</td>
-<td>Information  Processing and Management</td>
-<td>Elsevier</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/ipm/">http://dblp.uni-trier.de/db/journals/ipm/</a></td>
-</tr>
-<tr>
-<td>9</td>
-<td></td>
-<td>Information  Sciences</td>
-<td>Elsevier</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/isci/">http://dblp.uni-trier.de/db/journals/isci/</a></td>
-</tr>
-<tr>
-<td>10</td>
-<td><a target="_blank" rel="noopener" href="http://www.dimva.org/">IS</a><a target="_blank" rel="noopener" href="http://www.dimva.org/"> </a></td>
-<td>Information  Systems</td>
-<td><a target="_blank" rel="noopener" href="http://www.gi-fg-sidar.de/">Elsevier</a><a target="_blank" rel="noopener" href="http://www.gi-fg-sidar.de/"> </a></td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/is/">http://dblp.uni-trier.de/db/journals/is/</a></td>
-</tr>
-<tr>
-<td>11</td>
-<td>JASIST</td>
-<td>Journal  of the American Society for Information Science and Technology</td>
-<td>American  Society for   Information  Science and Technology</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/jasis/">http://dblp.uni-trier.de/db/journals/jasis/</a></td>
-</tr>
-<tr>
-<td>12</td>
-<td>JWS</td>
-<td>Journal  of Web Semantics</td>
-<td>Elsevier</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/ws/">http://dblp.uni-trier.de/db/journals/ws/</a></td>
-</tr>
-<tr>
-<td>13</td>
-<td>KAIS</td>
-<td>Knowledge  and Information Systems</td>
-<td>Springer</td>
-<td><a target="_blank" rel="noopener" href="http://dblp.uni-trier.de/db/journals/kais/">http://dblp.uni-trier.de/db/journals/kais/</a></td>
-</tr>
-</tbody></table>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/22867411">https://www.zhihu.com/question/22867411</a></p>
-<ul>
-<li><p>Dash</p>
-<p>官网地址 ：<a target="_blank" rel="noopener" href="https://kapeli.com/dash">https://kapeli.com/dash</a><br>Dash for mac是使用与Mac OS平台的软件编程文档管理工具，可以浏览API文档，以及管理代码片段工具。Dash自带了丰富的API文档，涉及各种主流的编程语言和框架。（190元）</p>
-</li>
-<li><p>mathpix</p>
-<p><a target="_blank" rel="noopener" href="https://mathpix.com/">https://mathpix.com/</a></p>
-<p>图片转LaTeX公式，适用于Markdown,word等文档</p>
-</li>
-<li><p>tmux/tmuxp。比screen好用，可以用来分屏，托管进程等，服务器端必备神器，ubuntu下基本就不用使用terminator之类的分屏工具了。最近看youtube视频还发现有人在服务器上使用tmux和vim结对编程，两个人同时attach到一个session里，基情四射。</p>
-</li>
-<li><p>wemux: tmux 共享，<a href="https://link.zhihu.com/?target=https://github.com/zolrath/wemux">https://github.com/zolrath/wemux</a></p>
-</li>
-<li><p>sshfs: 本地挂在服务器文件夹</p>
-</li>
-<li><p>tmate: <a href="https://link.zhihu.com/?target=https://tmate.io/">https://tmate.io</a> 终端共享工具，结对编程。很多现代化编辑器 vscode, atom 提供结对编程的插件。</p>
-</li>
-<li><p>asciinema: 终端会话记录工具。<a href="https://link.zhihu.com/?target=https://asciinema.org/">https://asciinema.org/</a></p>
-</li>
-<li><p>oh-my-zsh。替代原生的bash shell，提供了好多方便的特性和漂亮主题，支持插件。linux/mac下vim+tmux+zsh简直是绝配，甚至可以直接在服务器上方便地撸代码，跟本地开发体验没区别。</p>
-</li>
-<li><p>item2(mac)。替代原生的终端。<a href="https://link.zhihu.com/?target=https://medium.com/@RyanDavidson/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c">https://medium.com/@RyanDavidson/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c</a></p>
-</li>
-<li><p>brew(mac)。类似ubuntu下的apt-get，可以方便安转各种软件和工具。</p>
-</li>
-<li><p>Alfred(mac): mac 下一款功能强大的工具，不过我一般只用它快速打开软件。可以用 python 编写一些自己的 workflow 提高效率(<a href="https://link.zhihu.com/?target=https://github.com/deanishe/alfred-workflow">https://github.com/deanishe/alfred-workflow</a>)，比如把时间戳转成日期等。 <a href="https://link.zhihu.com/?target=https://github.com/derimagia/awesome-alfred-workflows">https://github.com/derimagia/awesome-alfred-workflows</a></p>
-</li>
-<li><p>Dash(mac,全英): 强悍的文档查询工具。支持非常多编程语言和框架</p>
-</li>
-<li><p>devdocs.io: 文档查询工具</p>
-</li>
-<li><p>Zeal——好用的离线 API 文档大全！(支持window，Linux，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/souldee/p/9523497.html%EF%BC%8Cfeed%EF%BC%9A[Zeal">https://www.cnblogs.com/souldee/p/9523497.html，feed：[Zeal</a> User Contributions &amp; Cheat Sheets](<a target="_blank" rel="noopener" href="https://zealusercontributions.vercel.app/">https://zealusercontributions.vercel.app/</a>))</p>
-</li>
-<li><p>Karabiner-Elements(mac): 改键工具 <a href="https://link.zhihu.com/?target=https://github.com/tekezo/Karabiner-Elements">https://github.com/tekezo/Karabiner-Elements</a></p>
-</li>
-<li><p>autojump。方便在命令行里来回跳转目录。</p>
-</li>
-<li><p>gitx(mac):方便查看代码提交历史，便于了解整个代码仓库是怎样一步步构建的。<a href="https://link.zhihu.com/?target=http://gitx.frim.nl/user_manual.html">http://gitx.frim.nl/user_manual.html</a></p>
-</li>
-<li><p>tig: text-mode interface for git. 喜欢命令行的可以尝试下。 <a href="https://link.zhihu.com/?target=https://github.com/jonas/tig">https://github.com/jonas/tig</a></p>
-</li>
-<li><p>tldr: 更好的man手册</p>
-</li>
-<li><p>YouCompleteMe: vim 代码补全<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44638957/article/details/91985270">https://blog.csdn.net/weixin_44638957/article/details/91985270</a></p>
-</li>
-<li><p>EditorConfig: <a href="https://link.zhihu.com/?target=http://editorconfig.org/">http://editorconfig.org/</a> 用来统一编辑器配置。如果成员用不同的操作系统和编辑器，建议使用。尤其是对于 python 这种使用缩进的语言</p>
-</li>
-<li><p>mac-setup: <a href="https://link.zhihu.com/?target=https://github.com/sb2nov/mac-setup">https://github.com/sb2nov/mac-setup</a> mac 下各种编程语言开发环境配置指引</p>
-</li>
-<li><p>pdf2go网址：<a target="_blank" rel="noopener" href="https://www.pdf2go.com/zh">https://www.pdf2go.com/zh</a> 免费PDF工具</p>
-</li>
-<li><p>ilovePDF网址：<a target="_blank" rel="noopener" href="https://www.ilovepdf.com/zh-cn">https://www.ilovepdf.com/zh-cn</a> 免费PDF工具</p>
-</li>
-<li><p>temp-mail网址：<a target="_blank" rel="noopener" href="https://temp-mail.org/">https://temp-mail.org/</a> 临时邮箱，避免垃圾广告</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/jlevy/the-art-of-command-line">jlevy/the-art-of-command-line: Master the command line, in one page (github.com)</a></p>
-</li>
-</ul>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="课程-amp-资料"><a href="#课程-amp-资料" class="headerlink" title="课程&amp;资料"></a>课程&amp;资料</h2><p>【链接】最值得看的十大机器学习公开课<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/yushupan/article/details/78582630">https://blog.csdn.net/yushupan/article/details/78582630</a></p>
-<p>【链接】计算机视觉有哪些比较好的公开课？补充计<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/35831904">https://www.zhihu.com/question/35831904</a></p>
-<p>机器学习与生成对抗网络<a target="_blank" rel="noopener" href="https://my.oschina.net/u/4579551/blog/4350931">https://my.oschina.net/u/4579551/blog/4350931</a></p>
-<p>分类机器学习中，某一标签占比太大（标签稀疏），如何学习？<a target="_blank" rel="noopener" href="https://my.oschina.net/u/4579551/blog/4750226">https://my.oschina.net/u/4579551/blog/4750226</a></p>
-<p>使用深度学习的图像分类-Koko.PDF<br><a target="_blank" rel="noopener" href="https://max.book118.com/html/2018/1016/7123041051001153.shtm">https://max.book118.com/html/2018/1016/7123041051001153.shtm</a></p>
-<p>pandas官方中文文档-草鸡详细！！！！<a target="_blank" rel="noopener" href="https://www.pypandas.cn/deep/basics/image_classification.html#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D">https://www.pypandas.cn/deep/basics/image_classification.html#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D</a></p>
-<p>汇总】CV 图像分类常见的 36 个模型<br><a target="_blank" rel="noopener" href="https://my.oschina.net/u/4579551/blog/4701954">https://my.oschina.net/u/4579551/blog/4701954</a></p>
-<p>超详细！！！<br><a target="_blank" rel="noopener" href="http://www.feiguyunai.com/">http://www.feiguyunai.com/</a></p>
-<p>Jupyter Notebook介绍、安装及使用教程<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/91365f343585">https://www.jianshu.com/p/91365f343585</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013709332/article/details/105029123/">https://blog.csdn.net/u013709332/article/details/105029123/</a></p>
-<p>Python深度学习 基于TensorFlow 在线版<br><a target="_blank" rel="noopener" href="http://www.feiguyunai.com/index.php/2018/05/26/python-ml-tf-01/">http://www.feiguyunai.com/index.php/2018/05/26/python-ml-tf-01/</a></p>
-<p>机器学习 几百篇文章<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/GarfieldEr007/category_5619819.html">https://blog.csdn.net/GarfieldEr007/category_5619819.html</a></p>
-<p>零基础学习-深度学习核心-梯度下降与最优化<br><a target="_blank" rel="noopener" href="http://www.feiguyunai.com/index.php/2017/11/08/pythonai-dl-grade01/">http://www.feiguyunai.com/index.php/2017/11/08/pythonai-dl-grade01/</a></p>
-<p>给大家再分享几个好用的知识文章检索工具哦：[OK]<br>1、<a target="_blank" rel="noopener" href="https://www.cn-ki.net/">https://www.cn-ki.net/</a> 仿知网<br>2、<a target="_blank" rel="noopener" href="https://www.jiumodiary.com/">https://www.jiumodiary.com/</a> 鸠摩搜索</p>
-<p>实在不行就用这个狗屁不通文章生成器[doge]<br><a target="_blank" rel="noopener" href="https://suulnnka.github.io/BullshitGenerator/index.html">https://suulnnka.github.io/BullshitGenerator/index.html</a></p>
-<p><strong>神经网络与深度学习</strong></p>
-<p><a target="_blank" rel="noopener" href="https://nndl.github.io/">https://nndl.github.io/</a></p>
-<h1 id="C-入门教程"><a href="#C-入门教程" class="headerlink" title="C++入门教程"></a>C++入门教程</h1><p><a target="_blank" rel="noopener" href="http://www.weixueyuan.net/cpp/rumen//e">http://www.weixueyuan.net/cpp/rumen//e</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-<div>
-    
- </div>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kuangyl-max.github.io/2021/10/28/youdao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-      <meta itemprop="name" content="小邝">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/10/28/youdao/" class="post-title-link" itemprop="url">有道API调用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-10-28 13:41:22" itemprop="dateCreated datePublished" datetime="2021-10-28T13:41:22+08:00">2021-10-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-25 19:43:56" itemprop="dateModified" datetime="2020-09-25T19:43:56+08:00">2020-09-25</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%89%E9%81%93%E6%99%BA%E4%BA%91API/" itemprop="url" rel="index"><span itemprop="name">有道智云API</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/10/28/youdao/" class="post-meta-item leancloud_visitors" data-flag-title="有道API调用" title="热度">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">热度：</span>
-              <span class="leancloud-visitors-count"></span>
-	<span>℃</span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/10/28/youdao/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/10/28/youdao/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="有道API调用"><a href="#有道API调用" class="headerlink" title="有道API调用"></a>有道API调用</h1><p>在有道智云&gt;产品服务&gt;自然语言翻译服务&gt;文本翻译&gt;技术文档&gt;API接入指南 查看相关信息，根据有道智云提供的demo实现一个公共API调用的实例。注意，API接入指南右侧可快速导航到常用语言Demo中的JS demo</p>
-<h2 id="有道API调用说明"><a href="#有道API调用说明" class="headerlink" title="有道API调用说明"></a>有道API调用说明</h2><p>文本翻译API接口提供有道的翻译服务，包含了中英翻译和小语种翻译功能。只需要通过调用文本翻译API，传入待翻译的内容，并指定要翻译的源语言（支持源语言语种自动检测）和目标语言种类，就可以得到相应的翻译结果。</p>
-<ul>
-<li>调用API需要向接口发送以下字段来访问服务<br><img src="https://img-blog.csdnimg.cn/20200924120622936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTA3MTk2MQ==,size_16,color_FFFFFF,t_70#pic_left" alt="在这里插入图片描述"><br>代码实现</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;有道智云&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;jqueryvalidation.org&#x2F;files&#x2F;demo&#x2F;site-demos.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align: center;border: 1px solid;width: 20%;padding: 10px;margin: 0 auto;&quot;&gt;</span><br><span class="line">        &lt;h3&gt;有道翻译&lt;&#x2F;h3&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;输入:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;in&quot; type&#x3D;&quot;text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;from:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;from&quot; type&#x3D;&quot;text&quot; value&#x3D;&#39;zh-CHS&#39; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;to:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;to&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;en&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;button&gt;确定&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            提示：zh-CHS(中文) || ja(日语) || en(英文) || fr(法语) ...</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;padding-top: 20px;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align: center; border: 1px solid;width: 50%;margin: 0 auto;&quot;&gt;</span><br><span class="line">        &lt;h&gt;翻译结果&lt;&#x2F;h&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;out&quot; border&#x3D;&quot;1&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;http:&#x2F;&#x2F;shared.ydstatic.com&#x2F;js&#x2F;jquery&#x2F;jquery-3.1.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;blueimp-md5&#x2F;2.10.0&#x2F;js&#x2F;md5.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;js-sha256&#x2F;0.9.0&#x2F;sha256.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">        var appKey &#x3D; &#39;your appKey&#39;;</span><br><span class="line">        var key &#x3D; &#39;your key&#39;;&#x2F;&#x2F;注意：暴露appSecret，有被盗用造成损失的风险</span><br><span class="line">        &#x2F;&#x2F;     当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 事件。</span><br><span class="line">        &#x2F;&#x2F; 由于该事件在文档就绪后发生，因此把所有其他的 jQuery 事件和函数置于该事件中是非常好的做法。</span><br><span class="line">        &#x2F;&#x2F; ready() 函数规定当 ready 事件发生时执行的代码。</span><br><span class="line">        $(document).ready(function () &#123;</span><br><span class="line">            $(&quot;button&quot;).click(function () &#123;</span><br><span class="line">                var salt &#x3D; (new Date).getTime();</span><br><span class="line">                var curTime &#x3D; Math.round(new Date().getTime() &#x2F; 1000);</span><br><span class="line">                var query &#x3D; $(&quot;#in&quot;).val()</span><br><span class="line">                var str1 &#x3D; appKey + truncate(query) + salt + curTime + key;</span><br><span class="line">                console.log(str1);</span><br><span class="line">                var sign &#x3D; sha256(str1);</span><br><span class="line">                $.ajax(&#123;&#x2F;&#x2F;ajax() 方法通过 HTTP 请求加载远程数据</span><br><span class="line">                    url: &#39;http:&#x2F;&#x2F;openapi.youdao.com&#x2F;api&#39;,</span><br><span class="line">                    type: &#39;post&#39;,&#x2F;&#x2F;请求方式（post或get）默认为get</span><br><span class="line">                    dataType: &#39;jsonp&#39;,&#x2F;&#x2F;JSONP格式</span><br><span class="line">                    data: &#123;</span><br><span class="line">                        q: query,</span><br><span class="line">                        appKey: appKey,</span><br><span class="line">                        salt: salt,</span><br><span class="line">                        from: $(&quot;#from&quot;).val(),</span><br><span class="line">                        to: $(&quot;#to&quot;).val(),</span><br><span class="line">                        sign: sign,</span><br><span class="line">                        signType: &quot;v3&quot;,</span><br><span class="line">                        curtime: curTime,</span><br><span class="line">                    &#125;,</span><br><span class="line">                    success: function (data) &#123;&#x2F;&#x2F;请求成功后调用的回调函数</span><br><span class="line">                        console.log(data);&#x2F;&#x2F;json</span><br><span class="line">                        var out &#x3D; JSON.stringify(data.web);</span><br><span class="line">                        console.log(out);</span><br><span class="line">                        $(&quot;#out&quot;).text(out);</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;); </span><br><span class="line">        function truncate(q) &#123;</span><br><span class="line">            var len &#x3D; q.length;</span><br><span class="line">            if (len &lt;&#x3D; 20) return q;</span><br><span class="line">            return q.substring(0, 10) + len + q.substring(len - 10, len);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://img-blog.csdnimg.cn/20200924120849188.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTA3MTk2MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-<div>
-    
- </div>
-  
-  
-  
-
-
-  
-
-
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -2576,6 +1530,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E5%91%BD%E4%BB%A4%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.1.</span> <span class="nav-text">git命令交互式学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git-ssh-%E9%85%8D%E7%BD%AE%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">Git ssh 配置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%96%91%E9%9A%BE"><span class="nav-number">1.3.</span> <span class="nav-text">疑难</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E4%B8%8B%E8%BD%BD%E4%BB%93%E5%BA%93%E5%86%85%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%86%85%E5%AE%B9"><span class="nav-number">1.3.1.</span> <span class="nav-text">git下载仓库内单个文件夹内容</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">1.3.1.0.0.1.</span> <span class="nav-text">步骤：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-clone-%E5%A4%AA%E6%85%A2"><span class="nav-number">1.3.2.</span> <span class="nav-text">git clone 太慢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E8%B6%85%E8%BF%87100M%E7%9A%84%E5%A4%A7%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">Github如何上传超过100M的大文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mac"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">Mac</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">Windows</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-lfs%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.4.</span> <span class="nav-text">git lfs的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFgit-lfs"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">1.什么是git lfs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%BC%98%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">2.优点是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">3.怎么使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8Blfs%E5%A4%A7%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.5.</span> <span class="nav-text">删除远程lfs大文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-clone%E5%A4%A7%E6%96%87%E4%BB%B6EOF%E9%94%99%E8%AF%AF"><span class="nav-number">1.3.6.</span> <span class="nav-text">git clone大文件EOF错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%8E%A7%E5%88%B6git%E5%BA%93%E7%9A%84%E8%86%A8%E8%83%80%EF%BC%9F"><span class="nav-number">1.3.7.</span> <span class="nav-text">如何控制git库的膨胀？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github%E9%87%8D%E7%BD%AE%E4%BB%93%E5%BA%93"><span class="nav-number">1.3.8.</span> <span class="nav-text">github重置仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%B2%BE%E7%AE%80%E4%BD%A0%E7%9A%84-Git-%E4%BB%93%E5%BA%93%EF%BC%9F"><span class="nav-number">1.3.9.</span> <span class="nav-text">如何精简你的 Git 仓库？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add%E8%AF%A6%E8%A7%A3"><span class="nav-number">1.3.10.</span> <span class="nav-text">git add详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E7%A7%BB%E9%99%A4%E5%B7%B2%E7%BB%8Fadd%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.11.</span> <span class="nav-text">git移除已经add的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GIT%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9-restore"><span class="nav-number">1.3.12.</span> <span class="nav-text">GIT撤销修改 restore</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.12.1.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E5%BF%BD%E7%95%A5%E6%9F%90%E4%BA%9B%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.13.</span> <span class="nav-text">提交忽略某些文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%AE%BE%E7%BD%AE-gitignore"><span class="nav-number">1.3.13.1.</span> <span class="nav-text">1.设置.gitignore</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.3.13.2.</span> <span class="nav-text">2.使用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E4%BD%BF%E7%94%A8-git-info-exclude"><span class="nav-number">1.3.13.3.</span> <span class="nav-text">3.使用.git&#x2F;info&#x2F;exclude</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-clean%E6%B8%85%E9%99%A4%E6%9C%AA%E8%B7%9F%E8%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.14.</span> <span class="nav-text">git clean清除未跟踪的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9Acommit"><span class="nav-number">1.3.15.</span> <span class="nav-text">git删除指定commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9Acommit-%E7%BB%AD"><span class="nav-number">1.3.16.</span> <span class="nav-text">git删除指定commit-续</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-rebase-%E5%90%88%E5%B9%B6%E5%A4%9A%E6%AC%A1commit"><span class="nav-number">1.3.17.</span> <span class="nav-text">git rebase 合并多次commit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-rebase-Vs-git-revert"><span class="nav-number">1.3.18.</span> <span class="nav-text">git rebase Vs git revert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4Git%E4%B8%8A%E7%9A%84%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">1.3.19.</span> <span class="nav-text">如何删除Git上的远程文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%85%E7%A9%BAcommits%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="nav-number">1.3.20.</span> <span class="nav-text">清空commits历史记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%8C%E5%88%A0%E9%99%A4-git%E7%9B%AE%E5%BD%95"><span class="nav-number">1.3.20.1.</span> <span class="nav-text">进入本地仓库，删除.git目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%96%B0git%E5%88%9D%E5%A7%8B%E5%8C%96%E5%B9%B6%E6%B7%BB%E5%8A%A0commit"><span class="nav-number">1.3.20.2.</span> <span class="nav-text">重新git初始化并添加commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E9%93%BE%E6%8E%A5"><span class="nav-number">1.3.20.3.</span> <span class="nav-text">添加远程仓库链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E6%8F%90%E4%BA%A4%EF%BC%8C%E8%A6%86%E7%9B%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84commits%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="nav-number">1.3.20.4.</span> <span class="nav-text">强制提交，覆盖远程仓库的commits历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E7%BB%AD%E8%AE%A8%E8%AE%BA"><span class="nav-number">1.3.20.5.</span> <span class="nav-text">后续讨论</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AFbranch%E5%92%8C%E4%BD%BF%E7%94%A8Pull-request"><span class="nav-number">1.3.21.</span> <span class="nav-text">创建分支branch和使用Pull request</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub-%E5%AE%9E%E7%8E%B0%E5%A4%9A%E4%BA%BA%E5%8D%8F%E5%90%8C%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%B9%B6%E4%B8%94%E6%9D%83%E9%99%90%E5%88%86%E7%BB%84%E7%AE%A1%E7%90%86"><span class="nav-number">1.3.22.</span> <span class="nav-text">GitHub 实现多人协同提交代码并且权限分组管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E5%A4%9A%E5%88%86%E6%94%AF%E5%B9%B3%E8%A1%8C%E5%8F%91%E5%B1%95%EF%BC%88%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AA%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%89"><span class="nav-number">1.3.23.</span> <span class="nav-text">Git多分支平行发展（一个仓库包含多个不同的项目）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E4%B8%ADsubmodule%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.24.</span> <span class="nav-text">Git中submodule的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-clone%E7%A7%BB%E5%8A%A8%E6%9C%AC%E5%9C%B0%E5%8E%82%E5%BA%93"><span class="nav-number">1.3.25.</span> <span class="nav-text">git clone移动本地厂库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E8%A3%B8%E5%85%8B%E9%9A%86"><span class="nav-number">1.3.26.</span> <span class="nav-text">git裸克隆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-pull%E5%92%8Cgit-fetch%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.27.</span> <span class="nav-text">git pull和git fetch的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fatal-does-not-appear-to-a-git-repository"><span class="nav-number">1.3.28.</span> <span class="nav-text">fatal: does not appear to a git repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-fork%E4%B8%8Eclone%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.3.29.</span> <span class="nav-text">git fork与clone有什么区别及使用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-clone"><span class="nav-number">1.3.29.1.</span> <span class="nav-text">git clone</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-fork"><span class="nav-number">1.3.29.2.</span> <span class="nav-text">git fork</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF-git-push-origin"><span class="nav-number">1.3.30.</span> <span class="nav-text">git 推送本地分支到远程分支 git push origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-remote%E5%85%B3%E8%81%94%E4%BA%86%E4%B8%A4%E4%B8%AA%E6%88%96%E5%A4%9A%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="nav-number">1.3.31.</span> <span class="nav-text">git remote关联了两个或多个仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add%E5%A4%96%E9%83%A8%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.32.</span> <span class="nav-text">git add外部文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-add-%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.33.</span> <span class="nav-text">git add 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit-%E6%8F%90%E4%BA%A4%E5%88%B0%E7%89%88%E6%9C%AC%E5%BA%93"><span class="nav-number">1.3.34.</span> <span class="nav-text">git commit 提交到版本库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-%E5%BB%96%E9%9B%AA%E5%B3%B0%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3"><span class="nav-number">1.4.</span> <span class="nav-text">git 廖雪峰学习文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">1.4.1.</span> <span class="nav-text">工作区和暂存区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8C%BA%EF%BC%88Working-Directory%EF%BC%89"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">工作区（Working Directory）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%BA%93%EF%BC%88Repository%EF%BC%89"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">版本库（Repository）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81git%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.</span> <span class="nav-text">一、git初始化本地仓库和配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">二、提交文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%9B%9E%E9%80%80"><span class="nav-number">1.7.</span> <span class="nav-text">三、回退</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9F%A5%E7%9C%8Bcommit%E4%BF%A1%E6%81%AF%E5%92%8C%E5%91%BD%E4%BB%A4%E4%BF%A1%E6%81%AF"><span class="nav-number">1.7.1.</span> <span class="nav-text">1.查看commit信息和命令信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%9B%9E%E9%80%80"><span class="nav-number">1.7.2.</span> <span class="nav-text">2.回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-HEAD%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.7.3.</span> <span class="nav-text">3.HEAD介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8Blog"><span class="nav-number">1.7.4.</span> <span class="nav-text">4.查看远程log</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%88%87%E6%8D%A2%E6%9A%82%E5%AD%98%E5%8C%BA%E3%80%81%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="nav-number">1.8.</span> <span class="nav-text">四、切换暂存区、工作区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-number">1.9.</span> <span class="nav-text">五、删除文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6"><span class="nav-number">1.9.1.</span> <span class="nav-text">1.删除本地文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%EF%BC%8C%E8%AF%AF%E5%88%A0"><span class="nav-number">1.9.2.</span> <span class="nav-text">2，误删</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%AB%AF%E6%96%87"><span class="nav-number">1.9.3.</span> <span class="nav-text">3.删除远端文</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%92%8C%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.10.</span> <span class="nav-text">六、本地分支和远程分支</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%EF%BC%8C%E5%B8%A6%E6%98%9F%E5%8F%B7%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%BD%93%E5%89%8D%E6%89%80%E5%9C%A8%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.10.1.</span> <span class="nav-text">1.查看本地分支，带星号的表示当前所在本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.10.2.</span> <span class="nav-text">2.创建本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.10.3.</span> <span class="nav-text">3.创建远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%90%88%E5%B9%B6%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.10.4.</span> <span class="nav-text">4.合并本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-origin"><span class="nav-number">1.10.5.</span> <span class="nav-text">5.origin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-git-fetch-%E6%9B%B4%E6%96%B0%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">1.10.6.</span> <span class="nav-text">6.git fetch 更新远程代码到本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-fetch%E6%9B%B4%E6%96%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.10.7.</span> <span class="nav-text">7.fetch更新本地仓库两种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E5%90%88%E5%B9%B6%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.10.8.</span> <span class="nav-text">8.合并远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.10.9.</span> <span class="nav-text">9.删除本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.10.10.</span> <span class="nav-text">10.删除远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%96%B0%E5%88%86%E6%94%AF%E5%B9%B6%E5%B0%86%E6%96%B0%E5%88%86%E6%94%AF%E5%92%8C%E8%BF%9C%E7%A8%8B%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E7%9B%B8%E5%85%B3%E8%81%94"><span class="nav-number">1.10.11.</span> <span class="nav-text">11.创建本地新分支并将新分支和远程某个分支相关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E4%BF%AE%E6%94%B9commit%E4%BF%A1%E6%81%AF"><span class="nav-number">1.10.12.</span> <span class="nav-text">12.修改commit信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-%E5%88%A0%E9%99%A4commit%E4%BF%A1%E6%81%AF"><span class="nav-number">1.10.13.</span> <span class="nav-text">13.删除commit信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E5%88%86%E6%94%AF%E7%AD%96%E7%95%A5"><span class="nav-number">1.11.</span> <span class="nav-text">七、分支策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81bug%E5%88%86%E6%94%AF%E5%92%8C%E6%9A%82%E5%AD%98%E5%B7%A5%E4%BD%9C%E7%8E%B0%E5%9C%BA"><span class="nav-number">1.12.</span> <span class="nav-text">八、bug分支和暂存工作现场</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-bug%E5%88%86%E6%94%AF%E7%9A%84%E7%94%A8%E9%80%94"><span class="nav-number">1.12.1.</span> <span class="nav-text">1.bug分支的用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAbug%E5%88%86%E6%94%AF%E7%9A%84%E6%B5%81%E7%A8%8B"><span class="nav-number">1.12.2.</span> <span class="nav-text">2.创建bug分支的流程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81feature%E5%88%86%E6%94%AF"><span class="nav-number">1.13.</span> <span class="nav-text">九、feature分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E3%80%81github%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">1.14.</span> <span class="nav-text">十、github远程仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8ssh%E5%88%9B%E5%BB%BAkey"><span class="nav-number">1.14.1.</span> <span class="nav-text">1.使用ssh创建key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%92%8C%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%85%B3%E8%81%94"><span class="nav-number">1.14.2.</span> <span class="nav-text">2.本地仓库和远程仓库关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%85%B3%E8%81%94%E4%BB%93%E5%BA%93%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">1.14.3.</span> <span class="nav-text">3.关联仓库出现问题解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%9C%89%E6%97%B6%E5%80%99%E4%B8%8D%E6%83%B3%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81-%E5%BB%BA%E8%AE%AE%E8%BF%98%E6%98%AF%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81%E5%A5%BD%EF%BC%89"><span class="nav-number">1.14.4.</span> <span class="nav-text">4.有时候不想解决冲突(建议还是解决冲突好）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-number">1.14.5.</span> <span class="nav-text">5.删除分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">1.14.6.</span> <span class="nav-text">6.创建远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AFcommit%E4%BF%A1%E6%81%AF%E7%94%A8%E4%BA%8E%E5%9B%9E%E9%80%80%E5%88%B0%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E7%9A%84%E6%9F%90%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="nav-number">1.14.7.</span> <span class="nav-text">7.查看远程分支commit信息用于回退到远程分支的某个版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%90%8D%E7%A7%B0"><span class="nav-number">1.14.8.</span> <span class="nav-text">8.修改远程仓库名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-fork%E5%88%AB%E4%BA%BA%E7%9A%84%E4%BB%93%E5%BA%93%E5%90%8E%E5%A6%82%E4%BD%95%E5%90%8C%E5%8E%9F%E4%BB%93%E5%BA%93%E4%BF%9D%E6%8C%81%E5%90%8C%E6%AD%A5%E6%9B%B4%E6%96%B0"><span class="nav-number">1.14.9.</span> <span class="nav-text">9. fork别人的仓库后如何同原仓库保持同步更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-git-pull-can%E2%80%99t-update"><span class="nav-number">1.14.10.</span> <span class="nav-text">10. git pull can’t update</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E5%A4%9A%E4%BA%BA%E5%90%88%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">1.15.</span> <span class="nav-text">十一、多人合作流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E7%89%88%E6%9C%AC%E6%A0%87%E7%AD%BE"><span class="nav-number">1.16.</span> <span class="nav-text">十二、版本标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%89%EF%BC%8C%E5%BF%BD%E7%95%A5%E7%89%B9%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6"><span class="nav-number">1.17.</span> <span class="nav-text">十三，忽略特特殊文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89Git%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">1.18.</span> <span class="nav-text">十四、自定义Git服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%BA%94%E3%80%81git%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">1.19.</span> <span class="nav-text">十五、git常见错误及解决办法</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
