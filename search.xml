@@ -461,6 +461,500 @@
       </tags>
   </entry>
   <entry>
+    <title>工具合集</title>
+    <url>/2021/10/28/tool/</url>
+    <content><![CDATA[<h1 id="Window-终端配置"><a href="#Window-终端配置" class="headerlink" title="Window 终端配置"></a>Window 终端配置</h1><p>相关软件快捷安装脚本 及 Fira字体：<a href="https://cdn.jsdelivr.net/gh/kuangyl-max/kuangyl-max.github.io@master/download/install.zip">点击下载</a></p>
+<h2 id="Scoop配置"><a href="#Scoop配置" class="headerlink" title="Scoop配置"></a>Scoop配置</h2><p>Scoop的定位主要是“开源、命令行的开发者工具”</p>
+<p><a href="https://blog.csdn.net/luoyooi/article/details/102990113">Windows下Scoop安装、配置与使用_luoyooi的博客-CSDN博客_scoop</a></p>
+<p><strong>安装</strong></p>
+<p>在PowerShell中运行以下命令，将scoop安装到其默认位置(<code>C:\Users\&lt;user&gt;\scoop</code>)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Invoke-Expression (New-Object</span><br><span class="line">System.Net.WebClient).DownloadString(&#39;https:&#x2F;&#x2F;get.scoop.sh&#39;)</span><br><span class="line">#或者</span><br><span class="line">iwr -useb get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，输入<code>scoop help</code>验证是否成功（常见的命令可以通过此方法来查看）。</p>
+<p>用户安装的程序和scoop本身位于C:Users&lt;user&gt;scoop。全局安装的程序（–global）位于C:\ProgramData\scoop。可以通过环境变量更改这些设置。具体步骤如下：</p>
+<p><strong>将Scoop安装到自定义目录(命令行方式)</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP&#x3D;&#39;D:Applications\Scoop&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP&#39;, $env:SCOOP,&#39;User&#39;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式)</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP_GLOBAL&#x3D;&#39;F:\GlobalScoopApps&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP_GLOBAL&#39;,</span><br><span class="line">$env:SCOOP_GLOBAL, &#39;Machine&#39;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>上面两句运行的结果(环境变量)</strong></p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-38-45-69d072a8079102da338071daa6fa4c10-image55-d2410c.png" alt="在这里插入图片描述">{width=”5.768055555555556in”<br>height=”4.741666666666666in”}<br>如果不想运行命令行，直接添加环境变量也可。设置完安装位置后，建议将默认目录下的所有文件复制到新目录（<strong>不是剪切！！</strong>）</p>
+<p>参考链接：</p>
+<ul>
+<li><p><a href="https://www.jianshu.com/p/50993df76b1c">scoop——强大的Windows命令行包管理工具 - 简书(jianshu.com)</a></p>
+</li>
+<li><p>配色 如何保存更改 ：<a href="https://blog.csdn.net/cum44153/article/details/109043040">zsh自定义命令提示符_如何使用Microsoft的ColorTool自定义命令提示符的配色方案_cum44153的博客-CSDN博客</a></p>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.jianshu.com/p/4b2b7074d9e2">像MAC一样使用win10的Terminal - 简书(jianshu.com)</a></li>
+<li><a href="https://blog.csdn.net/weixin_43455581/article/details/105565970">使用Oh-My-Posh美化FluentTerminal_罗伯特祥的博客-CSDN博客</a></li>
+</ul>
+<blockquote>
+<p> 如果遇到<strong>powershell乱码</strong>,  可以更改字体(如Fira Code Retina)</p>
+<p>或者<a href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3及oh-my-zsh提示prompt出现乱码的原因及使用Nerd字体的解决方法_yihuajack的博客-CSDN博客</a></p>
+</blockquote>
+<h2 id="scoop下工具安装"><a href="#scoop下工具安装" class="headerlink" title="scoop下工具安装"></a>scoop下工具安装</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>若下载不了，则开启VPN</p>
+</blockquote>
+<h2 id="配置右键菜单栏"><a href="#配置右键菜单栏" class="headerlink" title="配置右键菜单栏"></a>配置右键菜单栏</h2><p>HKEY_CLASSES_ROOT\Directory\Background\shell新建PowershellMenu</p>
+<p>空白处右键菜单</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellMenu]</span><br><span class="line">@&#x3D;&quot;Open PowerShell Here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellMenu\command]</span><br><span class="line">@&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -NoExit -Command Set-Location -LiteralPath &#39;%v&#39;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>HKEY_CLASSES_ROOT\Directory\shell新建PowershellMenu</p>
+<p>文件夹右键菜单</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu]</span><br><span class="line">@&#x3D;&quot;Open PowerShell Here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu\command]</span><br><span class="line">@&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -NoExit -Command Set-Location -LiteralPath &#39;%L&#39;&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Chocolatey配置"><a href="#Chocolatey配置" class="headerlink" title="Chocolatey配置"></a>Chocolatey配置</h2><p>Chocolatey依赖于Windows PowerShell及其NuGet包管理器系统，该系统主要用于解决软件库依赖关系。常用来管理window桌面端应用，如googlechrome,QQ等</p>
+<p><a href="https://blog.csdn.net/hffyyg/article/details/83990873?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link">Windows上的巧克力味Chocolatey详解_hffyyg的博客-CSDN博客_chocolatey</a></p>
+<h2 id="终端工具"><a href="#终端工具" class="headerlink" title="终端工具"></a>终端工具</h2><h3 id="terminus"><a href="#terminus" class="headerlink" title="terminus"></a>terminus</h3><p>全平台通用。功能强大。</p>
+<p><a href="https://tabby.sh/">Tabby - a terminal for a more modern age</a></p>
+<p>Github:<a href="https://github.com/eugeny/tabby">Eugeny/tabby</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#安装</span><br><span class="line">#方法1： https:&#x2F;&#x2F;github.com&#x2F;Eugeny&#x2F;tabby</span><br><span class="line">#方法2</span><br><span class="line">scoop install terminus -g </span><br></pre></td></tr></table></figure>
+
+<p>详细配置见：<a href="https://kuangyl-max.github.io/2021/11/15/terminal-tabby/">Tabby配置 | 博客 (kuangyl-max.github.io)</a></p>
+<h3 id="fluentTerminal"><a href="#fluentTerminal" class="headerlink" title="fluentTerminal"></a>fluentTerminal</h3><h3 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h3><h1 id="Onedriver"><a href="#Onedriver" class="headerlink" title="Onedriver"></a>Onedriver</h1><h2 id="同步任意文件夹"><a href="#同步任意文件夹" class="headerlink" title="同步任意文件夹"></a>同步任意文件夹</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">#需在<span class="built_in">cmd</span>内执行</span><br><span class="line">mklink /j &quot;onedrive文件夹地址\需要同步的文件夹名&quot; &quot;需要同步的文件夹地址&quot;</span><br><span class="line">mklink /j &quot;H:\OneDriver\OneDrive - stu.suda.edu.cn\研究生\算法&quot; &quot;H:\算法&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="自建博客"><a href="#自建博客" class="headerlink" title="自建博客"></a>自建博客</h1><h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p><strong>利用Hexo在多台电脑上提交和更新github pages博客</strong></p>
+<p><a href="https://hexo.io/zh-cn/docs/configuration.html">https://hexo.io/zh-cn/docs/configuration.html</a></p>
+<p><a href="https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg">[https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg]{.ul}</a></p>
+<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程_Fangzh的技术博客-CSDN博客_hexo</a></p>
+<p><a href="https://www.jianshu.com/p/4bcf2848b3fc">[https://www.jianshu.com/p/4bcf2848b3fc]{.ul}</a></p>
+<p><strong>写文章</strong></p>
+<p><a href="https://blog.csdn.net/weixin_44815733/article/details/88786480">[https://blog.csdn.net/weixin_44815733/article/details/88786480]{.ul}</a></p>
+<h2 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h2><p><strong>有了docsify神器，从此爱上看文档</strong></p>
+<p><a href="https://www.jianshu.com/p/4883e95aa903">https://www.jianshu.com/p/4883e95aa903</a></p>
+<p><a href="https://docsify.js.org/#/zh-cn/">官方中文文档</a></p>
+<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="vscode插件"><a href="#vscode插件" class="headerlink" title="vscode插件"></a>vscode插件</h2><p><strong>1.markdown-all-in-one—-基础功能+快捷键。<br>2.markdown toc—生成目录<br>3.markdown+math–编辑公式<br>4.Markdown PDF–转为PDF和其他格式<br>5.Markdown Preview Enhanced—–所以这款是增强显示的。<br>6.Markdown Shortcuts—–解决复制表格的问题。</strong></p>
+<h2 id="markdown互转word"><a href="#markdown互转word" class="headerlink" title="markdown互转word"></a>markdown互转word</h2><h3 id="一键将-Word-转换为-Markdown"><a href="#一键将-Word-转换为-Markdown" class="headerlink" title="一键将 Word 转换为 Markdown"></a>一键将 Word 转换为 Markdown</h3><p><a href="https://www.jianshu.com/p/df6a136d06d8">https://www.jianshu.com/p/df6a136d06d8</a></p>
+<h3 id="Writage-Pandoc"><a href="#Writage-Pandoc" class="headerlink" title="Writage + Pandoc"></a>Writage + Pandoc</h3><ol>
+<li><p>下载并安装 Writage，下载地址：<a href="http://www.writage.com/">http://www.writage.com/</a></p>
+<p>打开 Writage网页，点击Download，再点击Download Now完成下载<br>运行安装程序，一般按照默认选项安装就好啦</p>
+</li>
+<li><p>安装后重启电脑，新建或打开任一 Word 文档，在 文件 菜单栏下选 另存为，查看 <strong>【保存类型】</strong> 中是否有 Markdown 格式。</p>
+</li>
+</ol>
+<blockquote>
+<p>如果插件安装成功，就会自动出现Markdown选项；否则，重新安装一遍吧~）</p>
+</blockquote>
+<h3 id="Word-to-Markdown-Converter在线转换"><a href="#Word-to-Markdown-Converter在线转换" class="headerlink" title="Word to Markdown Converter在线转换"></a>Word to Markdown Converter在线转换</h3><ol>
+<li><strong>设置word文档中的标准样式，如一级、二级标题，项目符号或编号等，如此才能与markdown的格式对应</strong></li>
+</ol>
+<p>（稍微有点繁琐的前期准备，如果文档一开始就是按照标准样式排版，就没有这个烦恼啦）</p>
+<p>设置</p>
+<ol>
+<li><p>打开网页Word to Markdown</p>
+<blockquote>
+<p>Converter：<a href="https://word-to-markdown.herokuapp.com/">https://word-to-markdown.herokuapp.com/</a></p>
+</blockquote>
+</li>
+<li><p>选择需要转换的Word文件,点击Convert</p>
+</li>
+<li><p>大功告成啦！<br>页面左边显示的是Markdown文档的内容，右边显示的是预览出来的样子</p>
+</li>
+</ol>
+<p><strong>但还需要进一步手动编辑整理完善表格</strong></p>
+<p>（如果，Word文档本身不包括表格，Word to Markdown<br>Converter使用体验可谓相当便捷稳妥啦！）</p>
+<p><strong>图片的下载与存储</strong></p>
+<p>除了标准格式设置与表格调整问题，<br><strong>图片的下载与存储</strong>也会是我们可能会遇到的问题</p>
+<ul>
+<li><p><strong>Markdown转换为Word</strong><br>在Markdown文档中，图片以网络超链接的形式保存,如果markdown文档中有这一类图片，那么需要在网络连接的情况下，才能正常输出有图片的word文档。否则，图片处显示空白</p>
+</li>
+<li><p><strong>Word转换为Markdown</strong><br>Word转换为Markdown文档之后，文档中的图片输出到本地文件夹下，将该文件夹与输出的Markdown文档在同一目录下，在Markdown文档中图片引用本地相对路径，也就是说，必须保证Markdown文档与存放图片的本地文件夹在一起，才能完整的在markdown编辑器中显示图片</p>
+</li>
+</ul>
+<h3 id="在线版word2markdown"><a href="#在线版word2markdown" class="headerlink" title="在线版word2markdown"></a>在线版word2markdown</h3><p><a href="https://word2md.com/">https://word2md.com/</a></p>
+<h3 id="Ulysses-mac支持-纯文本-Markdown2Word-，但付费"><a href="#Ulysses-mac支持-纯文本-Markdown2Word-，但付费" class="headerlink" title="Ulysses mac支持 纯文本 Markdown2Word ，但付费"></a>Ulysses mac支持 纯文本 Markdown2Word ，但付费</h3><p>目前只研究了Mac下的方案：</p>
+<ol>
+<li>word-to-markdown，google用word to</li>
+</ol>
+<p>markdown搜出来第一个，看来这个名字起得好。用这个的话得装个LibreOffice</p>
+<ol>
+<li><p>pandoc，这个就比较大名鼎鼎了</p>
+</li>
+<li><p>unoconv，介绍</p>
+</li>
+</ol>
+<p>链接：<a href="https://www.jianshu.com/p/b0be43b03015">https://www.jianshu.com/p/b0be43b03015</a></p>
+<h2 id="Markdown如何存放图片"><a href="#Markdown如何存放图片" class="headerlink" title="Markdown如何存放图片"></a>Markdown如何存放图片</h2><h3 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h3><p>配置</p>
+<ol>
+<li><p>申请七牛云做免费图床</p>
+<p><a href="https://www.zhihu.com/question/335783774/answer/756830851">https://www.zhihu.com/question/335783774/answer/756830851</a></p>
+</li>
+</ol>
+<p>存储空间名称markdown-source-of-bayes</p>
+<ol start="2">
+<li><p>配置插件</p>
+<p><a href="https://www.codingyang.com/2020/03/getQiniu.html#%E8%8E%B7%E5%8F%96%E5%AF%86%E9%92%A5">https://www.codingyang.com/2020/03/getQiniu.html#%E8%8E%B7%E5%8F%96%E5%AF%86%E9%92%A5</a></p>
+</li>
+</ol>
+<p>Sm_ms,picGo</p>
+<h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a>pandoc</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pandoc -s $infile -t markdown -o $outfile --extract-media&#x3D;$filename#导出图片到目录下</span><br></pre></td></tr></table></figure>
+
+<p>pandoc是文档转换利器。在将docx文档转为md文档过程中，如果直接输入<code>pandoc -o f.md f.docx</code>,会丢失word文档中的图片。输入<code>pandoc -o f.md f.docx ---extract-media=f </code>则不会丢失图片。</p>
+<p>pandoc语法<a href="https://www.jianshu.com/p/fd761fc43753">https://www.jianshu.com/p/fd761fc43753</a></p>
+<p><strong>示例</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">foo $ cat word2md.sh</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">infile=$1</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$infile</span></span></span><br><span class="line">filename=$(echo $infile | awk -F &#x27;.&#x27; &#x27;&#123;print $1&#125;&#x27;)</span><br><span class="line">outfile=$&#123;filename&#125;.md</span><br><span class="line">pandoc -s $infile -t markdown -o $outfile --extract-media=$filename</span><br><span class="line">echo &quot;convert success, $outfile &quot;</span><br><span class="line"></span><br><span class="line">foo $ bash ./word2md.sh mydoc.docx </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="draw-io"><a href="#draw-io" class="headerlink" title="draw.io"></a>draw.io</h3><p>draw.io 绘图可以导出成 HTML，而 markdown 是支持直接嵌入 HTML 的</p>
+<p>点击图形中的全屏按钮，再点击编辑，居然还可以直接修改原图的副本。厉害了！</p>
+<p>具体插入的方法是，打开 draw.io 导出的 HTML<br>文件，将其中的 <body> 中的内容复制出来即可（不包含<code> &lt;body&gt;</code>标签）。<strong>github不支持解析</strong></p>
+<h3 id="picGo-GitHub-上传图片"><a href="#picGo-GitHub-上传图片" class="headerlink" title="picGo+GitHub 上传图片"></a>picGo+GitHub 上传图片</h3><p>Typora批量上传图片</p>
+<p><a href="https://www.cnblogs.com/zenglintao/p/12876725.html">https://www.cnblogs.com/zenglintao/p/12876725.html</a></p>
+<p>图床配置</p>
+<p><a href="https://blog.csdn.net/qq_43367829/article/details/104882071">https://blog.csdn.net/qq_43367829/article/details/104882071</a></p>
+<p>注意 创建的GitHub图床默认分支为main,没有master分支，</p>
+<h1 id="开发养成"><a href="#开发养成" class="headerlink" title="开发养成"></a>开发养成</h1><p>编程中最难的事：如何优雅地为程序中的变量和函数命名<br>命名不一致解决思路：<br><a href="https://www.zhihu.com/question/395223359">https://www.zhihu.com/question/395223359</a><br><a href="https://www.douban.com/note/571297448/">https://www.douban.com/note/571297448/</a><br>(创建中间层，添加注解@)<br>工具<br><a href="https://graphql.org/%EF%BC%8CTypeScrip">https://graphql.org/，TypeScrip</a></p>
+<p>python – 解析一个.py文件,读取AST,修改它,然后回写修改后的源代码<a href="http://www.voidcn.com/article/p-mvtnzhha-bsk.html">http://www.voidcn.com/article/p-mvtnzhha-bsk.html</a></p>
+<p>统一纠正变量名<br>读取各项目ast，对每个变量计算编辑距离，编辑距离为0~len(word) 为一类<br>批量更正变量并写回去</p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><p><a href="https://www.nbmao.com/archives/4463">2021年最新Clash For Windows 详细使用教程 - 笨猫博客 (nbmao.com)</a></p>
+<p><a href="https://hello-shudong.com/auth/login">登录 — GW树洞 (hello-shudong.com)</a> ：邀请码<code>gayP</code></p>
+<p><strong>为git设置代理</strong></p>
+<blockquote>
+<p>设置后加速git clone等命令执行速度，解决Timeout问题。</p>
+<p>此处使用clash for window 设置代理，其端口为7890</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">http代理</span></span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">https代理</span></span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">查看代理</span></span><br><span class="line">git config -l</span><br><span class="line"><span class="meta">#</span><span class="bash">取消http代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> http.proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">取消https代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> https.proxy</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="电脑维护"><a href="#电脑维护" class="headerlink" title="电脑维护"></a>电脑维护</h2><ul>
+<li>CCleaner</li>
+<li>SpaceSniffer</li>
+<li>Geek</li>
+<li>Snipaste</li>
+</ul>
+<h2 id="数据标注"><a href="#数据标注" class="headerlink" title="数据标注"></a>数据标注</h2><ol>
+<li>labelImg</li>
+</ol>
+<p><a href="https://github.com/tzutalin/labelImg">https://github.com/tzutalin/labelImg</a></p>
+<p>使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1.环境配置</span></span><br><span class="line">brew install qt  # Install qt-5.x.x by Homebrew</span><br><span class="line">brew install libxml2</span><br><span class="line"><span class="meta">#</span><span class="bash">or using pip</span></span><br><span class="line">pip3 install pyqt5 lxml # Install qt and lxml by pip</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.配置labelimg</span></span><br><span class="line">git clone https://hub.fastgit.org/tzutalin/labelImg.git</span><br><span class="line">cd labelImg</span><br><span class="line">make qt5py3</span><br><span class="line">python3 labelImg.py</span><br><span class="line">python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="2">
+<li><strong>Yolo_mark</strong></li>
+</ol>
+<p><strong>Windows</strong>和<strong>Linux</strong> GUI，用于在图像中标记对象的边界框，以训练Yolo v3和v2</p>
+<p><a href="https://github.com/AlexeyAB/Yolo_mark">https://github.com/AlexeyAB/Yolo_mark</a></p>
+<p>其他</p>
+<p>深度学习图像标注工具汇总</p>
+<p><a href="https://blog.csdn.net/chaipp0607/article/details/79036312">https://blog.csdn.net/chaipp0607/article/details/79036312</a></p>
+<p>浏览器 PDF 预览及打印（效果很棒）</p>
+<p><a href="https://www.printfriendly.com/">https://www.printfriendly.com/</a></p>
+<p>Send Anywhere</p>
+<p>Send Anywhere官方版是款支持多种平台的文件传输共享工具。</p>
+<p>Send Anywhere最新版主打网络传输文件，支持安卓、iOS、windows、macOS、Linux以及Windows Phon。Send Anywhere几乎能可以将你所有的电子设备全部打通!你甚至在电脑上无需安装任何APP，直接通过Chrome、Firefox、Safari或IE浏览器即可与手机收发文件。</p>
+<p>1、bandzip（解压 window）<br>2、ditto（复制剪贴板window）<br>3、shareX（截图window）</p>
+<p><a href="https://getsharex.com/">https://getsharex.com/</a></p>
+<p>4、everthing（找文件）<br>5、uTools（百宝箱）<br>6、IDM（下载）<br>7、RST（硬盘优化）<br>8、VS Code（编辑器）<br>9、天翼云盘（网盘）<br>10、chrome（浏览器）<br>11、quicker（鼠标党助手 window,chrome插件）</p>
+<p><a href="https://getquicker.net/Download">https://getquicker.net/Download</a></p>
+<p>FilePane for Mac 是一款轻量级，多功能的文件快速复制粘贴工具，功能上同之前分享过的 <a href="https://www.macsky.net/22701.html">PopClip</a> 类似，可用于快速管理文件。它适用于系统中任何应用程序的几乎任何可选择和可拖动内容，并根据您提供的数据建议各种快速操作。您可以轻松复制/移动/创建文件和文件夹，编辑/共享/转换图像等等。</p>
+<p>Chrome插件</p>
+<p>① 百度药丸</p>
+<p>使用更纯净的百度 1.屏蔽百度广告推广 2.阻止百度追踪 3.支持居中显示治愈偏头痛</p>
+<p>②onetab</p>
+<p>能把所有打开的网页/标签页一键「全部关闭」并「保存成列表」，你随后可以一个个 (或一次性全部) 恢复它们。这样不仅变相实现了释放和回收浏览器占用的内存、解决 CPU 资源占用问题、让系统和浏览器的速度恢复正常，而且还能将打开的网页全部保存下来备用。</p>
+<p><strong>Session Buddy</strong>插件功能介绍</p>
+<p>很多人应该都知道，Chrome 虽然也有内置的Session Manager，但是功能什么的简单。Session Buddy 扩展提供的功能为暂存标签，会自动记录已经关闭的标签，当然你可以手动点击保存，下次需要时调用。至于节省内存开销，这事还是交给 Google 来做吧。</p>
+<p>当然具有类似功能的插件，我们网站之前也有介绍过一些：</p>
+<blockquote>
+<p>2.<a href="http://www.cnplugins.com/fuzhu/tab-hibernation/">TAb Hibernation</a>:可以将我们目前未使用到的网页进入休眠，让这些分页暂时不占用内存，但我们需要使用时，按一下就可以唤醒，解决内存不足的问题.<br>3.<a href="http://www.cnplugins.com/office/the-great-suspender/">The Great Suspender</a>:可以让你把不需要的标签进入睡眠模式以节省内存，保证流畅的浏览体验。不同于其他类似扩展，The Great Suspender 提供两种休眠方式： 手动休眠、或者一段时间不使用自动休眠。扩展还支持白名单，无论自动休眠还是手动休眠，白名单中的网站是不会休眠的.</p>
+</blockquote>
+<p>③喵喵折</p>
+<p>购物助手</p>
+<p>④搜图助手</p>
+<p>奇妙加速器，免费<a href="https://www.qimiao.com/">https://www.qimiao.com/</a></p>
+<p>网页版文件快传</p>
+<p><a href="https://snapdrop.net/">https://snapdrop.net/</a></p>
+<p>快传 ：Feem和AirDroid</p>
+<p><strong>Linux远程拷贝工具(WinSCP)</strong></p>
+<p><a href="https://blog.csdn.net/dengjin20104042056/article/details/97378487">https://blog.csdn.net/dengjin20104042056/article/details/97378487</a></p>
+<h2 id="论文工具"><a href="#论文工具" class="headerlink" title="论文工具"></a>论文工具</h2><p>LaTeX新手入门以及TeXlive和TeXstudio的安装使用<a href="https://blog.csdn.net/zywhehe/article/details/83113214">https://blog.csdn.net/zywhehe/article/details/83113214</a><br>TeX Live 下载及安装说明(mac 和window)<br><a href="https://www.latexstudio.net/archives/10208.html">https://www.latexstudio.net/archives/10208.html</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/">https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/</a></p>
+<p>VS Code + LaTeX<br><a href="https://zhuanlan.zhihu.com/p/144729565">https://zhuanlan.zhihu.com/p/144729565</a></p>
+<p>一般来讲，LaTeX装好后默认的编译方式是pdflatex，但是这种方式不能编译中文源码。对于中文源码，采用的是xelatex的编译方式。对于编译中文文档有两种方式，第一种：在中文源文件首行添加：% !TEX program = xelatex，如果有参考文献，可以再添加% !BIB options = “%DOCFILE%”。显然，这个操作不够智能，因此，我们第一步是，添加xelatex的编译方式(2.3节)。</p>
+<p><a href="https://blog.csdn.net/wdkirchhoff/article/details/41707157">AUCTeX+Emacs 是目前我见过的能最大限度提高 LaTeX 编辑效率的编辑器 （转）_芝兰生于深谷，不以无人而不芳-CSDN博客</a></p>
+<p>Mendeley－一款免费好用的文献管理软件<br><a href="https://zhuanlan.zhihu.com/p/28762628">https://zhuanlan.zhihu.com/p/28762628</a><br>自动插入参考文献，史上最简Endnote教程！！#论文写作+Endnote X8安装文件<a href="http://www.xszydq.com/17326.html">http://www.xszydq.com/17326.html</a></p>
+<p>翻译狗：<a href="https://www.fanyigou.com/trans/login.html?code=6ZH3PQVY0F">登录-Word翻译,Pdf翻译,文献论文翻译-翻译狗 (fanyigou.com)</a></p>
+<h3 id="论文查询"><a href="#论文查询" class="headerlink" title="论文查询"></a>论文查询</h3><ol>
+<li>**<a href="https://link.zhihu.com/?target=https://scholar.google.com.hk/?hl=zh-CN">谷歌学术</a>**：谷歌大概是最友好的一个平台了，尤其是在国外的校内网中使用谷歌学术。</li>
+<li>**<a href="https://link.zhihu.com/?target=https://xueshu.baidu.com/">百度学术</a>**：这大概是百度产品中，算是非常良心的一个了，不能用谷歌的话，百度顶上吧。</li>
+<li>**<a href="https://link.zhihu.com/?target=http://www.cnki.net/">中国知网</a>**：知网是国内比较不错的平台，可在境外的话，会遇到IP限制，大概是超过国内许可范围了。</li>
+<li>**<a href="https://zhuanlan.zhihu.com/p/24299207">Sci-Hub</a>**：这个比较有趣，大家可以配合知网来使用，从知网搜寻论文，然后在Sci-Hub中下载。但你懂的，Sci-Hub的地址经常变动，所以需要的时候直接用搜索引擎吧。</li>
+<li>**<a href="https://link.zhihu.com/?target=https://lunwen.im/">喵咪论文 - 简单自由的论文下载平台</a>**：亲自试了一下，使用起来还是很方便的，但是随手测试了一下，论文查找到的概率也不是太大。</li>
+<li><a href="https://link.zhihu.com/?target=http://www.ncpssd.org/index.aspx">国家哲学社会科学文献中心</a>: 如果是中文的论文，那用这个查看也还行，主要是界面比知网要人性化一些。</li>
+<li><a href="https://papers.labml.ai/papers/monthly/">https://papers.labml.ai/papers/monthly/</a></li>
+<li><a href="https://scholar.google.com.hk/schhp?hl=zh-CN">Google 学术搜索</a></li>
+<li><a href="http://www.4243.net/">大木虫学术导航 (4243.net)</a>：<font color=red>功能极其强悍</font></li>
+</ol>
+<p>另外就是一些不错的期刊：</p>
+<ol>
+<li><strong><a href="https://link.zhihu.com/?target=https://www.sciencemag.org">Science官网</a></strong></li>
+<li><strong><a href="https://link.zhihu.com/?target=https://www.sciencemag.org">Science | AAAS</a></strong></li>
+</ol>
+<h3 id="论文撰写"><a href="#论文撰写" class="headerlink" title="论文撰写"></a>论文撰写</h3><p>officeTab：模仿WPS多个文章同时显示</p>
+<p>word小恐龙： <a href="http://gw.xkonglong.com/">http://gw.xkonglong.com/</a></p>
+<p>word精灵</p>
+<p>grammarly ：语法纠正</p>
+<p><a href="https://aimwriting.mtutor.engkoo.com/editor">微软爱写作</a>：在线写作，提供逻辑连接词例子，可批改评分</p>
+<p><a href="https://quillbot.com/">Paraphrasing Tool | QuillBot AI</a>：句子重构，降低查重</p>
+<p><a href="https://www.phrasebank.manchester.ac.uk/">Academic Phrasebank | The University of Manchester</a>：论文例句</p>
+<p><a href="https://www.bigan.net/check/">论文查重软件_论文检测软件_笔杆网 (bigan.net)</a></p>
+<p><a href="https://www.xiegelunwen.com/#/zhllc">写个论文 - 论文降重神器，写论文更简单 (xiegelunwen.com)</a></p>
+<h3 id="论文管理"><a href="#论文管理" class="headerlink" title="论文管理"></a>论文管理</h3><p><strong>Readcube</strong>：这是一个付费的管理软件，这里有一篇介绍Readcube的文章，<a href="https://link.zhihu.com/?target=https://www.jianshu.com/p/6bf14803dc99">高效率科研神器——驾驭文献洪流</a>，有需要可以继续了解一下。</p>
+<p>EndNote 是SCI（Thomson Scientific 公司）的官方软件，自身具有强大的功能，<strong>是一款集文献检索、文摘及全文管理、文献共享等功能于一身的老牌软件</strong></p>
+<p>Citavi有<strong>全功能免费版（支持每个项目插入不多于100篇文献）</strong>，具有<strong>强大的参考文献编辑功能，</strong>可以从各个方面实现对参考文献的编辑需求。</p>
+<p>Citavi很大一个特点是<strong>支持PDF阅读功能，且可以支持多种批注格式</strong></p>
+<p>Mendeley是一款Elsevier公司旗下的<strong>免费文献管理软件，</strong>所有人都可以在Mendeley上搜索到世界各地的学术文献，这些学术文件都是由用户自己上传到Mendeley“library”进行编辑管理，<strong>这款软件拥有整理组织文献、PDF标记和文件分享、网络备份的强大功能。</strong>（其余工具见<a href="https://zhuanlan.zhihu.com/p/105066833">研究生必备文献整理工具 - 知乎 (zhihu.com)</a>）</p>
+<p>noteexpress：对中文支持更全面，但对英文文献不太靠谱</p>
+<p>Zotero：最大特点是浏览器的抓取功能异常强大。</p>
+<p><strong>总结：首推citavi</strong></p>
+<h3 id="开题相关工具"><a href="#开题相关工具" class="headerlink" title="开题相关工具"></a>开题相关工具</h3><p>如果要快速了解某个领域，那需要大量阅读该领域的相关文献，才能了解到以下：</p>
+<ol>
+<li>这个领域的研究热点、主要研究内容、权威的学者等</li>
+<li>研究存在的不足</li>
+<li>对自己而言，该从哪个领域进行切入才有研究意义等</li>
+</ol>
+<p>这里我直接根据知乎的回答来推荐工具：</p>
+<p>**<a href="https://link.zhihu.com/?target=http://cluster.ischool.drexel.edu/~cchen/citespace/download/">CiteSpace</a>**：这是一个可视化软件，可以将下载的论文进行CiteSpace分析，让你能够尽快地了解领域的发展情况。</p>
+<p>**<a href="https://zhuanlan.zhihu.com/p/20902898">Histcite</a>**：这是一款非常强大的引文分析工具，可以快速绘制出某个研究领域的发展脉络，快速锁定某个研究方向的重要文献和学术大牛，还可以找到某些具有开创性成果的无指定关键词的论文。</p>
+<p>**<a href="https://link.zhihu.com/?target=http://xueshu.baidu.com/u/biye?fr=kaiti301">百度开题</a>**：这里必须隆重介绍一下这个百度开题，其使用简单，效果也比较炫酷，是开题不可多得的工具。</p>
+<h3 id="英文文献翻译"><a href="#英文文献翻译" class="headerlink" title="英文文献翻译"></a>英文文献翻译</h3><p>这里要推荐一个网站，叫tongtianta.site，<a href="https://link.zhihu.com/?target=http://www.tongtianta.site/">网站</a>功能很简单： 对论文进行翻译，中英文对照阅读</p>
+<p><a href="https://www.deepl.com/translator">DeepL翻译：全世界最准确的翻译</a></p>
+<h2 id="中国计算机学会推荐国际学术期刊"><a href="#中国计算机学会推荐国际学术期刊" class="headerlink" title="中国计算机学会推荐国际学术期刊"></a>中国计算机学会推荐国际学术期刊</h2><p><strong>(**数据库</strong>/<strong>数据挖掘</strong>/<strong>内容检索</strong>)**</p>
+<p>一、<strong>A</strong> 类 </p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>刊物简称</th>
+<th>刊物全称</th>
+<th>出版社</th>
+<th>网址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>TODS</td>
+<td>ACM  Transactions on Database Systems</td>
+<td>ACM</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/tods/">http://dblp.uni-trier.de/db/journals/tods/</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>TOIS</td>
+<td>ACM  Transactions on Information Systems</td>
+<td>ACM</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/tois/">http://dblp.uni-trier.de/db/journals/tois/</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>TKDE</td>
+<td>IEEE  Transactions on Knowledge and Data Engineering</td>
+<td>IEEE</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/tkde/">http://dblp.uni-trier.de/db/journals/tkde/</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>VLDBJ</td>
+<td>The  VLDB Journal</td>
+<td>Springer</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/vldb/">http://dblp.uni-trier.de/db/journals/vldb/</a></td>
+</tr>
+</tbody></table>
+<p><a href="https://icde2021.gr/accepted-papers/">https://icde2021.gr/accepted-papers/</a><br><a href="http://vldb.org/pvldb/vol14-volume-info/">http://vldb.org/pvldb/vol14-volume-info/</a></p>
+<p><a href="https://kdd.org/kdd2021/accepted-papers/index">https://kdd.org/kdd2021/accepted-papers/index</a><br><a href="https://sigir.org/sigir2021/accepted-papers/">https://sigir.org/sigir2021/accepted-papers/</a></p>
+<p>二、<strong>B</strong> 类 </p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>刊物简称</th>
+<th>刊物全称</th>
+<th>出版社</th>
+<th>网址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>TKDD</td>
+<td>ACM  Transactions on Knowledge   Discovery  from Data</td>
+<td>ACM</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/tkdd/">http://dblp.uni-trier.de/db/journals/tkdd/</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>TWEB</td>
+<td>ACM  Transactions on the Web</td>
+<td>ACM</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/tweb/">http://dblp.uni-trier.de/db/journals/tweb/</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>AEI</td>
+<td>Advanced  Engineering Informatics</td>
+<td>Elsevier</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/aei/">http://dblp.uni-trier.de/db/journals/aei/</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>DKE</td>
+<td>Data  and Knowledge Engineering</td>
+<td>Elsevier</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/dke/">http://dblp.uni-trier.de/db/journals/dke/</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>DMKD</td>
+<td>Data Mining and Knowledge Discovery</td>
+<td>Springer</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/datamine/">http://dblp.uni-trier.de/db/journals/datamine/</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>EJIS</td>
+<td>European  Journal of Information   Systems</td>
+<td>Springer</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/ejis/">http://dblp.uni-trier.de/db/journals/ejis/</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td></td>
+<td>GeoInformatica</td>
+<td>Springer</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/geoinformatica/">http://dblp.uni-trier.de/db/journals/geoinformatica/</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>IPM</td>
+<td>Information  Processing and Management</td>
+<td>Elsevier</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/ipm/">http://dblp.uni-trier.de/db/journals/ipm/</a></td>
+</tr>
+<tr>
+<td>9</td>
+<td></td>
+<td>Information  Sciences</td>
+<td>Elsevier</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/isci/">http://dblp.uni-trier.de/db/journals/isci/</a></td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="http://www.dimva.org/">IS</a><a href="http://www.dimva.org/"> </a></td>
+<td>Information  Systems</td>
+<td><a href="http://www.gi-fg-sidar.de/">Elsevier</a><a href="http://www.gi-fg-sidar.de/"> </a></td>
+<td><a href="http://dblp.uni-trier.de/db/journals/is/">http://dblp.uni-trier.de/db/journals/is/</a></td>
+</tr>
+<tr>
+<td>11</td>
+<td>JASIST</td>
+<td>Journal  of the American Society for Information Science and Technology</td>
+<td>American  Society for   Information  Science and Technology</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/jasis/">http://dblp.uni-trier.de/db/journals/jasis/</a></td>
+</tr>
+<tr>
+<td>12</td>
+<td>JWS</td>
+<td>Journal  of Web Semantics</td>
+<td>Elsevier</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/ws/">http://dblp.uni-trier.de/db/journals/ws/</a></td>
+</tr>
+<tr>
+<td>13</td>
+<td>KAIS</td>
+<td>Knowledge  and Information Systems</td>
+<td>Springer</td>
+<td><a href="http://dblp.uni-trier.de/db/journals/kais/">http://dblp.uni-trier.de/db/journals/kais/</a></td>
+</tr>
+</tbody></table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://www.zhihu.com/question/22867411">https://www.zhihu.com/question/22867411</a></p>
+<ul>
+<li><p>Dash</p>
+<p>官网地址 ：<a href="https://kapeli.com/dash">https://kapeli.com/dash</a><br>Dash for mac是使用与Mac OS平台的软件编程文档管理工具，可以浏览API文档，以及管理代码片段工具。Dash自带了丰富的API文档，涉及各种主流的编程语言和框架。（190元）</p>
+</li>
+<li><p>mathpix</p>
+<p><a href="https://mathpix.com/">https://mathpix.com/</a></p>
+<p>图片转LaTeX公式，适用于Markdown,word等文档</p>
+</li>
+<li><p>tmux/tmuxp。比screen好用，可以用来分屏，托管进程等，服务器端必备神器，ubuntu下基本就不用使用terminator之类的分屏工具了。最近看youtube视频还发现有人在服务器上使用tmux和vim结对编程，两个人同时attach到一个session里，基情四射。</p>
+</li>
+<li><p>wemux: tmux 共享，<a href="https://link.zhihu.com/?target=https://github.com/zolrath/wemux">https://github.com/zolrath/wemux</a></p>
+</li>
+<li><p>sshfs: 本地挂在服务器文件夹</p>
+</li>
+<li><p>tmate: <a href="https://link.zhihu.com/?target=https://tmate.io/">https://tmate.io</a> 终端共享工具，结对编程。很多现代化编辑器 vscode, atom 提供结对编程的插件。</p>
+</li>
+<li><p>asciinema: 终端会话记录工具。<a href="https://link.zhihu.com/?target=https://asciinema.org/">https://asciinema.org/</a></p>
+</li>
+<li><p>oh-my-zsh。替代原生的bash shell，提供了好多方便的特性和漂亮主题，支持插件。linux/mac下vim+tmux+zsh简直是绝配，甚至可以直接在服务器上方便地撸代码，跟本地开发体验没区别。</p>
+</li>
+<li><p>item2(mac)。替代原生的终端。<a href="https://link.zhihu.com/?target=https://medium.com/@RyanDavidson/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c">https://medium.com/@RyanDavidson/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c</a></p>
+</li>
+<li><p>brew(mac)。类似ubuntu下的apt-get，可以方便安转各种软件和工具。</p>
+</li>
+<li><p>Alfred(mac): mac 下一款功能强大的工具，不过我一般只用它快速打开软件。可以用 python 编写一些自己的 workflow 提高效率(<a href="https://link.zhihu.com/?target=https://github.com/deanishe/alfred-workflow">https://github.com/deanishe/alfred-workflow</a>)，比如把时间戳转成日期等。 <a href="https://link.zhihu.com/?target=https://github.com/derimagia/awesome-alfred-workflows">https://github.com/derimagia/awesome-alfred-workflows</a></p>
+</li>
+<li><p>Dash(mac,全英): 强悍的文档查询工具。支持非常多编程语言和框架</p>
+</li>
+<li><p>devdocs.io: 文档查询工具</p>
+</li>
+<li><p>Zeal——好用的离线 API 文档大全！(支持window，Linux，<a href="https://www.cnblogs.com/souldee/p/9523497.html%EF%BC%8Cfeed%EF%BC%9A[Zeal">https://www.cnblogs.com/souldee/p/9523497.html，feed：[Zeal</a> User Contributions &amp; Cheat Sheets](<a href="https://zealusercontributions.vercel.app/">https://zealusercontributions.vercel.app/</a>))</p>
+</li>
+<li><p>Karabiner-Elements(mac): 改键工具 <a href="https://link.zhihu.com/?target=https://github.com/tekezo/Karabiner-Elements">https://github.com/tekezo/Karabiner-Elements</a></p>
+</li>
+<li><p>autojump。方便在命令行里来回跳转目录。</p>
+</li>
+<li><p>gitx(mac):方便查看代码提交历史，便于了解整个代码仓库是怎样一步步构建的。<a href="https://link.zhihu.com/?target=http://gitx.frim.nl/user_manual.html">http://gitx.frim.nl/user_manual.html</a></p>
+</li>
+<li><p>tig: text-mode interface for git. 喜欢命令行的可以尝试下。 <a href="https://link.zhihu.com/?target=https://github.com/jonas/tig">https://github.com/jonas/tig</a></p>
+</li>
+<li><p>tldr: 更好的man手册</p>
+</li>
+<li><p>YouCompleteMe: vim 代码补全<a href="https://blog.csdn.net/weixin_44638957/article/details/91985270">https://blog.csdn.net/weixin_44638957/article/details/91985270</a></p>
+</li>
+<li><p>EditorConfig: <a href="https://link.zhihu.com/?target=http://editorconfig.org/">http://editorconfig.org/</a> 用来统一编辑器配置。如果成员用不同的操作系统和编辑器，建议使用。尤其是对于 python 这种使用缩进的语言</p>
+</li>
+<li><p>mac-setup: <a href="https://link.zhihu.com/?target=https://github.com/sb2nov/mac-setup">https://github.com/sb2nov/mac-setup</a> mac 下各种编程语言开发环境配置指引</p>
+</li>
+<li><p>pdf2go网址：<a href="https://www.pdf2go.com/zh">https://www.pdf2go.com/zh</a> 免费PDF工具</p>
+</li>
+<li><p>ilovePDF网址：<a href="https://www.ilovepdf.com/zh-cn">https://www.ilovepdf.com/zh-cn</a> 免费PDF工具</p>
+</li>
+<li><p>temp-mail网址：<a href="https://temp-mail.org/">https://temp-mail.org/</a> 临时邮箱，避免垃圾广告</p>
+</li>
+<li><p><a href="https://github.com/jlevy/the-art-of-command-line">jlevy/the-art-of-command-line: Master the command line, in one page (github.com)</a></p>
+</li>
+</ul>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="课程-amp-资料"><a href="#课程-amp-资料" class="headerlink" title="课程&amp;资料"></a>课程&amp;资料</h2><p>【链接】最值得看的十大机器学习公开课<br><a href="https://blog.csdn.net/yushupan/article/details/78582630">https://blog.csdn.net/yushupan/article/details/78582630</a></p>
+<p>【链接】计算机视觉有哪些比较好的公开课？补充计<br><a href="https://www.zhihu.com/question/35831904">https://www.zhihu.com/question/35831904</a></p>
+<p>机器学习与生成对抗网络<a href="https://my.oschina.net/u/4579551/blog/4350931">https://my.oschina.net/u/4579551/blog/4350931</a></p>
+<p>分类机器学习中，某一标签占比太大（标签稀疏），如何学习？<a href="https://my.oschina.net/u/4579551/blog/4750226">https://my.oschina.net/u/4579551/blog/4750226</a></p>
+<p>使用深度学习的图像分类-Koko.PDF<br><a href="https://max.book118.com/html/2018/1016/7123041051001153.shtm">https://max.book118.com/html/2018/1016/7123041051001153.shtm</a></p>
+<p>pandas官方中文文档-草鸡详细！！！！<a href="https://www.pypandas.cn/deep/basics/image_classification.html#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D">https://www.pypandas.cn/deep/basics/image_classification.html#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D</a></p>
+<p>汇总】CV 图像分类常见的 36 个模型<br><a href="https://my.oschina.net/u/4579551/blog/4701954">https://my.oschina.net/u/4579551/blog/4701954</a></p>
+<p>超详细！！！<br><a href="http://www.feiguyunai.com/">http://www.feiguyunai.com/</a></p>
+<p>Jupyter Notebook介绍、安装及使用教程<br><a href="https://www.jianshu.com/p/91365f343585">https://www.jianshu.com/p/91365f343585</a><br><a href="https://blog.csdn.net/u013709332/article/details/105029123/">https://blog.csdn.net/u013709332/article/details/105029123/</a></p>
+<p>Python深度学习 基于TensorFlow 在线版<br><a href="http://www.feiguyunai.com/index.php/2018/05/26/python-ml-tf-01/">http://www.feiguyunai.com/index.php/2018/05/26/python-ml-tf-01/</a></p>
+<p>机器学习 几百篇文章<br><a href="https://blog.csdn.net/GarfieldEr007/category_5619819.html">https://blog.csdn.net/GarfieldEr007/category_5619819.html</a></p>
+<p>零基础学习-深度学习核心-梯度下降与最优化<br><a href="http://www.feiguyunai.com/index.php/2017/11/08/pythonai-dl-grade01/">http://www.feiguyunai.com/index.php/2017/11/08/pythonai-dl-grade01/</a></p>
+<p>给大家再分享几个好用的知识文章检索工具哦：[OK]<br>1、<a href="https://www.cn-ki.net/">https://www.cn-ki.net/</a> 仿知网<br>2、<a href="https://www.jiumodiary.com/">https://www.jiumodiary.com/</a> 鸠摩搜索</p>
+<p>实在不行就用这个狗屁不通文章生成器[doge]<br><a href="https://suulnnka.github.io/BullshitGenerator/index.html">https://suulnnka.github.io/BullshitGenerator/index.html</a></p>
+<p><strong>神经网络与深度学习</strong></p>
+<p><a href="https://nndl.github.io/">https://nndl.github.io/</a></p>
+<h1 id="C-入门教程"><a href="#C-入门教程" class="headerlink" title="C++入门教程"></a>C++入门教程</h1><p><a href="http://www.weixueyuan.net/cpp/rumen//e">http://www.weixueyuan.net/cpp/rumen//e</a></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git教程</title>
     <url>/2021/11/15/git/</url>
     <content><![CDATA[<h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="git命令交互式学习"><a href="#git命令交互式学习" class="headerlink" title="git命令交互式学习"></a>git命令交互式学习</h2><p><a href="https://www.liaoxuefeng.com/wiki/896043488029600">https://www.liaoxuefeng.com/wiki/896043488029600</a></p>
@@ -846,7 +1340,7 @@
 <p>参数说明：</p>
 <ul>
 <li>$REPO_DIR 表示需要处理的Git仓库本地目录</li>
-<li><a href="mailto:&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#103;&#x69;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:xxxx/$REPO_DIR.git 表示远程仓库地址</li>
+<li><a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#104;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>:xxxx/$REPO_DIR.git 表示远程仓库地址</li>
 </ul>
 <p>则可以按照如下步骤处理：</p>
 <h4 id="进入本地仓库，删除-git目录"><a href="#进入本地仓库，删除-git目录" class="headerlink" title="进入本地仓库，删除.git目录"></a>进入本地仓库，删除.git目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$REPO_DIR</span></span><br><span class="line">rm -rf .git</span><br></pre></td></tr></table></figure>
@@ -1364,7 +1858,7 @@
 </li>
 <li><p>git commit -m “first commit”</p>
 </li>
-<li><p>git remote add origin <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#109;</a>:JasonDu1993/learngit.git</p>
+<li><p>git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;</a>:JasonDu1993/learngit.git</p>
 </li>
 <li><p>关联远程库，相当于让origin等于后面这串地址</p>
 </li>
@@ -1386,7 +1880,7 @@
 <p>一般master分支和dev分支都会推到远程</p>
 <p><strong>第二种情况：远程仓库有内容，直接克隆到本地</strong></p>
 <ol>
-<li><p>git clone <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:JasonDu1993/gitskills.git</p>
+<li><p>git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:JasonDu1993/gitskills.git</p>
 </li>
 <li><p>git branch -a 查看本地分支和远程分支</p>
 </li>
@@ -1578,500 +2072,6 @@
 ]]></content>
       <categories>
         <category>git</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工具合集</title>
-    <url>/2021/10/28/tool/</url>
-    <content><![CDATA[<h1 id="Window-终端配置"><a href="#Window-终端配置" class="headerlink" title="Window 终端配置"></a>Window 终端配置</h1><p>相关软件快捷安装脚本 及 Fira字体：<a href="./download/install.zip">点击下载</a></p>
-<h2 id="Scoop配置"><a href="#Scoop配置" class="headerlink" title="Scoop配置"></a>Scoop配置</h2><p>Scoop的定位主要是“开源、命令行的开发者工具”</p>
-<p><a href="https://blog.csdn.net/luoyooi/article/details/102990113">Windows下Scoop安装、配置与使用_luoyooi的博客-CSDN博客_scoop</a></p>
-<p><strong>安装</strong></p>
-<p>在PowerShell中运行以下命令，将scoop安装到其默认位置(<code>C:\Users\&lt;user&gt;\scoop</code>)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Invoke-Expression (New-Object</span><br><span class="line">System.Net.WebClient).DownloadString(&#39;https:&#x2F;&#x2F;get.scoop.sh&#39;)</span><br><span class="line">#或者</span><br><span class="line">iwr -useb get.scoop.sh | iex</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，输入<code>scoop help</code>验证是否成功（常见的命令可以通过此方法来查看）。</p>
-<p>用户安装的程序和scoop本身位于C:Users&lt;user&gt;scoop。全局安装的程序（–global）位于C:\ProgramData\scoop。可以通过环境变量更改这些设置。具体步骤如下：</p>
-<p><strong>将Scoop安装到自定义目录(命令行方式)</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP&#x3D;&#39;D:Applications\Scoop&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP&#39;, $env:SCOOP,&#39;User&#39;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>将Scoop配置为将全局程序安装到自定义目录 SCOOP_GLOBAL(命令行方式)</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$env:SCOOP_GLOBAL&#x3D;&#39;F:\GlobalScoopApps&#39;</span><br><span class="line"></span><br><span class="line">[Environment]::SetEnvironmentVariable(&#39;SCOOP_GLOBAL&#39;,</span><br><span class="line">$env:SCOOP_GLOBAL, &#39;Machine&#39;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>上面两句运行的结果(环境变量)</strong></p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/media/2020/12/05/17-38-45-69d072a8079102da338071daa6fa4c10-image55-d2410c.png" alt="在这里插入图片描述">{width=”5.768055555555556in”<br>height=”4.741666666666666in”}<br>如果不想运行命令行，直接添加环境变量也可。设置完安装位置后，建议将默认目录下的所有文件复制到新目录（<strong>不是剪切！！</strong>）</p>
-<p>参考链接：</p>
-<ul>
-<li><p><a href="https://www.jianshu.com/p/50993df76b1c">scoop——强大的Windows命令行包管理工具 - 简书(jianshu.com)</a></p>
-</li>
-<li><p>配色 如何保存更改 ：<a href="https://blog.csdn.net/cum44153/article/details/109043040">zsh自定义命令提示符_如何使用Microsoft的ColorTool自定义命令提示符的配色方案_cum44153的博客-CSDN博客</a></p>
-</li>
-</ul>
-<ul>
-<li><a href="https://www.jianshu.com/p/4b2b7074d9e2">像MAC一样使用win10的Terminal - 简书(jianshu.com)</a></li>
-<li><a href="https://blog.csdn.net/weixin_43455581/article/details/105565970">使用Oh-My-Posh美化FluentTerminal_罗伯特祥的博客-CSDN博客</a></li>
-</ul>
-<blockquote>
-<p> 如果遇到<strong>powershell乱码</strong>,  可以更改字体(如Fira Code Retina)</p>
-<p>或者<a href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3及oh-my-zsh提示prompt出现乱码的原因及使用Nerd字体的解决方法_yihuajack的博客-CSDN博客</a></p>
-</blockquote>
-<h2 id="scoop下工具安装"><a href="#scoop下工具安装" class="headerlink" title="scoop下工具安装"></a>scoop下工具安装</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>若下载不了，则开启VPN</p>
-</blockquote>
-<h2 id="配置右键菜单栏"><a href="#配置右键菜单栏" class="headerlink" title="配置右键菜单栏"></a>配置右键菜单栏</h2><p>HKEY_CLASSES_ROOT\Directory\Background\shell新建PowershellMenu</p>
-<p>空白处右键菜单</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellMenu]</span><br><span class="line">@&#x3D;&quot;Open PowerShell Here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\PowershellMenu\command]</span><br><span class="line">@&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -NoExit -Command Set-Location -LiteralPath &#39;%v&#39;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>HKEY_CLASSES_ROOT\Directory\shell新建PowershellMenu</p>
-<p>文件夹右键菜单</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu]</span><br><span class="line">@&#x3D;&quot;Open PowerShell Here&quot;</span><br><span class="line">&quot;Icon&quot;&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe&quot;</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\shell\PowershellMenu\command]</span><br><span class="line">@&#x3D;&quot;C:\\\\Windows\\\\SysWOW64\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe -NoExit -Command Set-Location -LiteralPath &#39;%L&#39;&quot;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Chocolatey配置"><a href="#Chocolatey配置" class="headerlink" title="Chocolatey配置"></a>Chocolatey配置</h2><p>Chocolatey依赖于Windows PowerShell及其NuGet包管理器系统，该系统主要用于解决软件库依赖关系。常用来管理window桌面端应用，如googlechrome,QQ等</p>
-<p><a href="https://blog.csdn.net/hffyyg/article/details/83990873?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link">Windows上的巧克力味Chocolatey详解_hffyyg的博客-CSDN博客_chocolatey</a></p>
-<h2 id="终端工具"><a href="#终端工具" class="headerlink" title="终端工具"></a>终端工具</h2><h3 id="terminus"><a href="#terminus" class="headerlink" title="terminus"></a>terminus</h3><p>全平台通用。功能强大。</p>
-<p><a href="https://tabby.sh/">Tabby - a terminal for a more modern age</a></p>
-<p>Github:<a href="https://github.com/eugeny/tabby">Eugeny/tabby</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#安装</span><br><span class="line">#方法1： https:&#x2F;&#x2F;github.com&#x2F;Eugeny&#x2F;tabby</span><br><span class="line">#方法2</span><br><span class="line">scoop install terminus -g </span><br></pre></td></tr></table></figure>
-
-<p>详细配置见：<a href="https://kuangyl-max.github.io/2021/11/15/terminal-tabby/">Tabby配置 | 博客 (kuangyl-max.github.io)</a></p>
-<h3 id="fluentTerminal"><a href="#fluentTerminal" class="headerlink" title="fluentTerminal"></a>fluentTerminal</h3><h3 id="Xshell"><a href="#Xshell" class="headerlink" title="Xshell"></a>Xshell</h3><h1 id="Onedriver"><a href="#Onedriver" class="headerlink" title="Onedriver"></a>Onedriver</h1><h2 id="同步任意文件夹"><a href="#同步任意文件夹" class="headerlink" title="同步任意文件夹"></a>同步任意文件夹</h2><figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">#需在<span class="built_in">cmd</span>内执行</span><br><span class="line">mklink /j &quot;onedrive文件夹地址\需要同步的文件夹名&quot; &quot;需要同步的文件夹地址&quot;</span><br><span class="line">mklink /j &quot;H:\OneDriver\OneDrive - stu.suda.edu.cn\研究生\算法&quot; &quot;H:\算法&quot;</span><br></pre></td></tr></table></figure>
-
-<h1 id="自建博客"><a href="#自建博客" class="headerlink" title="自建博客"></a>自建博客</h1><h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><p><strong>利用Hexo在多台电脑上提交和更新github pages博客</strong></p>
-<p><a href="https://hexo.io/zh-cn/docs/configuration.html">https://hexo.io/zh-cn/docs/configuration.html</a></p>
-<p><a href="https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg">[https://www.jianshu.com/p/0b1fccce74e0?tdsourcetag=s_pcqq_aiomsg]{.ul}</a></p>
-<p><a href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程_Fangzh的技术博客-CSDN博客_hexo</a></p>
-<p><a href="https://www.jianshu.com/p/4bcf2848b3fc">[https://www.jianshu.com/p/4bcf2848b3fc]{.ul}</a></p>
-<p><strong>写文章</strong></p>
-<p><a href="https://blog.csdn.net/weixin_44815733/article/details/88786480">[https://blog.csdn.net/weixin_44815733/article/details/88786480]{.ul}</a></p>
-<h2 id="docsify"><a href="#docsify" class="headerlink" title="docsify"></a>docsify</h2><p><strong>有了docsify神器，从此爱上看文档</strong></p>
-<p><a href="https://www.jianshu.com/p/4883e95aa903">https://www.jianshu.com/p/4883e95aa903</a></p>
-<p><a href="https://docsify.js.org/#/zh-cn/">官方中文文档</a></p>
-<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="vscode插件"><a href="#vscode插件" class="headerlink" title="vscode插件"></a>vscode插件</h2><p><strong>1.markdown-all-in-one—-基础功能+快捷键。<br>2.markdown toc—生成目录<br>3.markdown+math–编辑公式<br>4.Markdown PDF–转为PDF和其他格式<br>5.Markdown Preview Enhanced—–所以这款是增强显示的。<br>6.Markdown Shortcuts—–解决复制表格的问题。</strong></p>
-<h2 id="markdown互转word"><a href="#markdown互转word" class="headerlink" title="markdown互转word"></a>markdown互转word</h2><h3 id="一键将-Word-转换为-Markdown"><a href="#一键将-Word-转换为-Markdown" class="headerlink" title="一键将 Word 转换为 Markdown"></a>一键将 Word 转换为 Markdown</h3><p><a href="https://www.jianshu.com/p/df6a136d06d8">https://www.jianshu.com/p/df6a136d06d8</a></p>
-<h3 id="Writage-Pandoc"><a href="#Writage-Pandoc" class="headerlink" title="Writage + Pandoc"></a>Writage + Pandoc</h3><ol>
-<li><p>下载并安装 Writage，下载地址：<a href="http://www.writage.com/">http://www.writage.com/</a></p>
-<p>打开 Writage网页，点击Download，再点击Download Now完成下载<br>运行安装程序，一般按照默认选项安装就好啦</p>
-</li>
-<li><p>安装后重启电脑，新建或打开任一 Word 文档，在 文件 菜单栏下选 另存为，查看 <strong>【保存类型】</strong> 中是否有 Markdown 格式。</p>
-</li>
-</ol>
-<blockquote>
-<p>如果插件安装成功，就会自动出现Markdown选项；否则，重新安装一遍吧~）</p>
-</blockquote>
-<h3 id="Word-to-Markdown-Converter在线转换"><a href="#Word-to-Markdown-Converter在线转换" class="headerlink" title="Word to Markdown Converter在线转换"></a>Word to Markdown Converter在线转换</h3><ol>
-<li><strong>设置word文档中的标准样式，如一级、二级标题，项目符号或编号等，如此才能与markdown的格式对应</strong></li>
-</ol>
-<p>（稍微有点繁琐的前期准备，如果文档一开始就是按照标准样式排版，就没有这个烦恼啦）</p>
-<p>设置</p>
-<ol>
-<li><p>打开网页Word to Markdown</p>
-<blockquote>
-<p>Converter：<a href="https://word-to-markdown.herokuapp.com/">https://word-to-markdown.herokuapp.com/</a></p>
-</blockquote>
-</li>
-<li><p>选择需要转换的Word文件,点击Convert</p>
-</li>
-<li><p>大功告成啦！<br>页面左边显示的是Markdown文档的内容，右边显示的是预览出来的样子</p>
-</li>
-</ol>
-<p><strong>但还需要进一步手动编辑整理完善表格</strong></p>
-<p>（如果，Word文档本身不包括表格，Word to Markdown<br>Converter使用体验可谓相当便捷稳妥啦！）</p>
-<p><strong>图片的下载与存储</strong></p>
-<p>除了标准格式设置与表格调整问题，<br><strong>图片的下载与存储</strong>也会是我们可能会遇到的问题</p>
-<ul>
-<li><p><strong>Markdown转换为Word</strong><br>在Markdown文档中，图片以网络超链接的形式保存,如果markdown文档中有这一类图片，那么需要在网络连接的情况下，才能正常输出有图片的word文档。否则，图片处显示空白</p>
-</li>
-<li><p><strong>Word转换为Markdown</strong><br>Word转换为Markdown文档之后，文档中的图片输出到本地文件夹下，将该文件夹与输出的Markdown文档在同一目录下，在Markdown文档中图片引用本地相对路径，也就是说，必须保证Markdown文档与存放图片的本地文件夹在一起，才能完整的在markdown编辑器中显示图片</p>
-</li>
-</ul>
-<h3 id="在线版word2markdown"><a href="#在线版word2markdown" class="headerlink" title="在线版word2markdown"></a>在线版word2markdown</h3><p><a href="https://word2md.com/">https://word2md.com/</a></p>
-<h3 id="Ulysses-mac支持-纯文本-Markdown2Word-，但付费"><a href="#Ulysses-mac支持-纯文本-Markdown2Word-，但付费" class="headerlink" title="Ulysses mac支持 纯文本 Markdown2Word ，但付费"></a>Ulysses mac支持 纯文本 Markdown2Word ，但付费</h3><p>目前只研究了Mac下的方案：</p>
-<ol>
-<li>word-to-markdown，google用word to</li>
-</ol>
-<p>markdown搜出来第一个，看来这个名字起得好。用这个的话得装个LibreOffice</p>
-<ol>
-<li><p>pandoc，这个就比较大名鼎鼎了</p>
-</li>
-<li><p>unoconv，介绍</p>
-</li>
-</ol>
-<p>链接：<a href="https://www.jianshu.com/p/b0be43b03015">https://www.jianshu.com/p/b0be43b03015</a></p>
-<h2 id="Markdown如何存放图片"><a href="#Markdown如何存放图片" class="headerlink" title="Markdown如何存放图片"></a>Markdown如何存放图片</h2><h3 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h3><p>配置</p>
-<ol>
-<li><p>申请七牛云做免费图床</p>
-<p><a href="https://www.zhihu.com/question/335783774/answer/756830851">https://www.zhihu.com/question/335783774/answer/756830851</a></p>
-</li>
-</ol>
-<p>存储空间名称markdown-source-of-bayes</p>
-<ol start="2">
-<li><p>配置插件</p>
-<p><a href="https://www.codingyang.com/2020/03/getQiniu.html#%E8%8E%B7%E5%8F%96%E5%AF%86%E9%92%A5">https://www.codingyang.com/2020/03/getQiniu.html#%E8%8E%B7%E5%8F%96%E5%AF%86%E9%92%A5</a></p>
-</li>
-</ol>
-<p>Sm_ms,picGo</p>
-<h3 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a>pandoc</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pandoc -s $infile -t markdown -o $outfile --extract-media&#x3D;$filename#导出图片到目录下</span><br></pre></td></tr></table></figure>
-
-<p>pandoc是文档转换利器。在将docx文档转为md文档过程中，如果直接输入<code>pandoc -o f.md f.docx</code>,会丢失word文档中的图片。输入<code>pandoc -o f.md f.docx ---extract-media=f </code>则不会丢失图片。</p>
-<p>pandoc语法<a href="https://www.jianshu.com/p/fd761fc43753">https://www.jianshu.com/p/fd761fc43753</a></p>
-<p><strong>示例</strong></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">foo $ cat word2md.sh</span><br><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">infile=$1</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$infile</span></span></span><br><span class="line">filename=$(echo $infile | awk -F &#x27;.&#x27; &#x27;&#123;print $1&#125;&#x27;)</span><br><span class="line">outfile=$&#123;filename&#125;.md</span><br><span class="line">pandoc -s $infile -t markdown -o $outfile --extract-media=$filename</span><br><span class="line">echo &quot;convert success, $outfile &quot;</span><br><span class="line"></span><br><span class="line">foo $ bash ./word2md.sh mydoc.docx </span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="draw-io"><a href="#draw-io" class="headerlink" title="draw.io"></a>draw.io</h3><p>draw.io 绘图可以导出成 HTML，而 markdown 是支持直接嵌入 HTML 的</p>
-<p>点击图形中的全屏按钮，再点击编辑，居然还可以直接修改原图的副本。厉害了！</p>
-<p>具体插入的方法是，打开 draw.io 导出的 HTML<br>文件，将其中的 <body> 中的内容复制出来即可（不包含<code> &lt;body&gt;</code>标签）。<strong>github不支持解析</strong></p>
-<h3 id="picGo-GitHub-上传图片"><a href="#picGo-GitHub-上传图片" class="headerlink" title="picGo+GitHub 上传图片"></a>picGo+GitHub 上传图片</h3><p>Typora批量上传图片</p>
-<p><a href="https://www.cnblogs.com/zenglintao/p/12876725.html">https://www.cnblogs.com/zenglintao/p/12876725.html</a></p>
-<p>图床配置</p>
-<p><a href="https://blog.csdn.net/qq_43367829/article/details/104882071">https://blog.csdn.net/qq_43367829/article/details/104882071</a></p>
-<p>注意 创建的GitHub图床默认分支为main,没有master分支，</p>
-<h1 id="开发养成"><a href="#开发养成" class="headerlink" title="开发养成"></a>开发养成</h1><p>编程中最难的事：如何优雅地为程序中的变量和函数命名<br>命名不一致解决思路：<br><a href="https://www.zhihu.com/question/395223359">https://www.zhihu.com/question/395223359</a><br><a href="https://www.douban.com/note/571297448/">https://www.douban.com/note/571297448/</a><br>(创建中间层，添加注解@)<br>工具<br><a href="https://graphql.org/%EF%BC%8CTypeScrip">https://graphql.org/，TypeScrip</a></p>
-<p>python – 解析一个.py文件,读取AST,修改它,然后回写修改后的源代码<a href="http://www.voidcn.com/article/p-mvtnzhha-bsk.html">http://www.voidcn.com/article/p-mvtnzhha-bsk.html</a></p>
-<p>统一纠正变量名<br>读取各项目ast，对每个变量计算编辑距离，编辑距离为0~len(word) 为一类<br>批量更正变量并写回去</p>
-<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="科学上网"><a href="#科学上网" class="headerlink" title="科学上网"></a>科学上网</h2><p><a href="https://www.nbmao.com/archives/4463">2021年最新Clash For Windows 详细使用教程 - 笨猫博客 (nbmao.com)</a></p>
-<p><a href="https://hello-shudong.com/auth/login">登录 — GW树洞 (hello-shudong.com)</a> ：邀请码<code>gayP</code></p>
-<p><strong>为git设置代理</strong></p>
-<blockquote>
-<p>设置后加速git clone等命令执行速度，解决Timeout问题。</p>
-<p>此处使用clash for window 设置代理，其端口为7890</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">http代理</span></span><br><span class="line">git config --global http.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">https代理</span></span><br><span class="line">git config --global https.proxy &#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="line"><span class="meta">#</span><span class="bash">查看代理</span></span><br><span class="line">git config -l</span><br><span class="line"><span class="meta">#</span><span class="bash">取消http代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> http.proxy</span></span><br><span class="line"><span class="meta">#</span><span class="bash">取消https代理</span></span><br><span class="line"><span class="meta">#</span><span class="bash">git config --global --<span class="built_in">unset</span> https.proxy</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="电脑维护"><a href="#电脑维护" class="headerlink" title="电脑维护"></a>电脑维护</h2><ul>
-<li>CCleaner</li>
-<li>SpaceSniffer</li>
-<li>Geek</li>
-<li>Snipaste</li>
-</ul>
-<h2 id="数据标注"><a href="#数据标注" class="headerlink" title="数据标注"></a>数据标注</h2><ol>
-<li>labelImg</li>
-</ol>
-<p><a href="https://github.com/tzutalin/labelImg">https://github.com/tzutalin/labelImg</a></p>
-<p>使用</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1.环境配置</span></span><br><span class="line">brew install qt  # Install qt-5.x.x by Homebrew</span><br><span class="line">brew install libxml2</span><br><span class="line"><span class="meta">#</span><span class="bash">or using pip</span></span><br><span class="line">pip3 install pyqt5 lxml # Install qt and lxml by pip</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.配置labelimg</span></span><br><span class="line">git clone https://hub.fastgit.org/tzutalin/labelImg.git</span><br><span class="line">cd labelImg</span><br><span class="line">make qt5py3</span><br><span class="line">python3 labelImg.py</span><br><span class="line">python3 labelImg.py [IMAGE_PATH] [PRE-DEFINED CLASS FILE]</span><br></pre></td></tr></table></figure>
-
-
-
-<ol start="2">
-<li><strong>Yolo_mark</strong></li>
-</ol>
-<p><strong>Windows</strong>和<strong>Linux</strong> GUI，用于在图像中标记对象的边界框，以训练Yolo v3和v2</p>
-<p><a href="https://github.com/AlexeyAB/Yolo_mark">https://github.com/AlexeyAB/Yolo_mark</a></p>
-<p>其他</p>
-<p>深度学习图像标注工具汇总</p>
-<p><a href="https://blog.csdn.net/chaipp0607/article/details/79036312">https://blog.csdn.net/chaipp0607/article/details/79036312</a></p>
-<p>浏览器 PDF 预览及打印（效果很棒）</p>
-<p><a href="https://www.printfriendly.com/">https://www.printfriendly.com/</a></p>
-<p>Send Anywhere</p>
-<p>Send Anywhere官方版是款支持多种平台的文件传输共享工具。</p>
-<p>Send Anywhere最新版主打网络传输文件，支持安卓、iOS、windows、macOS、Linux以及Windows Phon。Send Anywhere几乎能可以将你所有的电子设备全部打通!你甚至在电脑上无需安装任何APP，直接通过Chrome、Firefox、Safari或IE浏览器即可与手机收发文件。</p>
-<p>1、bandzip（解压 window）<br>2、ditto（复制剪贴板window）<br>3、shareX（截图window）</p>
-<p><a href="https://getsharex.com/">https://getsharex.com/</a></p>
-<p>4、everthing（找文件）<br>5、uTools（百宝箱）<br>6、IDM（下载）<br>7、RST（硬盘优化）<br>8、VS Code（编辑器）<br>9、天翼云盘（网盘）<br>10、chrome（浏览器）<br>11、quicker（鼠标党助手 window,chrome插件）</p>
-<p><a href="https://getquicker.net/Download">https://getquicker.net/Download</a></p>
-<p>FilePane for Mac 是一款轻量级，多功能的文件快速复制粘贴工具，功能上同之前分享过的 <a href="https://www.macsky.net/22701.html">PopClip</a> 类似，可用于快速管理文件。它适用于系统中任何应用程序的几乎任何可选择和可拖动内容，并根据您提供的数据建议各种快速操作。您可以轻松复制/移动/创建文件和文件夹，编辑/共享/转换图像等等。</p>
-<p>Chrome插件</p>
-<p>① 百度药丸</p>
-<p>使用更纯净的百度 1.屏蔽百度广告推广 2.阻止百度追踪 3.支持居中显示治愈偏头痛</p>
-<p>②onetab</p>
-<p>能把所有打开的网页/标签页一键「全部关闭」并「保存成列表」，你随后可以一个个 (或一次性全部) 恢复它们。这样不仅变相实现了释放和回收浏览器占用的内存、解决 CPU 资源占用问题、让系统和浏览器的速度恢复正常，而且还能将打开的网页全部保存下来备用。</p>
-<p><strong>Session Buddy</strong>插件功能介绍</p>
-<p>很多人应该都知道，Chrome 虽然也有内置的Session Manager，但是功能什么的简单。Session Buddy 扩展提供的功能为暂存标签，会自动记录已经关闭的标签，当然你可以手动点击保存，下次需要时调用。至于节省内存开销，这事还是交给 Google 来做吧。</p>
-<p>当然具有类似功能的插件，我们网站之前也有介绍过一些：</p>
-<blockquote>
-<p>2.<a href="http://www.cnplugins.com/fuzhu/tab-hibernation/">TAb Hibernation</a>:可以将我们目前未使用到的网页进入休眠，让这些分页暂时不占用内存，但我们需要使用时，按一下就可以唤醒，解决内存不足的问题.<br>3.<a href="http://www.cnplugins.com/office/the-great-suspender/">The Great Suspender</a>:可以让你把不需要的标签进入睡眠模式以节省内存，保证流畅的浏览体验。不同于其他类似扩展，The Great Suspender 提供两种休眠方式： 手动休眠、或者一段时间不使用自动休眠。扩展还支持白名单，无论自动休眠还是手动休眠，白名单中的网站是不会休眠的.</p>
-</blockquote>
-<p>③喵喵折</p>
-<p>购物助手</p>
-<p>④搜图助手</p>
-<p>奇妙加速器，免费<a href="https://www.qimiao.com/">https://www.qimiao.com/</a></p>
-<p>网页版文件快传</p>
-<p><a href="https://snapdrop.net/">https://snapdrop.net/</a></p>
-<p>快传 ：Feem和AirDroid</p>
-<p><strong>Linux远程拷贝工具(WinSCP)</strong></p>
-<p><a href="https://blog.csdn.net/dengjin20104042056/article/details/97378487">https://blog.csdn.net/dengjin20104042056/article/details/97378487</a></p>
-<h2 id="论文工具"><a href="#论文工具" class="headerlink" title="论文工具"></a>论文工具</h2><p>LaTeX新手入门以及TeXlive和TeXstudio的安装使用<a href="https://blog.csdn.net/zywhehe/article/details/83113214">https://blog.csdn.net/zywhehe/article/details/83113214</a><br>TeX Live 下载及安装说明(mac 和window)<br><a href="https://www.latexstudio.net/archives/10208.html">https://www.latexstudio.net/archives/10208.html</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/">https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/mac/mactex/</a></p>
-<p>VS Code + LaTeX<br><a href="https://zhuanlan.zhihu.com/p/144729565">https://zhuanlan.zhihu.com/p/144729565</a></p>
-<p>一般来讲，LaTeX装好后默认的编译方式是pdflatex，但是这种方式不能编译中文源码。对于中文源码，采用的是xelatex的编译方式。对于编译中文文档有两种方式，第一种：在中文源文件首行添加：% !TEX program = xelatex，如果有参考文献，可以再添加% !BIB options = “%DOCFILE%”。显然，这个操作不够智能，因此，我们第一步是，添加xelatex的编译方式(2.3节)。</p>
-<p><a href="https://blog.csdn.net/wdkirchhoff/article/details/41707157">AUCTeX+Emacs 是目前我见过的能最大限度提高 LaTeX 编辑效率的编辑器 （转）_芝兰生于深谷，不以无人而不芳-CSDN博客</a></p>
-<p>Mendeley－一款免费好用的文献管理软件<br><a href="https://zhuanlan.zhihu.com/p/28762628">https://zhuanlan.zhihu.com/p/28762628</a><br>自动插入参考文献，史上最简Endnote教程！！#论文写作+Endnote X8安装文件<a href="http://www.xszydq.com/17326.html">http://www.xszydq.com/17326.html</a></p>
-<p>翻译狗：<a href="https://www.fanyigou.com/trans/login.html?code=6ZH3PQVY0F">登录-Word翻译,Pdf翻译,文献论文翻译-翻译狗 (fanyigou.com)</a></p>
-<h3 id="论文查询"><a href="#论文查询" class="headerlink" title="论文查询"></a>论文查询</h3><ol>
-<li>**<a href="https://link.zhihu.com/?target=https://scholar.google.com.hk/?hl=zh-CN">谷歌学术</a>**：谷歌大概是最友好的一个平台了，尤其是在国外的校内网中使用谷歌学术。</li>
-<li>**<a href="https://link.zhihu.com/?target=https://xueshu.baidu.com/">百度学术</a>**：这大概是百度产品中，算是非常良心的一个了，不能用谷歌的话，百度顶上吧。</li>
-<li>**<a href="https://link.zhihu.com/?target=http://www.cnki.net/">中国知网</a>**：知网是国内比较不错的平台，可在境外的话，会遇到IP限制，大概是超过国内许可范围了。</li>
-<li>**<a href="https://zhuanlan.zhihu.com/p/24299207">Sci-Hub</a>**：这个比较有趣，大家可以配合知网来使用，从知网搜寻论文，然后在Sci-Hub中下载。但你懂的，Sci-Hub的地址经常变动，所以需要的时候直接用搜索引擎吧。</li>
-<li>**<a href="https://link.zhihu.com/?target=https://lunwen.im/">喵咪论文 - 简单自由的论文下载平台</a>**：亲自试了一下，使用起来还是很方便的，但是随手测试了一下，论文查找到的概率也不是太大。</li>
-<li><a href="https://link.zhihu.com/?target=http://www.ncpssd.org/index.aspx">国家哲学社会科学文献中心</a>: 如果是中文的论文，那用这个查看也还行，主要是界面比知网要人性化一些。</li>
-<li><a href="https://papers.labml.ai/papers/monthly/">https://papers.labml.ai/papers/monthly/</a></li>
-<li><a href="https://scholar.google.com.hk/schhp?hl=zh-CN">Google 学术搜索</a></li>
-<li><a href="http://www.4243.net/">大木虫学术导航 (4243.net)</a>：<font color=red>功能极其强悍</font></li>
-</ol>
-<p>另外就是一些不错的期刊：</p>
-<ol>
-<li><strong><a href="https://link.zhihu.com/?target=https://www.sciencemag.org">Science官网</a></strong></li>
-<li><strong><a href="https://link.zhihu.com/?target=https://www.sciencemag.org">Science | AAAS</a></strong></li>
-</ol>
-<h3 id="论文撰写"><a href="#论文撰写" class="headerlink" title="论文撰写"></a>论文撰写</h3><p>officeTab：模仿WPS多个文章同时显示</p>
-<p>word小恐龙： <a href="http://gw.xkonglong.com/">http://gw.xkonglong.com/</a></p>
-<p>word精灵</p>
-<p>grammarly ：语法纠正</p>
-<p><a href="https://aimwriting.mtutor.engkoo.com/editor">微软爱写作</a>：在线写作，提供逻辑连接词例子，可批改评分</p>
-<p><a href="https://quillbot.com/">Paraphrasing Tool | QuillBot AI</a>：句子重构，降低查重</p>
-<p><a href="https://www.phrasebank.manchester.ac.uk/">Academic Phrasebank | The University of Manchester</a>：论文例句</p>
-<p><a href="https://www.bigan.net/check/">论文查重软件_论文检测软件_笔杆网 (bigan.net)</a></p>
-<p><a href="https://www.xiegelunwen.com/#/zhllc">写个论文 - 论文降重神器，写论文更简单 (xiegelunwen.com)</a></p>
-<h3 id="论文管理"><a href="#论文管理" class="headerlink" title="论文管理"></a>论文管理</h3><p><strong>Readcube</strong>：这是一个付费的管理软件，这里有一篇介绍Readcube的文章，<a href="https://link.zhihu.com/?target=https://www.jianshu.com/p/6bf14803dc99">高效率科研神器——驾驭文献洪流</a>，有需要可以继续了解一下。</p>
-<p>EndNote 是SCI（Thomson Scientific 公司）的官方软件，自身具有强大的功能，<strong>是一款集文献检索、文摘及全文管理、文献共享等功能于一身的老牌软件</strong></p>
-<p>Citavi有<strong>全功能免费版（支持每个项目插入不多于100篇文献）</strong>，具有<strong>强大的参考文献编辑功能，</strong>可以从各个方面实现对参考文献的编辑需求。</p>
-<p>Citavi很大一个特点是<strong>支持PDF阅读功能，且可以支持多种批注格式</strong></p>
-<p>Mendeley是一款Elsevier公司旗下的<strong>免费文献管理软件，</strong>所有人都可以在Mendeley上搜索到世界各地的学术文献，这些学术文件都是由用户自己上传到Mendeley“library”进行编辑管理，<strong>这款软件拥有整理组织文献、PDF标记和文件分享、网络备份的强大功能。</strong>（其余工具见<a href="https://zhuanlan.zhihu.com/p/105066833">研究生必备文献整理工具 - 知乎 (zhihu.com)</a>）</p>
-<p>noteexpress：对中文支持更全面，但对英文文献不太靠谱</p>
-<p>Zotero：最大特点是浏览器的抓取功能异常强大。</p>
-<p><strong>总结：首推citavi</strong></p>
-<h3 id="开题相关工具"><a href="#开题相关工具" class="headerlink" title="开题相关工具"></a>开题相关工具</h3><p>如果要快速了解某个领域，那需要大量阅读该领域的相关文献，才能了解到以下：</p>
-<ol>
-<li>这个领域的研究热点、主要研究内容、权威的学者等</li>
-<li>研究存在的不足</li>
-<li>对自己而言，该从哪个领域进行切入才有研究意义等</li>
-</ol>
-<p>这里我直接根据知乎的回答来推荐工具：</p>
-<p>**<a href="https://link.zhihu.com/?target=http://cluster.ischool.drexel.edu/~cchen/citespace/download/">CiteSpace</a>**：这是一个可视化软件，可以将下载的论文进行CiteSpace分析，让你能够尽快地了解领域的发展情况。</p>
-<p>**<a href="https://zhuanlan.zhihu.com/p/20902898">Histcite</a>**：这是一款非常强大的引文分析工具，可以快速绘制出某个研究领域的发展脉络，快速锁定某个研究方向的重要文献和学术大牛，还可以找到某些具有开创性成果的无指定关键词的论文。</p>
-<p>**<a href="https://link.zhihu.com/?target=http://xueshu.baidu.com/u/biye?fr=kaiti301">百度开题</a>**：这里必须隆重介绍一下这个百度开题，其使用简单，效果也比较炫酷，是开题不可多得的工具。</p>
-<h3 id="英文文献翻译"><a href="#英文文献翻译" class="headerlink" title="英文文献翻译"></a>英文文献翻译</h3><p>这里要推荐一个网站，叫tongtianta.site，<a href="https://link.zhihu.com/?target=http://www.tongtianta.site/">网站</a>功能很简单： 对论文进行翻译，中英文对照阅读</p>
-<p><a href="https://www.deepl.com/translator">DeepL翻译：全世界最准确的翻译</a></p>
-<h2 id="中国计算机学会推荐国际学术期刊"><a href="#中国计算机学会推荐国际学术期刊" class="headerlink" title="中国计算机学会推荐国际学术期刊"></a>中国计算机学会推荐国际学术期刊</h2><p><strong>(**数据库</strong>/<strong>数据挖掘</strong>/<strong>内容检索</strong>)**</p>
-<p>一、<strong>A</strong> 类 </p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>刊物简称</th>
-<th>刊物全称</th>
-<th>出版社</th>
-<th>网址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>TODS</td>
-<td>ACM  Transactions on Database Systems</td>
-<td>ACM</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/tods/">http://dblp.uni-trier.de/db/journals/tods/</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td>TOIS</td>
-<td>ACM  Transactions on Information Systems</td>
-<td>ACM</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/tois/">http://dblp.uni-trier.de/db/journals/tois/</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>TKDE</td>
-<td>IEEE  Transactions on Knowledge and Data Engineering</td>
-<td>IEEE</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/tkde/">http://dblp.uni-trier.de/db/journals/tkde/</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>VLDBJ</td>
-<td>The  VLDB Journal</td>
-<td>Springer</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/vldb/">http://dblp.uni-trier.de/db/journals/vldb/</a></td>
-</tr>
-</tbody></table>
-<p><a href="https://icde2021.gr/accepted-papers/">https://icde2021.gr/accepted-papers/</a><br><a href="http://vldb.org/pvldb/vol14-volume-info/">http://vldb.org/pvldb/vol14-volume-info/</a></p>
-<p><a href="https://kdd.org/kdd2021/accepted-papers/index">https://kdd.org/kdd2021/accepted-papers/index</a><br><a href="https://sigir.org/sigir2021/accepted-papers/">https://sigir.org/sigir2021/accepted-papers/</a></p>
-<p>二、<strong>B</strong> 类 </p>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>刊物简称</th>
-<th>刊物全称</th>
-<th>出版社</th>
-<th>网址</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>TKDD</td>
-<td>ACM  Transactions on Knowledge   Discovery  from Data</td>
-<td>ACM</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/tkdd/">http://dblp.uni-trier.de/db/journals/tkdd/</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td>TWEB</td>
-<td>ACM  Transactions on the Web</td>
-<td>ACM</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/tweb/">http://dblp.uni-trier.de/db/journals/tweb/</a></td>
-</tr>
-<tr>
-<td>3</td>
-<td>AEI</td>
-<td>Advanced  Engineering Informatics</td>
-<td>Elsevier</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/aei/">http://dblp.uni-trier.de/db/journals/aei/</a></td>
-</tr>
-<tr>
-<td>4</td>
-<td>DKE</td>
-<td>Data  and Knowledge Engineering</td>
-<td>Elsevier</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/dke/">http://dblp.uni-trier.de/db/journals/dke/</a></td>
-</tr>
-<tr>
-<td>5</td>
-<td>DMKD</td>
-<td>Data Mining and Knowledge Discovery</td>
-<td>Springer</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/datamine/">http://dblp.uni-trier.de/db/journals/datamine/</a></td>
-</tr>
-<tr>
-<td>6</td>
-<td>EJIS</td>
-<td>European  Journal of Information   Systems</td>
-<td>Springer</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/ejis/">http://dblp.uni-trier.de/db/journals/ejis/</a></td>
-</tr>
-<tr>
-<td>7</td>
-<td></td>
-<td>GeoInformatica</td>
-<td>Springer</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/geoinformatica/">http://dblp.uni-trier.de/db/journals/geoinformatica/</a></td>
-</tr>
-<tr>
-<td>8</td>
-<td>IPM</td>
-<td>Information  Processing and Management</td>
-<td>Elsevier</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/ipm/">http://dblp.uni-trier.de/db/journals/ipm/</a></td>
-</tr>
-<tr>
-<td>9</td>
-<td></td>
-<td>Information  Sciences</td>
-<td>Elsevier</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/isci/">http://dblp.uni-trier.de/db/journals/isci/</a></td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="http://www.dimva.org/">IS</a><a href="http://www.dimva.org/"> </a></td>
-<td>Information  Systems</td>
-<td><a href="http://www.gi-fg-sidar.de/">Elsevier</a><a href="http://www.gi-fg-sidar.de/"> </a></td>
-<td><a href="http://dblp.uni-trier.de/db/journals/is/">http://dblp.uni-trier.de/db/journals/is/</a></td>
-</tr>
-<tr>
-<td>11</td>
-<td>JASIST</td>
-<td>Journal  of the American Society for Information Science and Technology</td>
-<td>American  Society for   Information  Science and Technology</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/jasis/">http://dblp.uni-trier.de/db/journals/jasis/</a></td>
-</tr>
-<tr>
-<td>12</td>
-<td>JWS</td>
-<td>Journal  of Web Semantics</td>
-<td>Elsevier</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/ws/">http://dblp.uni-trier.de/db/journals/ws/</a></td>
-</tr>
-<tr>
-<td>13</td>
-<td>KAIS</td>
-<td>Knowledge  and Information Systems</td>
-<td>Springer</td>
-<td><a href="http://dblp.uni-trier.de/db/journals/kais/">http://dblp.uni-trier.de/db/journals/kais/</a></td>
-</tr>
-</tbody></table>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://www.zhihu.com/question/22867411">https://www.zhihu.com/question/22867411</a></p>
-<ul>
-<li><p>Dash</p>
-<p>官网地址 ：<a href="https://kapeli.com/dash">https://kapeli.com/dash</a><br>Dash for mac是使用与Mac OS平台的软件编程文档管理工具，可以浏览API文档，以及管理代码片段工具。Dash自带了丰富的API文档，涉及各种主流的编程语言和框架。（190元）</p>
-</li>
-<li><p>mathpix</p>
-<p><a href="https://mathpix.com/">https://mathpix.com/</a></p>
-<p>图片转LaTeX公式，适用于Markdown,word等文档</p>
-</li>
-<li><p>tmux/tmuxp。比screen好用，可以用来分屏，托管进程等，服务器端必备神器，ubuntu下基本就不用使用terminator之类的分屏工具了。最近看youtube视频还发现有人在服务器上使用tmux和vim结对编程，两个人同时attach到一个session里，基情四射。</p>
-</li>
-<li><p>wemux: tmux 共享，<a href="https://link.zhihu.com/?target=https://github.com/zolrath/wemux">https://github.com/zolrath/wemux</a></p>
-</li>
-<li><p>sshfs: 本地挂在服务器文件夹</p>
-</li>
-<li><p>tmate: <a href="https://link.zhihu.com/?target=https://tmate.io/">https://tmate.io</a> 终端共享工具，结对编程。很多现代化编辑器 vscode, atom 提供结对编程的插件。</p>
-</li>
-<li><p>asciinema: 终端会话记录工具。<a href="https://link.zhihu.com/?target=https://asciinema.org/">https://asciinema.org/</a></p>
-</li>
-<li><p>oh-my-zsh。替代原生的bash shell，提供了好多方便的特性和漂亮主题，支持插件。linux/mac下vim+tmux+zsh简直是绝配，甚至可以直接在服务器上方便地撸代码，跟本地开发体验没区别。</p>
-</li>
-<li><p>item2(mac)。替代原生的终端。<a href="https://link.zhihu.com/?target=https://medium.com/@RyanDavidson/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c">https://medium.com/@RyanDavidson/make-your-terminal-more-colourful-and-productive-with-iterm2-and-zsh-11b91607b98c</a></p>
-</li>
-<li><p>brew(mac)。类似ubuntu下的apt-get，可以方便安转各种软件和工具。</p>
-</li>
-<li><p>Alfred(mac): mac 下一款功能强大的工具，不过我一般只用它快速打开软件。可以用 python 编写一些自己的 workflow 提高效率(<a href="https://link.zhihu.com/?target=https://github.com/deanishe/alfred-workflow">https://github.com/deanishe/alfred-workflow</a>)，比如把时间戳转成日期等。 <a href="https://link.zhihu.com/?target=https://github.com/derimagia/awesome-alfred-workflows">https://github.com/derimagia/awesome-alfred-workflows</a></p>
-</li>
-<li><p>Dash(mac,全英): 强悍的文档查询工具。支持非常多编程语言和框架</p>
-</li>
-<li><p>devdocs.io: 文档查询工具</p>
-</li>
-<li><p>Zeal——好用的离线 API 文档大全！(支持window，Linux，<a href="https://www.cnblogs.com/souldee/p/9523497.html%EF%BC%8Cfeed%EF%BC%9A[Zeal">https://www.cnblogs.com/souldee/p/9523497.html，feed：[Zeal</a> User Contributions &amp; Cheat Sheets](<a href="https://zealusercontributions.vercel.app/">https://zealusercontributions.vercel.app/</a>))</p>
-</li>
-<li><p>Karabiner-Elements(mac): 改键工具 <a href="https://link.zhihu.com/?target=https://github.com/tekezo/Karabiner-Elements">https://github.com/tekezo/Karabiner-Elements</a></p>
-</li>
-<li><p>autojump。方便在命令行里来回跳转目录。</p>
-</li>
-<li><p>gitx(mac):方便查看代码提交历史，便于了解整个代码仓库是怎样一步步构建的。<a href="https://link.zhihu.com/?target=http://gitx.frim.nl/user_manual.html">http://gitx.frim.nl/user_manual.html</a></p>
-</li>
-<li><p>tig: text-mode interface for git. 喜欢命令行的可以尝试下。 <a href="https://link.zhihu.com/?target=https://github.com/jonas/tig">https://github.com/jonas/tig</a></p>
-</li>
-<li><p>tldr: 更好的man手册</p>
-</li>
-<li><p>YouCompleteMe: vim 代码补全<a href="https://blog.csdn.net/weixin_44638957/article/details/91985270">https://blog.csdn.net/weixin_44638957/article/details/91985270</a></p>
-</li>
-<li><p>EditorConfig: <a href="https://link.zhihu.com/?target=http://editorconfig.org/">http://editorconfig.org/</a> 用来统一编辑器配置。如果成员用不同的操作系统和编辑器，建议使用。尤其是对于 python 这种使用缩进的语言</p>
-</li>
-<li><p>mac-setup: <a href="https://link.zhihu.com/?target=https://github.com/sb2nov/mac-setup">https://github.com/sb2nov/mac-setup</a> mac 下各种编程语言开发环境配置指引</p>
-</li>
-<li><p>pdf2go网址：<a href="https://www.pdf2go.com/zh">https://www.pdf2go.com/zh</a> 免费PDF工具</p>
-</li>
-<li><p>ilovePDF网址：<a href="https://www.ilovepdf.com/zh-cn">https://www.ilovepdf.com/zh-cn</a> 免费PDF工具</p>
-</li>
-<li><p>temp-mail网址：<a href="https://temp-mail.org/">https://temp-mail.org/</a> 临时邮箱，避免垃圾广告</p>
-</li>
-<li><p><a href="https://github.com/jlevy/the-art-of-command-line">jlevy/the-art-of-command-line: Master the command line, in one page (github.com)</a></p>
-</li>
-</ul>
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="课程-amp-资料"><a href="#课程-amp-资料" class="headerlink" title="课程&amp;资料"></a>课程&amp;资料</h2><p>【链接】最值得看的十大机器学习公开课<br><a href="https://blog.csdn.net/yushupan/article/details/78582630">https://blog.csdn.net/yushupan/article/details/78582630</a></p>
-<p>【链接】计算机视觉有哪些比较好的公开课？补充计<br><a href="https://www.zhihu.com/question/35831904">https://www.zhihu.com/question/35831904</a></p>
-<p>机器学习与生成对抗网络<a href="https://my.oschina.net/u/4579551/blog/4350931">https://my.oschina.net/u/4579551/blog/4350931</a></p>
-<p>分类机器学习中，某一标签占比太大（标签稀疏），如何学习？<a href="https://my.oschina.net/u/4579551/blog/4750226">https://my.oschina.net/u/4579551/blog/4750226</a></p>
-<p>使用深度学习的图像分类-Koko.PDF<br><a href="https://max.book118.com/html/2018/1016/7123041051001153.shtm">https://max.book118.com/html/2018/1016/7123041051001153.shtm</a></p>
-<p>pandas官方中文文档-草鸡详细！！！！<a href="https://www.pypandas.cn/deep/basics/image_classification.html#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D">https://www.pypandas.cn/deep/basics/image_classification.html#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D</a></p>
-<p>汇总】CV 图像分类常见的 36 个模型<br><a href="https://my.oschina.net/u/4579551/blog/4701954">https://my.oschina.net/u/4579551/blog/4701954</a></p>
-<p>超详细！！！<br><a href="http://www.feiguyunai.com/">http://www.feiguyunai.com/</a></p>
-<p>Jupyter Notebook介绍、安装及使用教程<br><a href="https://www.jianshu.com/p/91365f343585">https://www.jianshu.com/p/91365f343585</a><br><a href="https://blog.csdn.net/u013709332/article/details/105029123/">https://blog.csdn.net/u013709332/article/details/105029123/</a></p>
-<p>Python深度学习 基于TensorFlow 在线版<br><a href="http://www.feiguyunai.com/index.php/2018/05/26/python-ml-tf-01/">http://www.feiguyunai.com/index.php/2018/05/26/python-ml-tf-01/</a></p>
-<p>机器学习 几百篇文章<br><a href="https://blog.csdn.net/GarfieldEr007/category_5619819.html">https://blog.csdn.net/GarfieldEr007/category_5619819.html</a></p>
-<p>零基础学习-深度学习核心-梯度下降与最优化<br><a href="http://www.feiguyunai.com/index.php/2017/11/08/pythonai-dl-grade01/">http://www.feiguyunai.com/index.php/2017/11/08/pythonai-dl-grade01/</a></p>
-<p>给大家再分享几个好用的知识文章检索工具哦：[OK]<br>1、<a href="https://www.cn-ki.net/">https://www.cn-ki.net/</a> 仿知网<br>2、<a href="https://www.jiumodiary.com/">https://www.jiumodiary.com/</a> 鸠摩搜索</p>
-<p>实在不行就用这个狗屁不通文章生成器[doge]<br><a href="https://suulnnka.github.io/BullshitGenerator/index.html">https://suulnnka.github.io/BullshitGenerator/index.html</a></p>
-<p><strong>神经网络与深度学习</strong></p>
-<p><a href="https://nndl.github.io/">https://nndl.github.io/</a></p>
-<h1 id="C-入门教程"><a href="#C-入门教程" class="headerlink" title="C++入门教程"></a>C++入门教程</h1><p><a href="http://www.weixueyuan.net/cpp/rumen//e">http://www.weixueyuan.net/cpp/rumen//e</a></p>
-]]></content>
-      <categories>
-        <category>工具</category>
       </categories>
       <tags>
         <tag>工具</tag>
