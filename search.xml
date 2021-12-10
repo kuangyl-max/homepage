@@ -392,6 +392,70 @@
       </tags>
   </entry>
   <entry>
+    <title>Tabby配置</title>
+    <url>/2021/11/15/terminal-tabby/</url>
+    <content><![CDATA[<h1 id="Tabby"><a href="#Tabby" class="headerlink" title="Tabby"></a>Tabby</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>全平台通用。功能强大。<br>支持</p>
+<ul>
+<li><p>免密登录ssh服务器</p>
+</li>
+<li><p>sftp 免scp与服务器互传文件</p>
+</li>
+<li><p>拆分窗格</p>
+</li>
+<li><p>鼠标右键打开当前文件夹</p>
+</li>
+<li><p>配置同步</p>
+<p>……</p>
+</li>
+</ul>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://tabby.sh/">Tabby - a terminal for a more modern age</a></p>
+<p>Github:<a href="https://github.com/eugeny/tabby">Eugeny/tabby</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#安装</span><br><span class="line">#方法1： https:&#x2F;&#x2F;github.com&#x2F;Eugeny&#x2F;tabby&#x2F;releases&#x2F;latest ,下载.exe文件</span><br><span class="line">#方法2</span><br><span class="line">scoop install terminus -g </span><br></pre></td></tr></table></figure>
+
+<h2 id="配置ssh连接"><a href="#配置ssh连接" class="headerlink" title="配置ssh连接"></a>配置ssh连接</h2><p>1.打开Tabby设置，转到如下界面，并点击<code>New profile</code></p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-03-08-a9042000e61cb4d75b0e34cfce428e87-typora-user-images-image-20211115210251688-b5c612.png" alt="image-20211115210251688"></p>
+<p>2.点击<code>SSH connection</code></p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-03-54-49aeb8c903403513c8a68dcaa8cd05c3-typora-user-images-image-20211115210353634-2f4bbb.png" alt="image-20211115210353634"></p>
+<p>3.填写Host和Username及password，并保存</p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-05-25-223eda57c83754b3c7cbe87624ead1ec-typora-user-images-image-20211115210523839-e1fef3.png" alt="image-20211115210523839"></p>
+<p>4.点击下图中的位置</p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-12-24-a5ed26dbfd0b60b3fce335a19a18dcd6-typora-user-images-image-20211115210608863-c2c9b2.png" alt="image-20211115210608863"></p>
+<p>5.选择你的刚刚配置的sever即可进入服务器</p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-07-14-db19bb05517da28a06fafd15abd86983-typora-user-images-image-20211115210712342-4eee44.png" alt="image-20211115210712342"></p>
+<p><img src="terminal-tabby.assets/20-08-11-68f14e0dbe1489c149ca84278d5b2c15-terminal-tabby.assets-image-20211207200810147-062b43.png" alt="image-20211207200810147"></p>
+<h2 id="设置同步你的配置"><a href="#设置同步你的配置" class="headerlink" title="设置同步你的配置"></a>设置同步你的配置</h2><p>1.在Plugins内搜索并安装<code>sync-config</code></p>
+<p>2.进入github-》settings -》Developer settings -》 Personal access tokens（即<a href="https://github.com/settings/tokens">Personal Access Tokens (github.com)</a>）</p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-55-11-2ff1eaee92ee4d6fc01ba72212717794-typora-user-images-image-20211115205510670-772853.png" alt="image-20211115205510670"></p>
+<p>3.选择<code>Generate new token</code>,并填写相关信息（随便√的，能用就完事了）</p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-56-45-394683581793bc6a84416f67e25845fe-typora-user-images-image-20211115205644578-e3639c.png" alt="image-20211115205644578"></p>
+<p>4.复制token到Tabby -》SyncConfig 并选择上传即可</p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-58-09-6be5f30c077c1b6a3e32febbdb428872-typora-user-images-image-20211115205808413-fe85b7.png" alt="image-20211115205808413"></p>
+<h2 id="命令行内打开-本地文件路径-或-网页链接"><a href="#命令行内打开-本地文件路径-或-网页链接" class="headerlink" title="命令行内打开 本地文件路径 或 网页链接"></a>命令行内打开 本地文件路径 或 网页链接</h2><p>1.在Plugins内搜索并安装<code>clickable-links</code></p>
+<p>2.重启Tabby，设置快捷键</p>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-50-49-90f2c5773f6f84cee8c05580bd930db2-typora-user-images-image-20211115205041447-109152.png" alt="image-20211115205041447"></p>
+<h2 id="使用sftp上传和下载文件"><a href="#使用sftp上传和下载文件" class="headerlink" title="使用sftp上传和下载文件"></a>使用sftp上传和下载文件</h2><ol>
+<li>连接服务器后，点击【sftp】</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/22/21-03-19-6d4bf5ea2fc8bdf47604ed93d80f437e-typora-user-images-image-20211122210317802-19ee86.png" alt="image-20211122210317802"></p>
+<ol start="2">
+<li><strong>选择你需要下载或上传的目录</strong>（注意别上传别人的目录里了）</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/22/21-04-19-427e9e068c37bb83483bfcb80080f59d-typora-user-images-image-20211122210417585-ba1a38.png" alt="image-20211122210417585"></p>
+<ol start="3">
+<li>点击该文件，如上图中data1M.gzip，会弹出保存到本地 的窗口，完成下载</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/22/21-05-55-cd993cf985c76f304027515749b5d196-typora-user-images-image-20211122210553949-c1bca3.png" alt="image-20211122210553949"></p>
+<p>4.同理，点击【Upload】按钮，完成文件上传</p>
+<p>5.更多上传下载方式见<a href="https://kuangyl-max.github.io/2021/11/15/linux/">Linux命令 | 博客 (kuangyl-max.github.io)</a>中的<code>scp，rsync, rz\sz</code></p>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux命令</title>
     <url>/2021/11/15/linux/</url>
     <content><![CDATA[<h1 id="Linux学习"><a href="#Linux学习" class="headerlink" title="Linux学习"></a>Linux学习</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>ssh教程</p>
@@ -1293,7 +1357,7 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 </li>
 </ol>
 </li>
-<li><p>使用 ssh-copy-id -i filename.pub user@IP 把公钥文件拷贝到server服务器，如ssh-copy-id -i rsa_work.pub <a href="mailto:&#114;&#x6f;&#x6f;&#116;&#x40;&#49;&#x37;&#50;&#46;&#x32;&#50;&#46;&#53;&#x2e;&#55;&#x35;">&#114;&#x6f;&#x6f;&#116;&#x40;&#49;&#x37;&#50;&#46;&#x32;&#50;&#46;&#53;&#x2e;&#55;&#x35;</a></p>
+<li><p>使用 ssh-copy-id -i filename.pub user@IP 把公钥文件拷贝到server服务器，如ssh-copy-id -i rsa_work.pub <a href="mailto:&#114;&#111;&#x6f;&#116;&#64;&#49;&#55;&#50;&#46;&#x32;&#50;&#x2e;&#x35;&#x2e;&#55;&#x35;">&#114;&#111;&#x6f;&#116;&#64;&#49;&#55;&#50;&#46;&#x32;&#50;&#x2e;&#x35;&#x2e;&#55;&#x35;</a></p>
 </li>
 <li><p>如果这里不能登录，需要重启重启ssh服务</p>
 <ol>
@@ -1375,70 +1439,6 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
       </categories>
       <tags>
         <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tabby配置</title>
-    <url>/2021/11/15/terminal-tabby/</url>
-    <content><![CDATA[<h1 id="Tabby"><a href="#Tabby" class="headerlink" title="Tabby"></a>Tabby</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>全平台通用。功能强大。<br>支持</p>
-<ul>
-<li><p>免密登录ssh服务器</p>
-</li>
-<li><p>sftp 免scp与服务器互传文件</p>
-</li>
-<li><p>拆分窗格</p>
-</li>
-<li><p>鼠标右键打开当前文件夹</p>
-</li>
-<li><p>配置同步</p>
-<p>……</p>
-</li>
-</ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><a href="https://tabby.sh/">Tabby - a terminal for a more modern age</a></p>
-<p>Github:<a href="https://github.com/eugeny/tabby">Eugeny/tabby</a></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#安装</span><br><span class="line">#方法1： https:&#x2F;&#x2F;github.com&#x2F;Eugeny&#x2F;tabby&#x2F;releases&#x2F;latest ,下载.exe文件</span><br><span class="line">#方法2</span><br><span class="line">scoop install terminus -g </span><br></pre></td></tr></table></figure>
-
-<h2 id="配置ssh连接"><a href="#配置ssh连接" class="headerlink" title="配置ssh连接"></a>配置ssh连接</h2><p>1.打开Tabby设置，转到如下界面，并点击<code>New profile</code></p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-03-08-a9042000e61cb4d75b0e34cfce428e87-typora-user-images-image-20211115210251688-b5c612.png" alt="image-20211115210251688"></p>
-<p>2.点击<code>SSH connection</code></p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-03-54-49aeb8c903403513c8a68dcaa8cd05c3-typora-user-images-image-20211115210353634-2f4bbb.png" alt="image-20211115210353634"></p>
-<p>3.填写Host和Username及password，并保存</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-05-25-223eda57c83754b3c7cbe87624ead1ec-typora-user-images-image-20211115210523839-e1fef3.png" alt="image-20211115210523839"></p>
-<p>4.点击下图中的位置</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-12-24-a5ed26dbfd0b60b3fce335a19a18dcd6-typora-user-images-image-20211115210608863-c2c9b2.png" alt="image-20211115210608863"></p>
-<p>5.选择你的刚刚配置的sever即可进入服务器</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/21-07-14-db19bb05517da28a06fafd15abd86983-typora-user-images-image-20211115210712342-4eee44.png" alt="image-20211115210712342"></p>
-<p><img src="terminal-tabby.assets/20-08-11-68f14e0dbe1489c149ca84278d5b2c15-terminal-tabby.assets-image-20211207200810147-062b43.png" alt="image-20211207200810147"></p>
-<h2 id="设置同步你的配置"><a href="#设置同步你的配置" class="headerlink" title="设置同步你的配置"></a>设置同步你的配置</h2><p>1.在Plugins内搜索并安装<code>sync-config</code></p>
-<p>2.进入github-》settings -》Developer settings -》 Personal access tokens（即<a href="https://github.com/settings/tokens">Personal Access Tokens (github.com)</a>）</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-55-11-2ff1eaee92ee4d6fc01ba72212717794-typora-user-images-image-20211115205510670-772853.png" alt="image-20211115205510670"></p>
-<p>3.选择<code>Generate new token</code>,并填写相关信息（随便√的，能用就完事了）</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-56-45-394683581793bc6a84416f67e25845fe-typora-user-images-image-20211115205644578-e3639c.png" alt="image-20211115205644578"></p>
-<p>4.复制token到Tabby -》SyncConfig 并选择上传即可</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-58-09-6be5f30c077c1b6a3e32febbdb428872-typora-user-images-image-20211115205808413-fe85b7.png" alt="image-20211115205808413"></p>
-<h2 id="命令行内打开-本地文件路径-或-网页链接"><a href="#命令行内打开-本地文件路径-或-网页链接" class="headerlink" title="命令行内打开 本地文件路径 或 网页链接"></a>命令行内打开 本地文件路径 或 网页链接</h2><p>1.在Plugins内搜索并安装<code>clickable-links</code></p>
-<p>2.重启Tabby，设置快捷键</p>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/15/20-50-49-90f2c5773f6f84cee8c05580bd930db2-typora-user-images-image-20211115205041447-109152.png" alt="image-20211115205041447"></p>
-<h2 id="使用sftp上传和下载文件"><a href="#使用sftp上传和下载文件" class="headerlink" title="使用sftp上传和下载文件"></a>使用sftp上传和下载文件</h2><ol>
-<li>连接服务器后，点击【sftp】</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/22/21-03-19-6d4bf5ea2fc8bdf47604ed93d80f437e-typora-user-images-image-20211122210317802-19ee86.png" alt="image-20211122210317802"></p>
-<ol start="2">
-<li><strong>选择你需要下载或上传的目录</strong>（注意别上传别人的目录里了）</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/22/21-04-19-427e9e068c37bb83483bfcb80080f59d-typora-user-images-image-20211122210417585-ba1a38.png" alt="image-20211122210417585"></p>
-<ol start="3">
-<li>点击该文件，如上图中data1M.gzip，会弹出保存到本地 的窗口，完成下载</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/kuangyl-max/markdownMedia/master/img/fix-dir/typora-user-images/2021/11/22/21-05-55-cd993cf985c76f304027515749b5d196-typora-user-images-image-20211122210553949-c1bca3.png" alt="image-20211122210553949"></p>
-<p>4.同理，点击【Upload】按钮，完成文件上传</p>
-<p>5.更多上传下载方式见<a href="https://kuangyl-max.github.io/2021/11/15/linux/">Linux命令 | 博客 (kuangyl-max.github.io)</a>中的<code>scp，rsync, rz\sz</code></p>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -1827,7 +1827,7 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 <p>参数说明：</p>
 <ul>
 <li>$REPO_DIR 表示需要处理的Git仓库本地目录</li>
-<li><a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:xxxx/$REPO_DIR.git 表示远程仓库地址</li>
+<li><a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>:xxxx/$REPO_DIR.git 表示远程仓库地址</li>
 </ul>
 <p>则可以按照如下步骤处理：</p>
 <h4 id="进入本地仓库，删除-git目录"><a href="#进入本地仓库，删除-git目录" class="headerlink" title="进入本地仓库，删除.git目录"></a>进入本地仓库，删除.git目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> <span class="variable">$REPO_DIR</span></span><br><span class="line">rm -rf .git</span><br></pre></td></tr></table></figure>
@@ -2345,7 +2345,7 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 </li>
 <li><p>git commit -m “first commit”</p>
 </li>
-<li><p>git remote add origin <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:JasonDu1993/learngit.git</p>
+<li><p>git remote add origin <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#105;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:JasonDu1993/learngit.git</p>
 </li>
 <li><p>关联远程库，相当于让origin等于后面这串地址</p>
 </li>
@@ -2367,7 +2367,7 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 <p>一般master分支和dev分支都会推到远程</p>
 <p><strong>第二种情况：远程仓库有内容，直接克隆到本地</strong></p>
 <ol>
-<li><p>git clone <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#98;&#x2e;&#99;&#111;&#x6d;</a>:JasonDu1993/gitskills.git</p>
+<li><p>git clone <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a>:JasonDu1993/gitskills.git</p>
 </li>
 <li><p>git branch -a 查看本地分支和远程分支</p>
 </li>
@@ -2565,6 +2565,25 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
       </tags>
   </entry>
   <entry>
+    <title>有道API调用</title>
+    <url>/2020/10/28/youdao/</url>
+    <content><![CDATA[<h1 id="有道API调用"><a href="#有道API调用" class="headerlink" title="有道API调用"></a>有道API调用</h1><p>在有道智云&gt;产品服务&gt;自然语言翻译服务&gt;文本翻译&gt;技术文档&gt;API接入指南 查看相关信息，根据有道智云提供的demo实现一个公共API调用的实例。注意，API接入指南右侧可快速导航到常用语言Demo中的JS demo</p>
+<h2 id="有道API调用说明"><a href="#有道API调用说明" class="headerlink" title="有道API调用说明"></a>有道API调用说明</h2><p>文本翻译API接口提供有道的翻译服务，包含了中英翻译和小语种翻译功能。只需要通过调用文本翻译API，传入待翻译的内容，并指定要翻译的源语言（支持源语言语种自动检测）和目标语言种类，就可以得到相应的翻译结果。</p>
+<ul>
+<li>调用API需要向接口发送以下字段来访问服务<br><img src="https://img-blog.csdnimg.cn/20200924120622936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTA3MTk2MQ==,size_16,color_FFFFFF,t_70#pic_left" alt="在这里插入图片描述"><br>代码实现</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;有道智云&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;jqueryvalidation.org&#x2F;files&#x2F;demo&#x2F;site-demos.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align: center;border: 1px solid;width: 20%;padding: 10px;margin: 0 auto;&quot;&gt;</span><br><span class="line">        &lt;h3&gt;有道翻译&lt;&#x2F;h3&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;输入:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;in&quot; type&#x3D;&quot;text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;from:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;from&quot; type&#x3D;&quot;text&quot; value&#x3D;&#39;zh-CHS&#39; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;to:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;to&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;en&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;button&gt;确定&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            提示：zh-CHS(中文) || ja(日语) || en(英文) || fr(法语) ...</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;padding-top: 20px;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align: center; border: 1px solid;width: 50%;margin: 0 auto;&quot;&gt;</span><br><span class="line">        &lt;h&gt;翻译结果&lt;&#x2F;h&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;out&quot; border&#x3D;&quot;1&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;http:&#x2F;&#x2F;shared.ydstatic.com&#x2F;js&#x2F;jquery&#x2F;jquery-3.1.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;blueimp-md5&#x2F;2.10.0&#x2F;js&#x2F;md5.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;js-sha256&#x2F;0.9.0&#x2F;sha256.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">        var appKey &#x3D; &#39;your appKey&#39;;</span><br><span class="line">        var key &#x3D; &#39;your key&#39;;&#x2F;&#x2F;注意：暴露appSecret，有被盗用造成损失的风险</span><br><span class="line">        &#x2F;&#x2F;     当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 事件。</span><br><span class="line">        &#x2F;&#x2F; 由于该事件在文档就绪后发生，因此把所有其他的 jQuery 事件和函数置于该事件中是非常好的做法。</span><br><span class="line">        &#x2F;&#x2F; ready() 函数规定当 ready 事件发生时执行的代码。</span><br><span class="line">        $(document).ready(function () &#123;</span><br><span class="line">            $(&quot;button&quot;).click(function () &#123;</span><br><span class="line">                var salt &#x3D; (new Date).getTime();</span><br><span class="line">                var curTime &#x3D; Math.round(new Date().getTime() &#x2F; 1000);</span><br><span class="line">                var query &#x3D; $(&quot;#in&quot;).val()</span><br><span class="line">                var str1 &#x3D; appKey + truncate(query) + salt + curTime + key;</span><br><span class="line">                console.log(str1);</span><br><span class="line">                var sign &#x3D; sha256(str1);</span><br><span class="line">                $.ajax(&#123;&#x2F;&#x2F;ajax() 方法通过 HTTP 请求加载远程数据</span><br><span class="line">                    url: &#39;http:&#x2F;&#x2F;openapi.youdao.com&#x2F;api&#39;,</span><br><span class="line">                    type: &#39;post&#39;,&#x2F;&#x2F;请求方式（post或get）默认为get</span><br><span class="line">                    dataType: &#39;jsonp&#39;,&#x2F;&#x2F;JSONP格式</span><br><span class="line">                    data: &#123;</span><br><span class="line">                        q: query,</span><br><span class="line">                        appKey: appKey,</span><br><span class="line">                        salt: salt,</span><br><span class="line">                        from: $(&quot;#from&quot;).val(),</span><br><span class="line">                        to: $(&quot;#to&quot;).val(),</span><br><span class="line">                        sign: sign,</span><br><span class="line">                        signType: &quot;v3&quot;,</span><br><span class="line">                        curtime: curTime,</span><br><span class="line">                    &#125;,</span><br><span class="line">                    success: function (data) &#123;&#x2F;&#x2F;请求成功后调用的回调函数</span><br><span class="line">                        console.log(data);&#x2F;&#x2F;json</span><br><span class="line">                        var out &#x3D; JSON.stringify(data.web);</span><br><span class="line">                        console.log(out);</span><br><span class="line">                        $(&quot;#out&quot;).text(out);</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;); </span><br><span class="line">        function truncate(q) &#123;</span><br><span class="line">            var len &#x3D; q.length;</span><br><span class="line">            if (len &lt;&#x3D; 20) return q;</span><br><span class="line">            return q.substring(0, 10) + len + q.substring(len - 10, len);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://img-blog.csdnimg.cn/20200924120849188.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTA3MTk2MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+]]></content>
+      <categories>
+        <category>API</category>
+      </categories>
+      <tags>
+        <tag>API</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>工具合集</title>
     <url>/2021/10/28/tool/</url>
     <content><![CDATA[<h1 id="Window-终端配置"><a href="#Window-终端配置" class="headerlink" title="Window 终端配置"></a>Window 终端配置</h1><p>相关软件快捷安装脚本 及 Fira字体：<a href="https://cdn.jsdelivr.net/gh/kuangyl-max/kuangyl-max.github.io@master/download/install.zip">点击下载</a></p>
@@ -2597,7 +2616,11 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 </ul>
 <blockquote>
 <p> 如果遇到<strong>powershell乱码</strong>,  可以更改字体(如Fira Code Retina)</p>
-<p>或者<a href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3及oh-my-zsh提示prompt出现乱码的原因及使用Nerd字体的解决方法_yihuajack的博客-CSDN博客</a></p>
+<p> 或者<a href="https://blog.csdn.net/yihuajack/article/details/111405007">oh-my-posh3及oh-my-zsh提示prompt出现乱码的原因及使用Nerd字体的解决方法_yihuajack的博客-CSDN博客</a></p>
+<p> 推荐使用 <strong>DejaVuSansMono Nerd Font</strong> 或者 <strong>Cousine Nerd Font</strong>，这两款字体比较全，适配也还不错</p>
+<p> 命令行自动补全和提示：Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete</p>
+<p>  查看所有posh主题：Get-PoshThemes </p>
+<p> 通过过DirColors插件增强一下ls命令在PowerShell中的效果：Import-Module DirColors</p>
 </blockquote>
 <h2 id="scoop下工具安装"><a href="#scoop下工具安装" class="headerlink" title="scoop下工具安装"></a>scoop下工具安装</h2><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scoop install <span class="number">7</span>zip</span><br><span class="line">scoop install aria2</span><br><span class="line">scoop install bfg</span><br><span class="line">scoop install cacert</span><br><span class="line">scoop install colortool</span><br><span class="line">scoop install <span class="built_in">curl</span></span><br><span class="line">scoop install cygwin</span><br><span class="line">scoop install gawk</span><br><span class="line">scoop install grep</span><br><span class="line">scoop install maven</span><br><span class="line">scoop install ntop</span><br><span class="line">scoop install redis</span><br><span class="line">scoop install sed</span><br><span class="line">scoop install unzip</span><br><span class="line">scoop install vim</span><br><span class="line">scoop install <span class="built_in">wget</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#cygwin 相当于虚拟Linux环境；内部可安装apt-cyg</span></span><br><span class="line"><span class="comment">#之后安装如下包</span></span><br><span class="line">apt<span class="literal">-cyg</span> install tree </span><br></pre></td></tr></table></figure>
 
@@ -3073,25 +3096,6 @@ screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
       </categories>
       <tags>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>有道API调用</title>
-    <url>/2020/10/28/youdao/</url>
-    <content><![CDATA[<h1 id="有道API调用"><a href="#有道API调用" class="headerlink" title="有道API调用"></a>有道API调用</h1><p>在有道智云&gt;产品服务&gt;自然语言翻译服务&gt;文本翻译&gt;技术文档&gt;API接入指南 查看相关信息，根据有道智云提供的demo实现一个公共API调用的实例。注意，API接入指南右侧可快速导航到常用语言Demo中的JS demo</p>
-<h2 id="有道API调用说明"><a href="#有道API调用说明" class="headerlink" title="有道API调用说明"></a>有道API调用说明</h2><p>文本翻译API接口提供有道的翻译服务，包含了中英翻译和小语种翻译功能。只需要通过调用文本翻译API，传入待翻译的内容，并指定要翻译的源语言（支持源语言语种自动检测）和目标语言种类，就可以得到相应的翻译结果。</p>
-<ul>
-<li>调用API需要向接口发送以下字段来访问服务<br><img src="https://img-blog.csdnimg.cn/20200924120622936.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTA3MTk2MQ==,size_16,color_FFFFFF,t_70#pic_left" alt="在这里插入图片描述"><br>代码实现</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;有道智云&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;jqueryvalidation.org&#x2F;files&#x2F;demo&#x2F;site-demos.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align: center;border: 1px solid;width: 20%;padding: 10px;margin: 0 auto;&quot;&gt;</span><br><span class="line">        &lt;h3&gt;有道翻译&lt;&#x2F;h3&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;输入:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;in&quot; type&#x3D;&quot;text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;from:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;from&quot; type&#x3D;&quot;text&quot; value&#x3D;&#39;zh-CHS&#39; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;p&gt;&lt;label&gt;to:&lt;&#x2F;label&gt;</span><br><span class="line">            &lt;input id&#x3D;&quot;to&quot; type&#x3D;&quot;text&quot; value&#x3D;&quot;en&quot; &#x2F;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">        &lt;button&gt;确定&lt;&#x2F;button&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            提示：zh-CHS(中文) || ja(日语) || en(英文) || fr(法语) ...</span><br><span class="line">        &lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;padding-top: 20px;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;text-align: center; border: 1px solid;width: 50%;margin: 0 auto;&quot;&gt;</span><br><span class="line">        &lt;h&gt;翻译结果&lt;&#x2F;h&gt;</span><br><span class="line">        &lt;p id&#x3D;&quot;out&quot; border&#x3D;&quot;1&quot;&gt;&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;http:&#x2F;&#x2F;shared.ydstatic.com&#x2F;js&#x2F;jquery&#x2F;jquery-3.1.1.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;blueimp-md5&#x2F;2.10.0&#x2F;js&#x2F;md5.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcss.com&#x2F;js-sha256&#x2F;0.9.0&#x2F;sha256.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">        var appKey &#x3D; &#39;your appKey&#39;;</span><br><span class="line">        var key &#x3D; &#39;your key&#39;;&#x2F;&#x2F;注意：暴露appSecret，有被盗用造成损失的风险</span><br><span class="line">        &#x2F;&#x2F;     当 DOM（文档对象模型） 已经加载，并且页面（包括图像）已经完全呈现时，会发生 ready 事件。</span><br><span class="line">        &#x2F;&#x2F; 由于该事件在文档就绪后发生，因此把所有其他的 jQuery 事件和函数置于该事件中是非常好的做法。</span><br><span class="line">        &#x2F;&#x2F; ready() 函数规定当 ready 事件发生时执行的代码。</span><br><span class="line">        $(document).ready(function () &#123;</span><br><span class="line">            $(&quot;button&quot;).click(function () &#123;</span><br><span class="line">                var salt &#x3D; (new Date).getTime();</span><br><span class="line">                var curTime &#x3D; Math.round(new Date().getTime() &#x2F; 1000);</span><br><span class="line">                var query &#x3D; $(&quot;#in&quot;).val()</span><br><span class="line">                var str1 &#x3D; appKey + truncate(query) + salt + curTime + key;</span><br><span class="line">                console.log(str1);</span><br><span class="line">                var sign &#x3D; sha256(str1);</span><br><span class="line">                $.ajax(&#123;&#x2F;&#x2F;ajax() 方法通过 HTTP 请求加载远程数据</span><br><span class="line">                    url: &#39;http:&#x2F;&#x2F;openapi.youdao.com&#x2F;api&#39;,</span><br><span class="line">                    type: &#39;post&#39;,&#x2F;&#x2F;请求方式（post或get）默认为get</span><br><span class="line">                    dataType: &#39;jsonp&#39;,&#x2F;&#x2F;JSONP格式</span><br><span class="line">                    data: &#123;</span><br><span class="line">                        q: query,</span><br><span class="line">                        appKey: appKey,</span><br><span class="line">                        salt: salt,</span><br><span class="line">                        from: $(&quot;#from&quot;).val(),</span><br><span class="line">                        to: $(&quot;#to&quot;).val(),</span><br><span class="line">                        sign: sign,</span><br><span class="line">                        signType: &quot;v3&quot;,</span><br><span class="line">                        curtime: curTime,</span><br><span class="line">                    &#125;,</span><br><span class="line">                    success: function (data) &#123;&#x2F;&#x2F;请求成功后调用的回调函数</span><br><span class="line">                        console.log(data);&#x2F;&#x2F;json</span><br><span class="line">                        var out &#x3D; JSON.stringify(data.web);</span><br><span class="line">                        console.log(out);</span><br><span class="line">                        $(&quot;#out&quot;).text(out);</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;); </span><br><span class="line">        function truncate(q) &#123;</span><br><span class="line">            var len &#x3D; q.length;</span><br><span class="line">            if (len &lt;&#x3D; 20) return q;</span><br><span class="line">            return q.substring(0, 10) + len + q.substring(len - 10, len);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;html&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="https://img-blog.csdnimg.cn/20200924120849188.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81MTA3MTk2MQ==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-]]></content>
-      <categories>
-        <category>API</category>
-      </categories>
-      <tags>
-        <tag>API</tag>
       </tags>
   </entry>
 </search>
